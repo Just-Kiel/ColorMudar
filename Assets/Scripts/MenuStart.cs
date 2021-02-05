@@ -13,6 +13,11 @@ public class MenuStart : MonoBehaviour
         //mettre un game object qui apparait et disparait (comme ça je peux utiliser le meme script dans le menu pause)
     }
 
+    public void CreditsButton()
+    {
+        //game object des crédits ?
+    }
+
     public void QuitButton()
     {
         Application.Quit();
