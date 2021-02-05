@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MenuStart : MonoBehaviour
 {
+    [SerializeField] private GameObject optionMenu;
+    [SerializeField] private GameObject currentMenu;
+    [SerializeField] private GameObject optionFirstButton;
     public void StartButton()
     {
         SceneManager.LoadScene("MoveScene");
@@ -10,7 +14,10 @@ public class MenuStart : MonoBehaviour
 
     public void OptionsButton()
     {
-        //mettre un game object qui apparait et disparait (comme ça je peux utiliser le meme script dans le menu pause)
+        currentMenu.SetActive(false);
+        optionMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionFirstButton);
     }
 
     public void CreditsButton()
