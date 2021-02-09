@@ -13,6 +13,7 @@ public class PlayerBehavior : MonoBehaviour
     private bool Jumping;
     //[SerializeField] private bool Climbing = false;
     private bool Walking;
+    public MenuStart menuStart;
 
     private Vector3 velocity = Vector3.zero;
 
@@ -22,6 +23,15 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Update()
     {
+        if (menuStart.Pausing == true)
+        {
+            Time.timeScale = 0;
+        } 
+        else if (menuStart.Pausing == false)
+        {
+            Time.timeScale = 1;
+        }
+
         horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;
 
         if (Input.GetButtonDown("Jump") && Walking == true)

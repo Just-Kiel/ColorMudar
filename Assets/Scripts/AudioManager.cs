@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-
     public static AudioManager instance = null;
 
     [SerializeField] private AudioSource musicStream;

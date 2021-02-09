@@ -8,6 +8,9 @@ public class MenuStart : MonoBehaviour
     [SerializeField] private GameObject currentMenu;
     [SerializeField] private GameObject optionFirstButton;
     [SerializeField] private GameObject currentFirstButton;
+
+    public bool Pausing = false;
+
     private void Update()
     {
         if (Input.GetButtonDown("Cancel") && optionMenu == true)
@@ -17,11 +20,26 @@ public class MenuStart : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(currentFirstButton);
         }
+        
+        if (Input.GetButtonDown("Cancel"))
+        {
+            currentMenu.SetActive(true);
+            Pausing = true;
+            //currentMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(currentFirstButton);
+        }
     }
 
     public void StartButton()
     {
         SceneManager.LoadScene("MoveScene");
+    }
+
+    public void ResumeButton()
+    {
+        currentMenu.SetActive(false);
+        Pausing = false;
     }
 
     public void OptionsButton()
