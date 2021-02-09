@@ -7,24 +7,25 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance = null;
 
-    [SerializeField] private AudioSource musicStream;
-    [SerializeField] public Text musicText;
-    private float musicVolume;
+    public AudioSource musicStream;
+    public Text musicText;
+    public float musicVolume;
     
-    [SerializeField] private AudioSource soundStream;
-    [SerializeField] public Text soundText;
-    private float soundVolume;
+    public AudioSource soundStream;
+    public Text soundText;
+    public float soundVolume;
 
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            
         } else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
