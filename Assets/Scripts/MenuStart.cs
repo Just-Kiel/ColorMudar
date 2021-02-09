@@ -42,6 +42,11 @@ public class MenuStart : MonoBehaviour
         Pausing = false;
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
+
     public void OptionsButton()
     {
         currentMenu.SetActive(false);
