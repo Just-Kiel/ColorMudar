@@ -199,8 +199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152023418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.6, y: 5.3, z: 0}
-  m_LocalScale: {x: 0.0024912166, y: 0.0017561173, z: 0.045736726}
+  m_LocalPosition: {x: -49.47, y: -64.8, z: 0}
+  m_LocalScale: {x: 0.120212816, y: 0.08474085, z: 2.2070103}
   m_Children:
   - {fileID: 504787310}
   m_Father: {fileID: 0}
@@ -219,12 +219,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2DPlayer: {fileID: 152023423}
-  speedMovement: 400
-  speedJump: 300
+  speedMovement: 14400
+  speedJump: 4000
   horizontalMove: 0
   menuStart: {fileID: 170392637}
   groundCheck: {fileID: 504787310}
-  groundCheckRay: 0.5
+  groundCheckRay: 21
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -259,7 +259,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 12
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
@@ -926,7 +926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504787309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -502, z: 0}
+  m_LocalPosition: {x: 0, y: -606, z: 0}
   m_LocalScale: {x: 5.2529902, y: 5.2529902, z: 5.2529902}
   m_Children: []
   m_Father: {fileID: 152023420}
@@ -1758,8 +1758,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145354650}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 8.8, y: -1.4, z: 0}
-  m_LocalScale: {x: 0.02153837, y: 0.026617898, z: 0.1005808}
+  m_LocalPosition: {x: 23.5, y: -160.2, z: 0}
+  m_LocalScale: {x: 0.14415747, y: 0.55399644, z: 0.1005808}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
