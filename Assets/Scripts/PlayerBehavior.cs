@@ -53,12 +53,13 @@ public class PlayerBehavior : MonoBehaviour
 
         if (Jumping == true)
         {
-            rb2DPlayer.AddForce(new Vector2(0f, speedJump));
+            rb2DPlayer.MovePosition(Vector2.up * speedJump);
+            //rb2DPlayer.AddForce(new Vector2(100f, speedJump)); //aucune idée de pourquoi ça marche pas hein mais bon
             Jumping = false;
         }
     }
 
-    private void OnDrawGizmos()
+    public void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRay);
