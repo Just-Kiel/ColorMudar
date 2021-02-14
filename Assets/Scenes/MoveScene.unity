@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &60927025 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5435119701513935538, guid: 8403afb9cd5d4714aafa2cf7c4d18ce5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1983291031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &60927026 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5435119701513935539, guid: 8403afb9cd5d4714aafa2cf7c4d18ce5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1983291031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &60927027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5435119701513935540, guid: 8403afb9cd5d4714aafa2cf7c4d18ce5,
@@ -173,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &201880773
 GameObject:
@@ -1322,7 +1334,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &834425162
 RectTransform:
@@ -1594,7 +1606,7 @@ Transform:
   m_LocalScale: {x: 0.14415747, y: 0.55399644, z: 0.1005808}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1145354653
 BoxCollider2D:
@@ -2020,8 +2032,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 3499.133
+  m_UseAutoMass: 0
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 12
@@ -2044,7 +2056,7 @@ Transform:
   - {fileID: 60927027}
   - {fileID: 1711322717}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1469238813
 MonoBehaviour:
@@ -2059,6 +2071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2DPlayer: {fileID: 1469238811}
+  animator: {fileID: 60927025}
+  spriteRenderer: {fileID: 60927026}
   speedMovement: 14400
   speedJump: 5000
   horizontalMove: 0
@@ -2643,6 +2657,11 @@ PrefabInstance:
     - target: {fileID: 5435119701513935538, guid: 8403afb9cd5d4714aafa2cf7c4d18ce5,
         type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435119701513935539, guid: 8403afb9cd5d4714aafa2cf7c4d18ce5,
+        type: 3}
+      propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5435119701513935540, guid: 8403afb9cd5d4714aafa2cf7c4d18ce5,

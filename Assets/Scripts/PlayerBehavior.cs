@@ -3,6 +3,8 @@
 public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2DPlayer;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private float speedMovement;
     [SerializeField] private float speedJump;
@@ -30,6 +32,21 @@ public class PlayerBehavior : MonoBehaviour
         else if (menuStart.Pausing == false)
         {
             Time.timeScale = 1;
+        }
+
+        if (Input.GetButton("Horizontal"))
+        {
+            animator.SetBool("isRunning", true);
+            if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
+            {
+                spriteRenderer.flipX = true;
+            } else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
+            {
+                spriteRenderer.flipX = false;
+            }
+        } else
+        {
+            animator.SetBool("isRunning", false);
         }
 
         horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;

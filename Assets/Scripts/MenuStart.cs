@@ -6,8 +6,10 @@ public class MenuStart : MonoBehaviour
 {
     [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject currentMenu;
+    [SerializeField] private GameObject selectMenu;
     [SerializeField] private GameObject optionFirstButton;
     [SerializeField] private GameObject currentFirstButton;
+    [SerializeField] private GameObject selectFirstButton;
 
     public bool Pausing = false;
 
@@ -33,7 +35,8 @@ public class MenuStart : MonoBehaviour
 
     public void StartButton()
     {
-        SceneManager.LoadScene("MoveScene");
+        //SceneManager.LoadScene("MoveScene");
+        currentMenu.SetActive(false);
     }
 
     public void ResumeButton()
