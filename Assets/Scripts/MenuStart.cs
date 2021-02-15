@@ -11,6 +11,9 @@ public class MenuStart : MonoBehaviour
     [SerializeField] private GameObject currentFirstButton;
     [SerializeField] private GameObject selectFirstButton;
 
+    public static string currentPlayer;
+
+
     public bool Pausing = false;
 
     private void Update()
@@ -18,6 +21,14 @@ public class MenuStart : MonoBehaviour
         if (Input.GetButtonDown("Cancel") && optionMenu == true)
         {
             optionMenu.SetActive(false);
+            currentMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(currentFirstButton);
+        }
+        
+        if (Input.GetButtonDown("Cancel") && selectMenu == true)
+        {
+            selectMenu.SetActive(false);
             currentMenu.SetActive(true);
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(currentFirstButton);
@@ -37,6 +48,16 @@ public class MenuStart : MonoBehaviour
     {
         //SceneManager.LoadScene("MoveScene");
         currentMenu.SetActive(false);
+        selectMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(selectFirstButton);
+    }
+
+    public void SelectButton()
+    {
+        currentPlayer = gameObject.name;
+        Debug.Log(currentPlayer);
+        SceneManager.LoadScene("MoveScene");
     }
 
     public void ResumeButton()
