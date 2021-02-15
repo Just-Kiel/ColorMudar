@@ -11,6 +11,8 @@ public class MenuStart : MonoBehaviour
     [SerializeField] private GameObject currentFirstButton;
     [SerializeField] private GameObject selectFirstButton;
 
+    [SerializeField] private SceneLoader sceneLoader;
+
     public static string currentPlayer;
 
 
@@ -57,7 +59,8 @@ public class MenuStart : MonoBehaviour
     {
         currentPlayer = gameObject.name;
         Debug.Log(currentPlayer);
-        SceneManager.LoadScene("MoveScene");
+        StartCoroutine(sceneLoader.LoadLevel("MoveScene"));
+        //SceneManager.LoadScene("MoveScene");
     }
 
     public void ResumeButton()
