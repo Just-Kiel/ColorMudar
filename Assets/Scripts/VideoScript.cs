@@ -8,6 +8,8 @@ public class VideoScript : MonoBehaviour
 {
     [SerializeField] private VideoPlayer m_videoPlayer;
 
+    [SerializeField] private SceneLoader sceneLoader;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,15 @@ public class VideoScript : MonoBehaviour
 
     void VideoOver(UnityEngine.Video.VideoPlayer vp)
     {
-        //vp.Stop();
-        SceneManager.LoadScene("StartScene");
+        if (SceneManager.GetActiveScene().name == "SplashScene")
+        {
+            StartCoroutine(sceneLoader.LoadLevel("FirstCinematiqueScene"));
+            //SceneManager.LoadScene("FirstCinematiqueScene");
+        }
+        
+        if (SceneManager.GetActiveScene().name == "FirstCinematiqueScene")
+        {
+            SceneManager.LoadScene("StartScene");
+        }
     }
 }
