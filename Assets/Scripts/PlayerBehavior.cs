@@ -70,6 +70,7 @@ public class PlayerBehavior : MonoBehaviour
 
         if (Jumping == true)
         {
+            animator.SetTrigger("Jump");
             rb2DPlayer.MovePosition(Vector2.up * speedJump);
             //rb2DPlayer.AddForce(new Vector2(100f, speedJump)); //aucune idée de pourquoi ça marche pas hein mais bon
             Jumping = false;
