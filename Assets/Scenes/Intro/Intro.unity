@@ -2243,7 +2243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 679.91614, y: 76.87875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210307615
@@ -2421,8 +2421,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 55.53631}
-  m_Size: {x: 39.615936, y: 200.80107}
+  m_Offset: {x: 0, y: 13.455437}
+  m_Size: {x: 39.615936, y: 116.63933}
   m_Direction: 0
 --- !u!4 &1233697782
 Transform:
@@ -5210,7 +5210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087984030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 231, y: -18, z: 0}
+  m_LocalPosition: {x: 109, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 403876812}
