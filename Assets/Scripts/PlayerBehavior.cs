@@ -16,10 +16,12 @@ public class PlayerBehavior : MonoBehaviour
 
     [SerializeField] private float horizontalMove;
 
-    private bool Jumping;
+    //private bool Jumping;
     //[SerializeField] private bool Climbing = false;
     private bool Walking;
     public MenuStart menuStart;
+
+    public AledText aledText;
 
     private Vector3 velocity = Vector3.zero;
 
@@ -61,7 +63,9 @@ public class PlayerBehavior : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && Walking == true)
         {
-            Jumping = true;
+            animator.SetTrigger("PrepaJump");
+            rb2DPlayer.velocity = Vector2.up * speedJump;
+            //Jumping = true;
         }
     }
 
@@ -76,24 +80,41 @@ public class PlayerBehavior : MonoBehaviour
         Vector3 targetSpeed = new Vector2(_horizontalMovement, rb2DPlayer.velocity.y);
         rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
 
-        if (Jumping == true)
+        if (Walking == true)
         {
-            animator.SetTrigger("Jump");
-            rb2DPlayer.MovePosition(Vector2.up * speedJump);
+            animator.SetBool("isJumping", false);
+        } else
+        {
+            animator.SetBool("isJumping", true);
+            
+        }
+
+        /*if (Jumping == true)
+        {
+            //animator.SetTrigger("Jump");
+            rb2DPlayer.velocity = Vector2.up * speedJump;
+            //rb2DPlayer.MovePosition(Vector2.up * speedJump);
             //rb2DPlayer.AddForce(new Vector2(100f, speedJump)); //aucune idée de pourquoi ça marche pas hein mais bon
             Jumping = false;
-        }
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "End")
         {
-            currentLevel = PlayerPrefs.GetInt("nextLevel", 0);
+            currentLevel = PlayerPrefs.GetInt("nextLevel");
             int m_nextLevel = currentLevel + 1;
             Debug.Log(m_nextLevel);
             SceneManager.LoadScene(levelName[m_nextLevel]);
-            PlayerPrefs.SetInt("nextLevel", currentLevel + 1);
+            PlayerPrefs.SetInt("nextLevel", m_nextLevel);
+            Debug.Log(m_nextLevel);
+        }
+
+        if(collision.gameObject.tag == "Aled")
+        {
+            Destroy(collision.gameObject);
+            AledText.score ++;
         }
     }
 

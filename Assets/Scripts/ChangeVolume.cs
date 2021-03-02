@@ -8,7 +8,7 @@ public class ChangeVolume : MonoBehaviour
     public Text localMusicText;
     public Text localSoundText;
 
-    private void Update()
+    public void Update()
     {
         AudioManager.instance.musicText = localMusicText;
         AudioManager.instance.soundText = localSoundText;
