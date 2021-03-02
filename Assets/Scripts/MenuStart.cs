@@ -49,6 +49,7 @@ public class MenuStart : MonoBehaviour
     public void StartButton()
     {
         //SceneManager.LoadScene("MoveScene");
+        PlayerPrefs.SetInt("nextLevel", 0);
         currentMenu.SetActive(false);
         selectMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
@@ -59,7 +60,7 @@ public class MenuStart : MonoBehaviour
     {
         currentPlayer = gameObject.name;
         Debug.Log(currentPlayer);
-        StartCoroutine(sceneLoader.LoadLevel("MoveScene"));
+        StartCoroutine(sceneLoader.LoadLevel("Intro"));
         //SceneManager.LoadScene("MoveScene");
     }
 

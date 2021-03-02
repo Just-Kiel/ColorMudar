@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    public string[] levelName;
+    public int currentLevel = 0;
+
     [SerializeField] private Rigidbody2D rb2DPlayer;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -23,6 +27,10 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private float groundCheckRay;
     [SerializeField] private LayerMask collisionLayer;
 
+    private void Start()
+    {
+        //PlayerPrefs.DeleteAll();
+    }
     private void Update()
     {
         if (menuStart.Pausing == true)
@@ -74,6 +82,18 @@ public class PlayerBehavior : MonoBehaviour
             rb2DPlayer.MovePosition(Vector2.up * speedJump);
             //rb2DPlayer.AddForce(new Vector2(100f, speedJump)); //aucune idée de pourquoi ça marche pas hein mais bon
             Jumping = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "End")
+        {
+            currentLevel = PlayerPrefs.GetInt("nextLevel", 0);
+            int m_nextLevel = currentLevel + 1;
+            Debug.Log(m_nextLevel);
+            SceneManager.LoadScene(levelName[m_nextLevel]);
+            PlayerPrefs.SetInt("nextLevel", currentLevel + 1);
         }
     }
 
