@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 3313406592301237150}
   - component: {fileID: 3313406592301237151}
   - component: {fileID: 1315906491012019537}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: roi_chaussette_gentil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,8 +170,8 @@ MonoBehaviour:
   - {fileID: 3313406592860546310}
   - {fileID: 3313406592239127728}
   m_Bounds:
-    m_Center: {x: -432.27545, y: 27.85196, z: 0}
-    m_Extent: {x: 251.27551, y: 285.64795, z: 0}
+    m_Center: {x: -432.27542, y: 27.85196, z: 0}
+    m_Extent: {x: 251.27548, y: 285.64795, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!95 &3313406592301237151
@@ -207,15 +207,15 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 6
   m_Points:
   - {x: -191.85614, y: 175.21582}
   - {x: -233.03676, y: 260.2058}
   - {x: -463.56512, y: 310.19318}
   - {x: -606.4222, y: 241.39893}
   - {x: -669.48254, y: 76.65135}
-  - {x: -678.08386, y: -236.8133}
-  - {x: -470.71817, y: -260.09155}
+  - {x: -683.0149, y: -289.41074}
+  - {x: -472.84543, y: -294.8464}
   - {x: -446.79492, y: 8.329903}
   - {x: -395.01157, y: 94.34439}
   - {x: -271.94934, y: 108.281265}

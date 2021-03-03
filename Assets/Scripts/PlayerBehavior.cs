@@ -21,6 +21,8 @@ public class PlayerBehavior : MonoBehaviour
     private bool Walking;
     public MenuStart menuStart;
 
+    //[SerializeField] private GameObject DiscussionBox;
+
     public AledText aledText;
 
     private Vector3 velocity = Vector3.zero;
@@ -38,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
         if (menuStart.Pausing == true)
         {
             Time.timeScale = 0;
-        } 
+        }
         else if (menuStart.Pausing == false)
         {
             Time.timeScale = 1;
@@ -50,11 +52,13 @@ public class PlayerBehavior : MonoBehaviour
             if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
             {
                 spriteRenderer.flipX = true;
-            } else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
+            }
+            else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
             {
                 spriteRenderer.flipX = false;
             }
-        } else
+        }
+        else
         {
             animator.SetBool("isRunning", false);
         }
@@ -68,6 +72,7 @@ public class PlayerBehavior : MonoBehaviour
             //Jumping = true;
         }
     }
+
 
     void FixedUpdate()
     {
