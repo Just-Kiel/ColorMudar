@@ -513,7 +513,7 @@ MonoBehaviour:
   rb2DPlayer: {fileID: 52341286}
   animator: {fileID: 1098091629}
   spriteRenderer: {fileID: 1098091627}
-  speedMovement: 5000
+  speedMovement: 14400
   speedJump: 100
   horizontalMove: 0
   menuStart: {fileID: 1183339730}
@@ -522,7 +522,7 @@ MonoBehaviour:
   groundCheckRay: 19.72
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1024
 --- !u!50 &52341286
 Rigidbody2D:
   serializedVersion: 4

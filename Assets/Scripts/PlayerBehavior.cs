@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class PlayerBehavior : MonoBehaviour
 {
     public string[] levelName;
     public int currentLevel = 0;
+
+    public NavMeshAgent agent;
+    [SerializeField] private Transform start;
 
     [SerializeField] private Rigidbody2D rb2DPlayer;
     [SerializeField] private Animator animator;
@@ -128,4 +132,9 @@ public class PlayerBehavior : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRay);
     }
+    /*void OnBecameInvisible()
+    {
+        Debug.Log("nik ta race");
+        agent.SetDestination(start.position);
+    }*/
 }
