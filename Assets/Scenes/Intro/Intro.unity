@@ -510,6 +510,8 @@ MonoBehaviour:
   - Intro_2
   - Intro_3
   currentLevel: 0
+  agent: {fileID: 0}
+  start: {fileID: 0}
   rb2DPlayer: {fileID: 52341286}
   animator: {fileID: 1098091629}
   spriteRenderer: {fileID: 1098091627}
@@ -4419,7 +4421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087984030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 122, y: -18, z: 0}
+  m_LocalPosition: {x: 389, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 403876812}

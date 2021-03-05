@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
+using System.Collections;
+using Pathfinding;
 
 public class PlayerBehavior : MonoBehaviour
 {
     public string[] levelName;
     public int currentLevel = 0;
 
-    public NavMeshAgent agent;
     [SerializeField] private Transform start;
+    [SerializeField] private Path path;
+    Seeker seeker;
+    [SerializeField] private int currentWayPoint = 0;
+    [SerializeField] private bool reachedEnd = false;
+    [SerializeField] private float nextPoint = 3f;
 
     [SerializeField] private Rigidbody2D rb2DPlayer;
     [SerializeField] private Animator animator;
@@ -37,10 +43,67 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Start()
     {
+        spriteRenderer.enabled = true;
+        seeker = GetComponent<Seeker>();
+        seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
         //PlayerPrefs.DeleteAll();
+        InvokeRepeating("UpdatePath", 0f, .5f);
+    }
+
+    IEnumerator Respawn()
+    {
+        Debug.Log("ého");
+        /*if (path == null)
+        {
+            return null;
+        }*/
+        while (Vector2.Distance(start.position, rb2DPlayer.position) > 1)
+        {
+            if (currentWayPoint >= path.vectorPath.Count)
+            {
+                Debug.Log("test");
+                reachedEnd = true;
+            }
+            else
+            {
+                Debug.Log("echec");
+                reachedEnd = false;
+            }
+
+            Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb2DPlayer.position).normalized;
+            Vector2 force = direction * speedMovement * Time.deltaTime;
+
+            float distance = Vector2.Distance(rb2DPlayer.position, path.vectorPath[currentWayPoint]);
+
+            if (distance < nextPoint)
+            {
+                Debug.Log("JE MARCHE PAS ET JE SOULE OROR");
+                currentWayPoint++;
+            }
+            yield return null;
+        }
+    }
+
+    void onPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWayPoint = 0;
+        }
+    }
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
+        }
     }
     private void Update()
     {
+        
+        //Debug.Log(spriteRenderer.isVisible);
         if (menuStart.Pausing == true)
         {
             Time.timeScale = 0;
@@ -50,7 +113,14 @@ public class PlayerBehavior : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        if (Input.GetButton("Horizontal"))
+        /*if (spriteRenderer.isVisible == false)
+        {
+            Debug.Log("pute");
+            Destroy(gameObject);
+
+        }*/
+
+            if (Input.GetButton("Horizontal"))
         {
             animator.SetBool("isRunning", true);
             if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
@@ -81,7 +151,8 @@ public class PlayerBehavior : MonoBehaviour
     void FixedUpdate()
     {
         Walking = Physics2D.OverlapCircle(groundCheck.position, groundCheckRay, collisionLayer);
-        MovePlayer(horizontalMove);        
+        MovePlayer(horizontalMove);
+        //OnBecameInvisible();
     }
 
     void MovePlayer(float _horizontalMovement)
@@ -132,9 +203,17 @@ public class PlayerBehavior : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRay);
     }
-    /*void OnBecameInvisible()
+    void OnBecameInvisible()
     {
-        Debug.Log("nik ta race");
-        agent.SetDestination(start.position);
-    }*/
+        //rb2DPlayer.isKinematic = true;
+        rb2DPlayer.velocity = Vector2.zero;
+        Debug.Log("JE SUIS PAS VISIBLE LALALALA");
+
+        StartCoroutine("Respawn");
+
+        
+        //agent.SetDestination(start.position);
+    }
+
+    
 }

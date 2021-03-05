@@ -10,7 +10,7 @@ public class KingBehavior : MonoBehaviour
 
     [SerializeField] private int speedMove;
 
-    [SerializeField] private Renderer oui;
+    [SerializeField] private GameObject oui;
 
     // Start is called before the first frame update
     void Start()
