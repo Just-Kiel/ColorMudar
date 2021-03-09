@@ -102,8 +102,6 @@ public class PlayerBehavior : MonoBehaviour
     }
     private void Update()
     {
-        
-        //Debug.Log(spriteRenderer.isVisible);
         if (menuStart.Pausing == true)
         {
             Time.timeScale = 0;
@@ -113,37 +111,59 @@ public class PlayerBehavior : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        /*if (spriteRenderer.isVisible == false)
+        if (speedMovement == 0 && speedJump == 0)
         {
-            Debug.Log("pute");
-            Destroy(gameObject);
+            while (Vector2.Distance(start.position, rb2DPlayer.position) > 1)
+            {
+                if (currentWayPoint >= path.vectorPath.Count)
+                {
+                    Debug.Log("test");
+                    reachedEnd = true;
+                }
+                else
+                {
+                    Debug.Log("echec");
+                    reachedEnd = false;
+                }
 
-        }*/
+                Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb2DPlayer.position).normalized;
+                Vector2 force = direction * speedMovement * Time.deltaTime;
+
+                float distance = Vector2.Distance(rb2DPlayer.position, path.vectorPath[currentWayPoint]);
+
+                if (distance < nextPoint)
+                {
+                    Debug.Log("JE MARCHE PAS ET JE SOULE OROR");
+                    currentWayPoint++;
+                }
+            }
+
 
             if (Input.GetButton("Horizontal"))
-        {
-            animator.SetBool("isRunning", true);
-            if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
             {
-                spriteRenderer.flipX = true;
+                animator.SetBool("isRunning", true);
+                if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
+                {
+                    spriteRenderer.flipX = false;
+                }
             }
-            else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
+            else
             {
-                spriteRenderer.flipX = false;
+                animator.SetBool("isRunning", false);
             }
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }
 
-        horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;
+            horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;
 
-        if (Input.GetButtonDown("Jump") && Walking == true)
-        {
-            animator.SetTrigger("PrepaJump");
-            rb2DPlayer.velocity = Vector2.up * speedJump;
-            //Jumping = true;
+            if (Input.GetButtonDown("Jump") && Walking == true)
+            {
+                animator.SetTrigger("PrepaJump");
+                rb2DPlayer.velocity = Vector2.up * speedJump;
+                //Jumping = true;
+            }
         }
     }
 
@@ -185,16 +205,24 @@ public class PlayerBehavior : MonoBehaviour
         {
             currentLevel = PlayerPrefs.GetInt("nextLevel");
             int m_nextLevel = currentLevel + 1;
-            Debug.Log(m_nextLevel);
+            //Debug.Log(m_nextLevel);
             SceneManager.LoadScene(levelName[m_nextLevel]);
             PlayerPrefs.SetInt("nextLevel", m_nextLevel);
-            Debug.Log(m_nextLevel);
+            //Debug.Log(m_nextLevel);
         }
 
         if(collision.gameObject.tag == "Aled")
         {
             Destroy(collision.gameObject);
             AledText.score ++;
+        }
+
+        if(collision.gameObject.tag == "TagTest")
+        {
+            speedJump = 0;
+            speedMovement = 0;
+            //rb2DPlayer.velocity = Vector2.zero;
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaa");
         }
     }
 
