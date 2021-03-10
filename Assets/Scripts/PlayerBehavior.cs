@@ -9,16 +9,21 @@ public class PlayerBehavior : MonoBehaviour
     public string[] levelName;
     public int currentLevel = 0;
 
+    private Vector3 lastPosition;
+    [SerializeField] private Parallaxe parallax;
+
     [SerializeField] private Transform start;
-    [SerializeField] private Path path;
-    Seeker seeker;
-    [SerializeField] private int currentWayPoint = 0;
+    /*[SerializeField] private Path path;
+    Seeker seeker;*/
+    /*[SerializeField] private int currentWayPoint = 0;
     [SerializeField] private bool reachedEnd = false;
-    [SerializeField] private float nextPoint = 3f;
+    [SerializeField] private float nextPoint = 3f;*/
 
     [SerializeField] private Rigidbody2D rb2DPlayer;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private DiscussionManager discuss;
 
     [SerializeField] private float speedMovement;
     [SerializeField] private float speedJump;
@@ -44,19 +49,20 @@ public class PlayerBehavior : MonoBehaviour
     private void Start()
     {
         spriteRenderer.enabled = true;
-        seeker = GetComponent<Seeker>();
+        lastPosition = transform.localPosition;
+        /*seeker = GetComponent<Seeker>();
         seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
         //PlayerPrefs.DeleteAll();
-        InvokeRepeating("UpdatePath", 0f, .5f);
+        InvokeRepeating("UpdatePath", 0f, .5f);*/
     }
 
-    IEnumerator Respawn()
+    /*IEnumerator Respawn()
     {
         Debug.Log("ého");
-        /*if (path == null)
+        *//*if (path == null)
         {
             return null;
-        }*/
+        }*//*
         while (Vector2.Distance(start.position, rb2DPlayer.position) > 1)
         {
             if (currentWayPoint >= path.vectorPath.Count)
@@ -82,9 +88,9 @@ public class PlayerBehavior : MonoBehaviour
             }
             yield return null;
         }
-    }
+    }*/
 
-    void onPathComplete(Path p)
+    /*void onPathComplete(Path p)
     {
         if (!p.error)
         {
@@ -99,7 +105,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
         }
-    }
+    }*/
     private void Update()
     {
         if (menuStart.Pausing == true)
@@ -111,9 +117,11 @@ public class PlayerBehavior : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        if (speedMovement == 0 && speedJump == 0)
+        /*if (speedMovement == 0 && speedJump == 0)
         {
-            while (Vector2.Distance(start.position, rb2DPlayer.position) > 1)
+            Debug.Log("test");
+
+            *//*while (Vector2.Distance(start.position, rb2DPlayer.position) > 1)
             {
                 if (currentWayPoint >= path.vectorPath.Count)
                 {
@@ -136,9 +144,11 @@ public class PlayerBehavior : MonoBehaviour
                     Debug.Log("JE MARCHE PAS ET JE SOULE OROR");
                     currentWayPoint++;
                 }
-            }
+            }*//*
+        }*/
 
-
+        if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false)
+        {
             if (Input.GetButton("Horizontal"))
             {
                 animator.SetBool("isRunning", true);
@@ -165,6 +175,7 @@ public class PlayerBehavior : MonoBehaviour
                 //Jumping = true;
             }
         }
+        
     }
 
 
@@ -172,7 +183,9 @@ public class PlayerBehavior : MonoBehaviour
     {
         Walking = Physics2D.OverlapCircle(groundCheck.position, groundCheckRay, collisionLayer);
         MovePlayer(horizontalMove);
-        //OnBecameInvisible();
+
+        parallax.UpdateParallax(transform.localPosition.x - lastPosition.x);
+        lastPosition = transform.localPosition;
     }
 
     void MovePlayer(float _horizontalMovement)
@@ -205,24 +218,16 @@ public class PlayerBehavior : MonoBehaviour
         {
             currentLevel = PlayerPrefs.GetInt("nextLevel");
             int m_nextLevel = currentLevel + 1;
-            //Debug.Log(m_nextLevel);
+            Debug.Log(m_nextLevel);
             SceneManager.LoadScene(levelName[m_nextLevel]);
             PlayerPrefs.SetInt("nextLevel", m_nextLevel);
-            //Debug.Log(m_nextLevel);
+            Debug.Log(m_nextLevel);
         }
 
         if(collision.gameObject.tag == "Aled")
         {
             Destroy(collision.gameObject);
             AledText.score ++;
-        }
-
-        if(collision.gameObject.tag == "TagTest")
-        {
-            speedJump = 0;
-            speedMovement = 0;
-            //rb2DPlayer.velocity = Vector2.zero;
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaa");
         }
     }
 
@@ -233,14 +238,10 @@ public class PlayerBehavior : MonoBehaviour
     }
     void OnBecameInvisible()
     {
-        //rb2DPlayer.isKinematic = true;
-        rb2DPlayer.velocity = Vector2.zero;
         Debug.Log("JE SUIS PAS VISIBLE LALALALA");
+        rb2DPlayer.transform.position = start.position; //retour à la case départ
 
-        StartCoroutine("Respawn");
-
-        
-        //agent.SetDestination(start.position);
+        //StartCoroutine("Respawn");
     }
 
     

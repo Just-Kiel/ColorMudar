@@ -21,7 +21,7 @@ public class KingBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DiscussionBox.activeSelf == false)
+        if (DiscussionBox == null || DiscussionBox.activeSelf == false)
         {
             //Debug.Log("jem le chokola");
             rb2DKing.velocity = Vector2.right * speedMove;
