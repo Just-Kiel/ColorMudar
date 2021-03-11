@@ -46,6 +46,10 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private float groundCheckRay;
     [SerializeField] private LayerMask collisionLayer;
 
+    [SerializeField] private GameObject toDisable = null;
+    [SerializeField] private bool getDash = false;
+    [SerializeField] private bool isDashing;
+
     private void Start()
     {
         spriteRenderer.enabled = true;
@@ -147,6 +151,12 @@ public class PlayerBehavior : MonoBehaviour
             }*//*
         }*/
 
+        if (toDisable && discuss.DiscussionBox.activeSelf == false)
+        {
+
+            toDisable.GetComponent<CapsuleCollider2D>().enabled = false;
+        }
+
         if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false)
         {
             if (Input.GetButton("Horizontal"))
@@ -174,6 +184,25 @@ public class PlayerBehavior : MonoBehaviour
                 rb2DPlayer.velocity = Vector2.up * speedJump;
                 //Jumping = true;
             }
+
+            if(getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
+            {
+
+                //petit souci à régler mais dans l'idée ça marche comme ça
+                if (Input.GetButton("Horizontal"))
+                {
+                    rb2DPlayer.MovePosition(Input.GetAxis("Horizontal") * Vector2.right * speedJump);
+                } else if (Input.GetButton("Vertical"))
+                {
+                    rb2DPlayer.MovePosition(Input.GetAxis("Vertical") * Vector2.up * speedJump);
+                } else
+                {
+                    rb2DPlayer.MovePosition(Vector2.right * speedJump);
+                }
+                //rb2DPlayer.MovePosition(horizontalMove * Vector2.one * speedJump);
+                Debug.Log("tarace");
+                isDashing = true;
+            }
         }
         
     }
@@ -195,6 +224,7 @@ public class PlayerBehavior : MonoBehaviour
 
         if (Walking == true)
         {
+            isDashing = false;
             animator.SetBool("isJumping", false);
         } else
         {
@@ -231,11 +261,19 @@ public class PlayerBehavior : MonoBehaviour
                 animator.SetBool("isRunning", false);
                 horizontalMove = 0;
                 discuss.DiscussionBox.SetActive(true);
-                
             }
             Destroy(collision.gameObject);
             AledText.score ++;
+        }
 
+        if (collision.gameObject.tag == "Dash")
+        {
+            Debug.Log("j'ai le dash");
+            getDash = true;
+            animator.SetBool("isRunning", false);
+            horizontalMove = 0;
+            discuss.DiscussionBox.SetActive(true);
+            toDisable = collision.gameObject;
             
         }
     }
@@ -247,8 +285,11 @@ public class PlayerBehavior : MonoBehaviour
     }
     void OnBecameInvisible()
     {
-        Debug.Log("JE SUIS PAS VISIBLE LALALALA");
-        rb2DPlayer.transform.position = start.position; //retour à la case départ
+        if (rb2DPlayer)
+        {
+            Debug.Log("JE SUIS PAS VISIBLE LALALALA");
+            rb2DPlayer.position = start.position; //retour à la case départ
+        }
 
         //StartCoroutine("Respawn");
     }
