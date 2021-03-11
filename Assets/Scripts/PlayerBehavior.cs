@@ -226,8 +226,17 @@ public class PlayerBehavior : MonoBehaviour
 
         if(collision.gameObject.tag == "Aled")
         {
+            if (SceneManager.GetActiveScene().name == "Level1_3")
+            {
+                animator.SetBool("isRunning", false);
+                horizontalMove = 0;
+                discuss.DiscussionBox.SetActive(true);
+                
+            }
             Destroy(collision.gameObject);
             AledText.score ++;
+
+            
         }
     }
 
