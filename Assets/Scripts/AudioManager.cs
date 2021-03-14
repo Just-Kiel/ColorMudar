@@ -31,10 +31,14 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         musicVolume = musicStream.volume * 5;
-        musicText.text = musicVolume.ToString();
-
+        
         soundVolume = soundStream.volume * 5;
-        soundText.text = soundVolume.ToString();
+        
+        if(musicText && soundText)
+        {
+            musicText.text = musicVolume.ToString();
+            soundText.text = soundVolume.ToString();
+        }
     }
 
     public void MusicVolumeUp()

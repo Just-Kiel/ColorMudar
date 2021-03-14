@@ -10,7 +10,7 @@ public class KingBehavior : MonoBehaviour
 
     [SerializeField] private int speedMove;
 
-    [SerializeField] private Renderer oui;
+    [SerializeField] private GameObject oui;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class KingBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DiscussionBox.activeSelf == false)
+        if (DiscussionBox == null || DiscussionBox.activeSelf == false)
         {
             //Debug.Log("jem le chokola");
             rb2DKing.velocity = Vector2.right * speedMove;

@@ -5,11 +5,11 @@ using UnityEngine;
 public class DiscussionManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject DiscussionBox;
+    public GameObject DiscussionBox;
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && !Input.GetButtonDown("Horizontal"))
         {
             DiscussionBox.SetActive(false);
         }
