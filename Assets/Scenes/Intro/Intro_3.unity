@@ -664,7 +664,7 @@ MonoBehaviour:
   animator: {fileID: 898298087}
   spriteRenderer: {fileID: 898298083}
   discuss: {fileID: 1718403398}
-  speedMovement: 9000
+  speedMovement: 14400
   speedJump: 100
   horizontalMove: 0
   menuStart: {fileID: 1718403395}
@@ -674,6 +674,9 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
+  toDisable: {fileID: 0}
+  getDash: 0
+  isDashing: 0
 --- !u!50 &297114378
 Rigidbody2D:
   serializedVersion: 4

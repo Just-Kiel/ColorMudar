@@ -49,6 +49,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private GameObject toDisable = null;
     [SerializeField] private bool getDash = false;
     [SerializeField] private bool isDashing;
+    [SerializeField] private int speedDash;
 
     private void Start()
     {
@@ -159,22 +160,21 @@ public class PlayerBehavior : MonoBehaviour
 
         if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false)
         {
-            if (Input.GetButton("Horizontal"))
-            {
-                animator.SetBool("isRunning", true);
-                if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
+
+                
+                /*if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
                 {
                     spriteRenderer.flipX = true;
+                    animator.SetBool("isRunning", true);
                 }
                 else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
                 {
                     spriteRenderer.flipX = false;
                 }
-            }
             else
             {
                 animator.SetBool("isRunning", false);
-            }
+            }*/
 
             horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;
 
@@ -187,17 +187,20 @@ public class PlayerBehavior : MonoBehaviour
 
             if(getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
             {
-
                 //petit souci à régler mais dans l'idée ça marche comme ça
-                if (Input.GetButton("Horizontal"))
+                if (horizontalMove !=0)
                 {
-                    rb2DPlayer.MovePosition(Input.GetAxis("Horizontal") * Vector2.right * speedJump);
-                } else if (Input.GetButton("Vertical"))
+                    //Debug.Log(Input.GetAxis("Horizontal"));
+                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x + speedDash * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
+                    //rb2DPlayer.MovePosition(Input.GetAxis("Horizontal") * Vector2.right * speedJump);
+                } else if (Input.GetAxis("Vertical") != 0)
                 {
-                    rb2DPlayer.MovePosition(Input.GetAxis("Vertical") * Vector2.up * speedJump);
+                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y + Time.deltaTime * speedMovement);
+                    //rb2DPlayer.MovePosition(Input.GetAxis("Vertical") * Vector2.up * speedJump);
                 } else
                 {
-                    rb2DPlayer.MovePosition(Vector2.right * speedJump);
+                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x + speedDash, rb2DPlayer.velocity.y);
+                    //rb2DPlayer.MovePosition(Vector2.right * speedJump);
                 }
                 //rb2DPlayer.MovePosition(horizontalMove * Vector2.one * speedJump);
                 Debug.Log("tarace");
@@ -221,6 +224,24 @@ public class PlayerBehavior : MonoBehaviour
     {
         Vector3 targetSpeed = new Vector2(_horizontalMovement, rb2DPlayer.velocity.y);
         rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
+        if(horizontalMove != 0)
+        {
+            animator.SetBool("isRunning", true);
+        } else
+        {
+            animator.SetBool("isRunning", false);
+
+        }
+
+        if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
+        {
+            spriteRenderer.flipX = true;
+
+        }
+        else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
+        {
+            spriteRenderer.flipX = false;
+        }
 
         if (Walking == true)
         {
@@ -274,7 +295,6 @@ public class PlayerBehavior : MonoBehaviour
             horizontalMove = 0;
             discuss.DiscussionBox.SetActive(true);
             toDisable = collision.gameObject;
-            
         }
     }
 
@@ -289,6 +309,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             Debug.Log("JE SUIS PAS VISIBLE LALALALA");
             rb2DPlayer.position = start.position; //retour à la case départ
+            rb2DPlayer.velocity = new Vector2(0 * rb2DPlayer.velocity.x, 0 * rb2DPlayer.velocity.y);
         }
 
         //StartCoroutine("Respawn");
