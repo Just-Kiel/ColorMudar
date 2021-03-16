@@ -414,7 +414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Appuie sur X pour faire un dash.
+  m_Text: "Super ! Et 1 couleur de trouv\xE9e !"
 --- !u!222 &115763840
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2583,6 +2583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fiole: {fileID: 962823766}
+  discuss: {fileID: 680131858}
+  player: {fileID: 190923643}
 --- !u!1 &1000121913
 GameObject:
   m_ObjectHideFlags: 0
