@@ -1050,8 +1050,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.8682785, y: 26.177422}
-  m_Size: {x: 25.87938, y: 142.0833}
+  m_Offset: {x: 22.025131, y: 44.707237}
+  m_Size: {x: 87.62955, y: 179.14293}
   m_Direction: 0
 --- !u!4 &379872242
 Transform:
@@ -1061,7 +1061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379872240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 312, y: -32, z: 0}
+  m_LocalPosition: {x: 269, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1509,6 +1509,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302659494339753292, guid: f949f977eb68c2f42aa5733062a5d5d1,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2001734779
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302659494339753292, guid: f949f977eb68c2f42aa5733062a5d5d1,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302659494339753292, guid: f949f977eb68c2f42aa5733062a5d5d1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302659494339753293, guid: f949f977eb68c2f42aa5733062a5d5d1,
         type: 3}

@@ -20,7 +20,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private float nextPoint = 3f;*/
 
     [SerializeField] private Rigidbody2D rb2DPlayer;
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private DiscussionManager discuss;
@@ -29,7 +29,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private float speedJump;
     //[SerializeField] private float climbJump = 200f;
 
-    [SerializeField] private float horizontalMove;
+    [SerializeField] public float horizontalMove;
 
     //private bool Jumping;
     //[SerializeField] private bool Climbing = false;

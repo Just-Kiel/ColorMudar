@@ -8,6 +8,7 @@ TagManager:
   - End
   - Aled
   - Dash
+  - Couleur
   layers:
   - Default
   - TransparentFX
@@ -47,4 +48,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 737195911
     locked: 0
