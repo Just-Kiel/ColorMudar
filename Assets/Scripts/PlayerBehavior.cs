@@ -47,7 +47,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private LayerMask collisionLayer;
 
     [SerializeField] private GameObject toDisable = null;
-    [SerializeField] private bool getDash = false;
+    [SerializeField] bool getDash;
     [SerializeField] private bool isDashing;
     [SerializeField] private int speedDash;
 

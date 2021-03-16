@@ -545,7 +545,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   toDisable: {fileID: 0}
-  getDash: 0
+  getDash: 1
   isDashing: 0
   speedDash: 3000
 --- !u!50 &190923644
@@ -2508,7 +2508,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fce468d583075e64a9c3e117a419def9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7796fd63db28e7a47ac5c361d96bdfd0, type: 3}
   m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
