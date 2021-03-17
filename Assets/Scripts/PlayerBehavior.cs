@@ -187,6 +187,7 @@ public class PlayerBehavior : MonoBehaviour
             {
                 animator.SetTrigger("PrepaJump");
                 rb2DPlayer.velocity = Vector2.up * speedJump;
+                //Walking = false;
                 //Jumping = true;
             }
 
@@ -260,11 +261,14 @@ public class PlayerBehavior : MonoBehaviour
             {
                 isDashing = false;
                 animator.SetBool("isJumping", false);
-            }
-            else
+                Debug.Log("je veu pa soté");
+
+        }
+        else
             {
                 animator.SetBool("isJumping", true);
-
+            //Walking = true;
+                Debug.Log("je saute llalalalalalala");
             }
         //}
 
