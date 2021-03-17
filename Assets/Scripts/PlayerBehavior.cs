@@ -316,6 +316,14 @@ public class PlayerBehavior : MonoBehaviour
             toDisable = collision.gameObject;
         }
 
+        if (collision.gameObject.tag == "Discussion")
+        {
+            animator.SetBool("isRunning", false);
+            horizontalMove = 0;
+            discuss.DiscussionBox.SetActive(true);
+            toDisable = collision.gameObject;
+        }
+
         if (collision.gameObject.tag == "Reset")
         {
             rb2DPlayer.position = start.position; //retour à la case départ
