@@ -1542,8 +1542,8 @@ MonoBehaviour:
   - {fileID: 0}
   perso: {fileID: 1537327209}
   discuss: {fileID: 680131858}
-  speedMovement: 14400
-  speedJump: 100
+  speedMovement: 20000
+  speedJump: 125
   horizontalMove: 0
   menuStart: {fileID: 680131856}
   aledText: {fileID: 680131857}
@@ -1571,7 +1571,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 12
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1

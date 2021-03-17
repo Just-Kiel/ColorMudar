@@ -1975,7 +1975,7 @@ PrefabInstance:
     - target: {fileID: 3582715233941455349, guid: ce2f43cf9ec98e54a9c86202973a787b,
         type: 3}
       propertyPath: m_labelHash
-      value: 0.000000058288776
+      value: -2.372375e+37
       objectReference: {fileID: 0}
     - target: {fileID: 4633918792777278583, guid: ce2f43cf9ec98e54a9c86202973a787b,
         type: 3}
@@ -2012,7 +2012,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1187211361522701377, guid: ce2f43cf9ec98e54a9c86202973a787b,
+      objectReference: {fileID: -2911704298291310917, guid: ce2f43cf9ec98e54a9c86202973a787b,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 1339873694350759044, guid: ce2f43cf9ec98e54a9c86202973a787b,
@@ -2318,8 +2318,8 @@ MonoBehaviour:
   - {fileID: 420104070}
   perso: {fileID: 267049660}
   discuss: {fileID: 338231091}
-  speedMovement: 14400
-  speedJump: 100
+  speedMovement: 20000
+  speedJump: 125
   horizontalMove: 0
   menuStart: {fileID: 338231089}
   aledText: {fileID: 338231090}
@@ -2347,7 +2347,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 12
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
