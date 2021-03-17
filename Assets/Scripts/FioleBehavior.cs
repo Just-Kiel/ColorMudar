@@ -9,8 +9,10 @@ public class FioleBehavior : MonoBehaviour
 
     [SerializeField] private DiscussionManager discuss;
     [SerializeField] private PlayerBehavior player;
+    [SerializeField] private ChangeColor changeColor;
+    //[SerializeField] private GameObject perso;
 
-    [SerializeField] private SpriteLibrary spriteLibrary = default;
+    //[SerializeField] private SpriteLibrary spriteLibrary = default;
     [SerializeField] private SpriteLibraryAsset libraryAsset;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,14 +23,9 @@ public class FioleBehavior : MonoBehaviour
             player.horizontalMove = 0;
             Debug.Log("bam on a la couleur");
             discuss.DiscussionBox.SetActive(true);
-            Replace(libraryAsset);
-            //spriteLibrary.spriteLibraryAsset = libraryAsset;
-            Destroy(gameObject);
+            changeColor.Replace(libraryAsset);
+            //Destroy(fiole);
             
         }
-    }
-    public void Replace(SpriteLibraryAsset libraryAsset)
-    {
-        spriteLibrary.spriteLibraryAsset = libraryAsset;
     }
 }

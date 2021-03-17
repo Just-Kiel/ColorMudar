@@ -187,6 +187,21 @@ MonoBehaviour:
   PersoList: []
   currentPerso: {fileID: 0}
   spriteLibrary: {fileID: 140016267}
+  libraryAssetChoosen: {fileID: 0}
+--- !u!114 &140016271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140016265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ce23fd50f72264390242ab2eed2d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteLibrary: {fileID: 140016267}
+  spriteResolver: {fileID: 0}
 --- !u!1 &148440469
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +318,7 @@ MonoBehaviour:
   PersoList: []
   currentPerso: {fileID: 0}
   spriteLibrary: {fileID: 0}
+  libraryAssetChoosen: {fileID: 0}
 --- !u!114 &148440475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +595,7 @@ MonoBehaviour:
   PersoList: []
   currentPerso: {fileID: 0}
   spriteLibrary: {fileID: 0}
+  libraryAssetChoosen: {fileID: 0}
 --- !u!1 &913376593
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,11 +756,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140016270}
+      - m_Target: {fileID: 140016271}
         m_MethodName: Replace
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: fa82773019d6c7842843825a59449e87,
+          m_ObjectArgument: {fileID: 11400000, guid: 76d181671312b4345a814a128f0a3805,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Experimental.U2D.Animation.SpriteLibraryAsset,
             Unity.2D.Animation.Runtime

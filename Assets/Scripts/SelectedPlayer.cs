@@ -18,17 +18,20 @@ public class SelectedPlayer : MonoBehaviour
         currentPerso = PersoList.Single(d => d.name == MenuStart.currentPlayer);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Couleur")
         {
             Debug.Log("pute");
-            spriteLibrary.spriteLibraryAsset = libraryAssetChoosen;
+            //Replace(libraryAssetChoosen);
+            
+            //spriteLibrary.spriteLibraryAsset = libraryAssetChoosen;
             //Replace(libraryAssetChoosen);
         }
-    }
-    public void Replace(SpriteLibraryAsset libraryAsset)
+    }*/
+    /*public void Replace(SpriteLibraryAsset libraryAsset)
     {
+        Debug.Log("aled");
         spriteLibrary.spriteLibraryAsset = libraryAsset;
-    }
+    }*/
 }
