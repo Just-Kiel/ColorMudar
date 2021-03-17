@@ -21,7 +21,8 @@ public class PlayerBehavior : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb2DPlayer;
     [SerializeField] public Animator animator;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer[] spriteRenderer;
+    [SerializeField] private GameObject perso;
 
     [SerializeField] private DiscussionManager discuss;
 
@@ -46,14 +47,18 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private float groundCheckRay;
     [SerializeField] private LayerMask collisionLayer;
 
-    [SerializeField] private GameObject toDisable = null;
+    [SerializeField] public GameObject toDisable = null;
     [SerializeField] bool getDash;
     [SerializeField] private bool isDashing;
-    [SerializeField] private int speedDash;
+    [SerializeField] private float speedDash;
 
     private void Start()
     {
-        spriteRenderer.enabled = true;
+        /*for (int i = 0; i < spriteRenderer.Length; i++)
+        {
+            spriteRenderer[i].enabled = true;
+        }*/
+        perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
         lastPosition = transform.localPosition;
         /*seeker = GetComponent<Seeker>();
         seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
@@ -191,19 +196,19 @@ public class PlayerBehavior : MonoBehaviour
                 if (horizontalMove !=0)
                 {
                     //Debug.Log(Input.GetAxis("Horizontal"));
-                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x + speedDash * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
+                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x * Time.deltaTime * speedMovement * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
                     //rb2DPlayer.MovePosition(Input.GetAxis("Horizontal") * Vector2.right * speedJump);
                 } else if (Input.GetAxis("Vertical") != 0)
                 {
-                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y + Time.deltaTime * speedMovement);
+                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y + Time.deltaTime * speedMovement * speedDash);
                     //rb2DPlayer.MovePosition(Input.GetAxis("Vertical") * Vector2.up * speedJump);
                 } else
                 {
-                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x + speedDash, rb2DPlayer.velocity.y);
+                    rb2DPlayer.velocity = new Vector2(Time.deltaTime * speedMovement, rb2DPlayer.velocity.y);
                     //rb2DPlayer.MovePosition(Vector2.right * speedJump);
                 }
                 //rb2DPlayer.MovePosition(horizontalMove * Vector2.one * speedJump);
-                Debug.Log("tarace");
+                Debug.Log("dash");
                 isDashing = true;
             }
         }
@@ -216,7 +221,10 @@ public class PlayerBehavior : MonoBehaviour
         Walking = Physics2D.OverlapCircle(groundCheck.position, groundCheckRay, collisionLayer);
         MovePlayer(horizontalMove);
 
-        parallax.UpdateParallax(transform.localPosition.x - lastPosition.x);
+        if (parallax != null)
+        {
+            parallax.UpdateParallax(transform.localPosition.x - lastPosition.x);
+        }
         lastPosition = transform.localPosition;
     }
 
@@ -233,25 +241,32 @@ public class PlayerBehavior : MonoBehaviour
 
         }
 
-        if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
-        {
-            spriteRenderer.flipX = true;
+        /*for (int i = 0; i < spriteRenderer.Length; i++)
+        {*/
+            if (Input.GetAxis("Horizontal") > 0f && perso.transform.localScale.x > 0 /*&& spriteRenderer[0].flipX == false*/)
+            {
+                perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
+                //spriteRenderer[i].flipX = true;
+                //gameObject.transform.localScale.x = -spriteRenderer[0].transform.localScale.x;
 
         }
-        else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
-        {
-            spriteRenderer.flipX = false;
-        }
+            else if (Input.GetAxis("Horizontal") < 0f && perso.transform.localScale.x < 0 /*&& spriteRenderer[0].flipX == true*/)
+            {
+                perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
+                //spriteRenderer[0].flipX = false;
+            }
 
-        if (Walking == true)
-        {
-            isDashing = false;
-            animator.SetBool("isJumping", false);
-        } else
-        {
-            animator.SetBool("isJumping", true);
-            
-        }
+            if (Walking == true)
+            {
+                isDashing = false;
+                animator.SetBool("isJumping", false);
+            }
+            else
+            {
+                animator.SetBool("isJumping", true);
+
+            }
+        //}
 
         /*if (Jumping == true)
         {
@@ -296,6 +311,12 @@ public class PlayerBehavior : MonoBehaviour
             discuss.DiscussionBox.SetActive(true);
             toDisable = collision.gameObject;
         }
+
+        if (collision.gameObject.tag == "Reset")
+        {
+            rb2DPlayer.position = start.position; //retour à la case départ
+            rb2DPlayer.velocity = new Vector2(0 * rb2DPlayer.velocity.x, 0 * rb2DPlayer.velocity.y);
+        }
     }
 
     public void OnDrawGizmos()
@@ -303,7 +324,7 @@ public class PlayerBehavior : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRay);
     }
-    void OnBecameInvisible()
+    /*void OnBecameInvisible()
     {
         if (rb2DPlayer)
         {
@@ -313,7 +334,7 @@ public class PlayerBehavior : MonoBehaviour
         }
 
         //StartCoroutine("Respawn");
-    }
+    }*/
 
     
 }
