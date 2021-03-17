@@ -600,8 +600,8 @@ MonoBehaviour:
   spriteRenderer: []
   perso: {fileID: 818421431}
   discuss: {fileID: 1183339733}
-  speedMovement: 14400
-  speedJump: 100
+  speedMovement: 20000
+  speedJump: 125
   horizontalMove: 0
   menuStart: {fileID: 1183339730}
   aledText: {fileID: 1183339732}
@@ -629,7 +629,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 12
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
@@ -1839,7 +1839,7 @@ PrefabInstance:
     - target: {fileID: -8146313794030778728, guid: ce2f43cf9ec98e54a9c86202973a787b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 93.74
+      value: -55.12
       objectReference: {fileID: 0}
     - target: {fileID: -8146313794030778728, guid: ce2f43cf9ec98e54a9c86202973a787b,
         type: 3}
