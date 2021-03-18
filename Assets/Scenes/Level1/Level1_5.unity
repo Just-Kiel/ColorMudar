@@ -2363,7 +2363,7 @@ MonoBehaviour:
   toDisable: {fileID: 0}
   getDash: 0
   isDashing: 0
-  speedDash: 1.5
+  speedDash: 0
 --- !u!50 &989588993
 Rigidbody2D:
   serializedVersion: 4
@@ -2383,7 +2383,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &989588994
 Transform:

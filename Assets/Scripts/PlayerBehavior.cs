@@ -19,7 +19,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private bool reachedEnd = false;
     [SerializeField] private float nextPoint = 3f;*/
 
-    [SerializeField] private Rigidbody2D rb2DPlayer;
+    [SerializeField] private Rigidbody2D rb2DPlayer;        //RIGIDBODY
     [SerializeField] public Animator animator;
     [SerializeField] private SpriteRenderer[] spriteRenderer;
     [SerializeField] private GameObject perso;
@@ -48,9 +48,22 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private LayerMask collisionLayer;
 
     [SerializeField] public GameObject toDisable = null;
+
     [SerializeField] bool getDash;
     [SerializeField] private bool isDashing;
     [SerializeField] private float speedDash;
+
+
+
+    //DASH d'Amandine
+    /*[SerializeField] bool getDash;
+    public float dashSpeed;
+    [SerializeField] private float dashTime;
+    public float startDashTime;
+    [SerializeField] private int direction;
+    [SerializeField] private bool isDashing;*/
+
+
 
     private void Start()
     {
@@ -64,6 +77,9 @@ public class PlayerBehavior : MonoBehaviour
         seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
         //PlayerPrefs.DeleteAll();
         InvokeRepeating("UpdatePath", 0f, .5f);*/
+
+            //DASH d'Amandine
+        //dashTime = startDashTime;
     }
 
     /*IEnumerator Respawn()
@@ -191,25 +207,30 @@ public class PlayerBehavior : MonoBehaviour
                 //Jumping = true;
             }
 
-            if(getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
+
+
+                //DASH OROR
+            if (getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
             {
                 animator.SetTrigger("PrepaDash");
                 //animator.SetTrigger("PrepaDash");
                 //petit souci à régler mais dans l'idée ça marche comme ça
-                if (horizontalMove !=0)
+                if (horizontalMove != 0)
                 {
-                    
+
 
                     //Debug.Log(Input.GetAxis("Horizontal"));
                     rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x * Time.deltaTime * speedMovement * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
                     animator.SetTrigger("EndDash");
                     //rb2DPlayer.MovePosition(Input.GetAxis("Horizontal") * Vector2.right * speedJump);
-                } else if (Input.GetAxis("Vertical") != 0)
+                }
+                else if (Input.GetAxis("Vertical") != 0)
                 {
                     rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y + Time.deltaTime * speedMovement * speedDash);
                     animator.SetTrigger("EndDash");
                     //rb2DPlayer.MovePosition(Input.GetAxis("Vertical") * Vector2.up * speedJump);
-                } else
+                }
+                else
                 {
                     rb2DPlayer.velocity = new Vector2(Time.deltaTime * speedMovement, rb2DPlayer.velocity.y);
                     animator.SetTrigger("EndDash");
@@ -220,6 +241,56 @@ public class PlayerBehavior : MonoBehaviour
                 isDashing = true;
                 //animator.SetBool("isDashing", false);
             }
+
+            //DASH AMANDINE
+            /*if (getDash == true)
+            {
+                if (direction == 0 && isDashing == false)
+                {
+                    if (horizontalMove != 0)
+                    {
+                        direction = 1;
+                    }
+                    else if (Input.GetAxis("Vertical") != 0)
+                    {
+                        direction = 2;
+                    }
+                    else
+                    {
+                        direction = 1;
+                    }
+                }
+                else if(Input.GetButtonDown("Dash")) 
+                {
+                    if (dashTime <= 0)
+                    {
+                        direction = 0;
+                        dashTime = startDashTime;
+                        rb2DPlayer.velocity = Vector2.zero;
+                        isDashing = false;
+                    }
+                    else
+                    {
+                        dashTime -= Time.deltaTime;
+                        isDashing = true;
+                        if (direction == 1)
+                        {
+                            animator.SetTrigger("PrepaDash");
+                            rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x * dashSpeed * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
+                            animator.SetTrigger("EndDash");
+                            Debug.Log("je dash horizontalement");
+                        }
+                        else if (direction == 2)
+                        {
+                            animator.SetTrigger("PrepaDash");
+                            rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y * dashSpeed);
+                            animator.SetTrigger("EndDash");
+                            Debug.Log("je dash verticalement");
+                        }
+                        
+                    }
+                }
+            }*/
         }
         
     }
@@ -269,7 +340,7 @@ public class PlayerBehavior : MonoBehaviour
             {
                 isDashing = false;
                 animator.SetBool("isJumping", false);
-                Debug.Log("je veu pa soté");
+                //Debug.Log("je veu pa soté");
 
         }
         else
