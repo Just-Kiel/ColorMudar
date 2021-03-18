@@ -193,24 +193,32 @@ public class PlayerBehavior : MonoBehaviour
 
             if(getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
             {
+                animator.SetTrigger("PrepaDash");
+                //animator.SetTrigger("PrepaDash");
                 //petit souci à régler mais dans l'idée ça marche comme ça
                 if (horizontalMove !=0)
                 {
+                    
+
                     //Debug.Log(Input.GetAxis("Horizontal"));
                     rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x * Time.deltaTime * speedMovement * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
+                    animator.SetTrigger("EndDash");
                     //rb2DPlayer.MovePosition(Input.GetAxis("Horizontal") * Vector2.right * speedJump);
                 } else if (Input.GetAxis("Vertical") != 0)
                 {
                     rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y + Time.deltaTime * speedMovement * speedDash);
+                    animator.SetTrigger("EndDash");
                     //rb2DPlayer.MovePosition(Input.GetAxis("Vertical") * Vector2.up * speedJump);
                 } else
                 {
                     rb2DPlayer.velocity = new Vector2(Time.deltaTime * speedMovement, rb2DPlayer.velocity.y);
+                    animator.SetTrigger("EndDash");
                     //rb2DPlayer.MovePosition(Vector2.right * speedJump);
                 }
                 //rb2DPlayer.MovePosition(horizontalMove * Vector2.one * speedJump);
                 Debug.Log("dash");
                 isDashing = true;
+                //animator.SetBool("isDashing", false);
             }
         }
         
