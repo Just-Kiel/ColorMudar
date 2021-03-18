@@ -1537,7 +1537,7 @@ MonoBehaviour:
   perso: {fileID: 1537327209}
   discuss: {fileID: 680131858}
   speedMovement: 20000
-  speedJump: 125
+  speedJump: 130
   horizontalMove: 0
   menuStart: {fileID: 680131856}
   aledText: {fileID: 680131857}
@@ -1549,7 +1549,7 @@ MonoBehaviour:
   toDisable: {fileID: 0}
   getDash: 1
   isDashing: 0
-  speedDash: 125
+  speedDash: 175
   timeDash: 0
   startTimeDash: 0.005
   direction: 0
