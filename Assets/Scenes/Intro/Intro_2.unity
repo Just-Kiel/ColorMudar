@@ -2118,7 +2118,7 @@ MonoBehaviour:
   perso: {fileID: 355403375}
   discuss: {fileID: 1879706498}
   speedMovement: 20000
-  speedJump: 125
+  speedJump: 130
   horizontalMove: 0
   menuStart: {fileID: 1879706495}
   aledText: {fileID: 1879706497}
@@ -2131,6 +2131,9 @@ MonoBehaviour:
   getDash: 0
   isDashing: 0
   speedDash: 0
+  timeDash: 0
+  startTimeDash: 0
+  direction: 0
 --- !u!50 &670357118
 Rigidbody2D:
   serializedVersion: 4
