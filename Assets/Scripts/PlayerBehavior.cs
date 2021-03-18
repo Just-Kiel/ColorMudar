@@ -52,6 +52,9 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] bool getDash;
     [SerializeField] private bool isDashing;
     [SerializeField] private float speedDash;
+    [SerializeField] private float timeDash;
+    [SerializeField] private float startTimeDash;
+    [SerializeField] private int direction;
 
 
 
@@ -78,6 +81,7 @@ public class PlayerBehavior : MonoBehaviour
         //PlayerPrefs.DeleteAll();
         InvokeRepeating("UpdatePath", 0f, .5f);*/
 
+        timeDash = startTimeDash;
             //DASH d'Amandine
         //dashTime = startDashTime;
     }
@@ -181,21 +185,37 @@ public class PlayerBehavior : MonoBehaviour
 
         if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false)
         {
-
-                
-                /*if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
-                {
-                    spriteRenderer.flipX = true;
-                    animator.SetBool("isRunning", true);
-                }
-                else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
-                {
-                    spriteRenderer.flipX = false;
-                }
+            if (Input.GetAxis("Horizontal") > 0f)
+            {
+                direction = 1;
+            }
+            else if (Input.GetAxis("Horizontal") < 0f)
+            {
+                direction = 2;
+            }
+            else if (Input.GetAxis("Vertical") > 0f)
+            {
+                direction = 3;
+            }
             else
             {
-                animator.SetBool("isRunning", false);
-            }*/
+                direction = 0;
+            }
+
+
+            /*if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
+            {
+                spriteRenderer.flipX = true;
+                animator.SetBool("isRunning", true);
+            }
+            else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
+            {
+                spriteRenderer.flipX = false;
+            }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }*/
 
             horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;
 
@@ -209,10 +229,61 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-                //DASH OROR
+            //DASH OROR
             if (getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
             {
+                /*if (direction == 0)
+                {*/
+
+                //}
+                //else
+                //{
+                /*if (timeDash <= 0)
+                {
+                    direction = 0;
+                    Debug.Log("aled");
+                    timeDash = startTimeDash;
+                    rb2DPlayer.velocity = Vector2.zero;
+                }
+                else //if (timeDash > 0)
+                {
+                    timeDash -= Time.deltaTime;*/
                 animator.SetTrigger("PrepaDash");
+                if (direction == 1)
+                    {
+                        rb2DPlayer.velocity = Vector2.right * speedDash * 5;
+                        //isDashing = true;
+                        //direction = 0;
+                    }
+                    else if (direction == 2)
+                    {
+                        rb2DPlayer.velocity = Vector2.left * speedDash * 5;
+                        //isDashing = true;
+                        //direction = 0;
+                    }
+                    else if (direction == 3)
+                    {
+                        rb2DPlayer.velocity = Vector2.up * speedDash;
+                        //isDashing = true;
+                        //direction = 0;
+                    }
+                //isDashing = true;
+                //direction = 0;
+                /*}else
+                {
+                    direction = 0;
+                    Debug.Log("aled");
+                    timeDash = startTimeDash;
+                    rb2DPlayer.velocity = Vector2.zero;
+                }*/
+                //}
+                //rb2DPlayer.velocity = Vector2.zero;
+                
+                isDashing = true;
+                animator.SetTrigger("EndDash");
+            }
+
+                /*animator.SetTrigger("PrepaDash");
                 //animator.SetTrigger("PrepaDash");
                 //petit souci à régler mais dans l'idée ça marche comme ça
                 if (horizontalMove != 0)
@@ -240,7 +311,7 @@ public class PlayerBehavior : MonoBehaviour
                 Debug.Log("dash");
                 isDashing = true;
                 //animator.SetBool("isDashing", false);
-            }
+            }*/
 
             //DASH AMANDINE
             /*if (getDash == true)

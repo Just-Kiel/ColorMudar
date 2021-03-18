@@ -1533,13 +1533,7 @@ MonoBehaviour:
   start: {fileID: 1206428325}
   rb2DPlayer: {fileID: 536788740}
   animator: {fileID: 1537327214}
-  spriteRenderer:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  spriteRenderer: []
   perso: {fileID: 1537327209}
   discuss: {fileID: 680131858}
   speedMovement: 20000
@@ -1555,7 +1549,10 @@ MonoBehaviour:
   toDisable: {fileID: 0}
   getDash: 1
   isDashing: 0
-  speedDash: 1.5
+  speedDash: 125
+  timeDash: 0
+  startTimeDash: 0.005
+  direction: 0
 --- !u!50 &536788740
 Rigidbody2D:
   serializedVersion: 4
@@ -1575,7 +1572,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &536788741
 Transform:
