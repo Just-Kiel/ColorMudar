@@ -52,9 +52,15 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] bool getDash;
     [SerializeField] private bool isDashing;
     [SerializeField] private float speedDash;
-    [SerializeField] private float timeDash;
-    [SerializeField] private float startTimeDash;
+    //[SerializeField] private float timeDash;
+    //[SerializeField] private float startTimeDash;
     [SerializeField] private int direction;
+
+    [SerializeField] bool getClimb;
+    private bool Climbing;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private float wallCheckRay;
+    [SerializeField] private float speedClimb;
 
 
 
@@ -81,7 +87,7 @@ public class PlayerBehavior : MonoBehaviour
         //PlayerPrefs.DeleteAll();
         InvokeRepeating("UpdatePath", 0f, .5f);*/
 
-        timeDash = startTimeDash;
+        //timeDash = startTimeDash;
             //DASH d'Amandine
         //dashTime = startDashTime;
     }
@@ -283,6 +289,7 @@ public class PlayerBehavior : MonoBehaviour
                 animator.SetTrigger("EndDash");
             }
 
+            
                 /*animator.SetTrigger("PrepaDash");
                 //animator.SetTrigger("PrepaDash");
                 //petit souci à régler mais dans l'idée ça marche comme ça
@@ -370,6 +377,12 @@ public class PlayerBehavior : MonoBehaviour
     void FixedUpdate()
     {
         Walking = Physics2D.OverlapCircle(groundCheck.position, groundCheckRay, collisionLayer);
+
+        if (wallCheck != null)
+        {
+            Climbing = Physics2D.OverlapCircle(wallCheck.position, wallCheckRay, collisionLayer);
+        }
+
         MovePlayer(horizontalMove);
 
         if (parallax != null)
@@ -420,6 +433,27 @@ public class PlayerBehavior : MonoBehaviour
             //Walking = true;
                 Debug.Log("je saute llalalalalalala");
             }
+
+            if (Climbing == true && getClimb == true)
+            {
+                Debug.Log("je suis contre un mur");
+
+                if (/*isClimbing == false &&*/ Input.GetButtonDown("Climb") || Input.GetAxis("Climb") > 0f)
+                {
+                    Debug.Log("je grimpe");
+                rb2DPlayer.velocity = Vector2.zero;
+
+                if (Input.GetAxis("Vertical") > 0f)
+                {
+                    rb2DPlayer.velocity = Vector2.up * speedClimb * Time.deltaTime;
+                } else if (Input.GetAxis("Vertical") < 0f)
+                {
+                    rb2DPlayer.velocity = Vector2.down * speedClimb * Time.deltaTime;
+                }
+
+                    //rb2DPlayer.velocity = new Vector2(0, /*je sais pas*/);
+                }
+            }
         //}
 
         /*if (Jumping == true)
@@ -466,6 +500,16 @@ public class PlayerBehavior : MonoBehaviour
             toDisable = collision.gameObject;
         }
 
+        if(collision.gameObject.tag == "Climb")
+        {
+            Debug.Log("je peux enfin climb");
+            getClimb = true;
+            animator.SetBool("isRunning", false);
+            horizontalMove = 0;
+            discuss.DiscussionBox.SetActive(true);
+            toDisable = collision.gameObject;
+        }
+
         if (collision.gameObject.tag == "Discussion")
         {
             animator.SetBool("isRunning", false);
@@ -485,6 +529,11 @@ public class PlayerBehavior : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRay);
+        Gizmos.color = Color.magenta;
+        if (wallCheck != null)
+        {
+            Gizmos.DrawWireSphere(wallCheck.position, wallCheckRay);
+        }
     }
     /*void OnBecameInvisible()
     {

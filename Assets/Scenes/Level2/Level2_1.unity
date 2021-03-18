@@ -1394,19 +1394,21 @@ MonoBehaviour:
   perso: {fileID: 171536598}
   discuss: {fileID: 1254858110}
   speedMovement: 20000
-  speedJump: 125
+  speedJump: 130
   horizontalMove: 0
   menuStart: {fileID: 1254858108}
   aledText: {fileID: 1254858109}
   groundCheck: {fileID: 2022459228}
-  groundCheckRay: 19.72
+  groundCheckRay: 8.69
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
   toDisable: {fileID: 0}
   getDash: 1
   isDashing: 0
-  speedDash: 1.5
+  speedDash: 175
+  direction: 0
+  getClimb: 0
 --- !u!50 &507459009
 Rigidbody2D:
   serializedVersion: 4
@@ -1426,7 +1428,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &507459010
 Transform:
