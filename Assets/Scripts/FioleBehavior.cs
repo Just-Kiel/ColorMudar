@@ -5,27 +5,22 @@ using UnityEngine.Experimental.U2D.Animation;
 
 public class FioleBehavior : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D fiole;
+    [SerializeField] private DiscussionManager discuss; //appel du script de gestion d'affichage des boites de dialogue
+    [SerializeField] private PlayerBehavior player; //appel du script de gestion du joueur
+    [SerializeField] private ChangeColor changeColor; //appel du script de changement de couleur de perso (sprite library asset)
 
-    [SerializeField] private DiscussionManager discuss;
-    [SerializeField] private PlayerBehavior player;
-    [SerializeField] private ChangeColor changeColor;
-    //[SerializeField] private GameObject perso;
-
-    //[SerializeField] private SpriteLibrary spriteLibrary = default;
-    [SerializeField] private SpriteLibraryAsset libraryAsset;
+    [SerializeField] private SpriteLibraryAsset libraryAsset; //nouvelle sprite library asset
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //si collision entre le player (et la fiole)
         if(collision.gameObject.tag == "Player")
         {
-            player.animator.SetBool("isRunning", false);
-            player.horizontalMove = 0;
-            Debug.Log("bam on a la couleur");
-            discuss.DiscussionBox.SetActive(true);
-            changeColor.Replace(libraryAsset);
-            //Destroy(fiole);
-            
+            player.animator.SetBool("isRunning", false); //désactivation de l'animation de course du personnage
+            player.horizontalMove = 0; //arrêt de mouvement latéral du personnage
+            //Debug.Log("Fiole récupérée");
+            discuss.DiscussionBox.SetActive(true); //affichage de la boite de dialogue
+            changeColor.Replace(libraryAsset); //changement de la couleur (library asset) du personnage
         }
     }
 }

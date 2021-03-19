@@ -47,8 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicStream: {fileID: 1153367190822798873}
   musicText: {fileID: 0}
+  musicVolume: 0
   soundStream: {fileID: 1153367190822798872}
   soundText: {fileID: 0}
+  soundVolume: 0
 --- !u!82 &1153367190822798873
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61,7 +63,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7b688e41851b04849af9da337af9e78e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -157,7 +159,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -1552,6 +1552,9 @@ MonoBehaviour:
   speedDash: 175
   direction: 0
   getClimb: 0
+  wallCheck: {fileID: 0}
+  wallCheckRay: 0
+  speedClimb: 0
 --- !u!50 &536788740
 Rigidbody2D:
   serializedVersion: 4
