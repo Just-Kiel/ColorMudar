@@ -1,149 +1,62 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.AI;
 using System.Collections;
-using Pathfinding;
 
 public class PlayerBehavior : MonoBehaviour
 {
-    public string[] levelName;
-    public int currentLevel = 0;
+    public string[] levelName; //tableau de noms de toutes les scenes de niveau
+    public int currentLevel = 0; //numéro du niveau courant
+
+    [SerializeField] private Transform start; //point de départ
+    [SerializeField] private Parallaxe parallax; //appel du script de Parallaxe
+    [SerializeField] private DiscussionManager discuss; //appel du script de gestion d'affichage des boites de dialogue
+    public MenuStart menuStart; //appel du script Menu start (gestion des menus, des boutons)
+    public AledText aledText; //appel du script Aled Text, qui permet d'attribuer la valeur à la bonne zone de texte
+
+    [SerializeField] private Rigidbody2D rb2DPlayer; //RIGIDBODY du joueur
+    [SerializeField] public Animator animator; //élément Animator du joueur (permet de gérer les animations)
+    [SerializeField] private GameObject perso; //objet du joueur
+    [SerializeField] private int direction; //variable où chaque valeur correspond à une direction
+
+    [SerializeField] private float speedMovement; //vitesse de mouvement
+    [SerializeField] public float horizontalMove; //variable de mouvement en latéral
+    private Vector3 velocity = Vector3.zero; //référence du mouvement nul
+    private bool Walking; //booléen de détection de si le joueur touche le sol
+
+    [SerializeField] private Transform groundCheck; //objet pour la détection du sol
+    [SerializeField] private float groundCheckRay; //variable du rayon de la zone de détection du sol
+    [SerializeField] private LayerMask collisionLayer; //calque pour détecter les bonnes collisions
+
+    [SerializeField] private float speedJump; //vitesse de saut
+
+    [SerializeField] bool getDash; //booléen de déblocage du dash
+    [SerializeField] private bool isDashing; //booléen de détection du dash
+    [SerializeField] private float speedDash; //vitesse du dash
+
+    [SerializeField] bool getClimb; //booléen de déblocage de l'escalade
+    private bool Climbing; //booléen de détection de si le joueur touche un mur
+    [SerializeField] private Transform wallCheck; //objet pour la détection de mur
+    [SerializeField] private float wallCheckRay; //variable du rayon de la zone de détection du mur
+    [SerializeField] private float speedClimb; //vitesse d'escalade
+
+    [SerializeField] public GameObject toDisable = null; //objet "à désactiver"
+
+
 
     private Vector3 lastPosition;
-    [SerializeField] private Parallaxe parallax;
-
-    [SerializeField] private Transform start;
-    /*[SerializeField] private Path path;
-    Seeker seeker;*/
-    /*[SerializeField] private int currentWayPoint = 0;
-    [SerializeField] private bool reachedEnd = false;
-    [SerializeField] private float nextPoint = 3f;*/
-
-    [SerializeField] private Rigidbody2D rb2DPlayer;        //RIGIDBODY
-    [SerializeField] public Animator animator;
-    [SerializeField] private SpriteRenderer[] spriteRenderer;
-    [SerializeField] private GameObject perso;
-
-    [SerializeField] private DiscussionManager discuss;
-
-    [SerializeField] private float speedMovement;
-    [SerializeField] private float speedJump;
-    //[SerializeField] private float climbJump = 200f;
-
-    [SerializeField] public float horizontalMove;
-
-    //private bool Jumping;
-    //[SerializeField] private bool Climbing = false;
-    private bool Walking;
-    public MenuStart menuStart;
-
-    //[SerializeField] private GameObject DiscussionBox;
-
-    public AledText aledText;
-
-    private Vector3 velocity = Vector3.zero;
-
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRay;
-    [SerializeField] private LayerMask collisionLayer;
-
-    [SerializeField] public GameObject toDisable = null;
-
-    [SerializeField] bool getDash;
-    [SerializeField] private bool isDashing;
-    [SerializeField] private float speedDash;
-    //[SerializeField] private float timeDash;
-    //[SerializeField] private float startTimeDash;
-    [SerializeField] private int direction;
-
-    [SerializeField] bool getClimb;
-    private bool Climbing;
-    [SerializeField] private Transform wallCheck;
-    [SerializeField] private float wallCheckRay;
-    [SerializeField] private float speedClimb;
-
-
-
-    //DASH d'Amandine
-    /*[SerializeField] bool getDash;
-    public float dashSpeed;
-    [SerializeField] private float dashTime;
-    public float startDashTime;
-    [SerializeField] private int direction;
-    [SerializeField] private bool isDashing;*/
-
-
 
     private void Start()
     {
-        /*for (int i = 0; i < spriteRenderer.Length; i++)
-        {
-            spriteRenderer[i].enabled = true;
-        }*/
-        perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
+        perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z); //les sprites regardent vers la gauche donc on les fait regarder vers la droite dès le début
+        
+        
+
         lastPosition = transform.localPosition;
-        /*seeker = GetComponent<Seeker>();
-        seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
-        //PlayerPrefs.DeleteAll();
-        InvokeRepeating("UpdatePath", 0f, .5f);*/
-
-        //timeDash = startTimeDash;
-            //DASH d'Amandine
-        //dashTime = startDashTime;
     }
 
-    /*IEnumerator Respawn()
-    {
-        Debug.Log("ého");
-        *//*if (path == null)
-        {
-            return null;
-        }*//*
-        while (Vector2.Distance(start.position, rb2DPlayer.position) > 1)
-        {
-            if (currentWayPoint >= path.vectorPath.Count)
-            {
-                Debug.Log("test");
-                reachedEnd = true;
-            }
-            else
-            {
-                Debug.Log("echec");
-                reachedEnd = false;
-            }
-
-            Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb2DPlayer.position).normalized;
-            Vector2 force = direction * speedMovement * Time.deltaTime;
-
-            float distance = Vector2.Distance(rb2DPlayer.position, path.vectorPath[currentWayPoint]);
-
-            if (distance < nextPoint)
-            {
-                Debug.Log("JE MARCHE PAS ET JE SOULE OROR");
-                currentWayPoint++;
-            }
-            yield return null;
-        }
-    }*/
-
-    /*void onPathComplete(Path p)
-    {
-        if (!p.error)
-        {
-            path = p;
-            currentWayPoint = 0;
-        }
-    }
-
-    void UpdatePath()
-    {
-        if (seeker.IsDone())
-        {
-            seeker.StartPath(rb2DPlayer.position, start.position, onPathComplete);
-        }
-    }*/
     private void Update()
     {
+        //gestion de pause du jeu
         if (menuStart.Pausing == true)
         {
             Time.timeScale = 0;
@@ -153,40 +66,10 @@ public class PlayerBehavior : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        /*if (speedMovement == 0 && speedJump == 0)
+        
+        if (toDisable && discuss.DiscussionBox.activeSelf == false) //si objet à désactiver assigné et les boites de dialogue sont désactivées
         {
-            Debug.Log("test");
-
-            *//*while (Vector2.Distance(start.position, rb2DPlayer.position) > 1)
-            {
-                if (currentWayPoint >= path.vectorPath.Count)
-                {
-                    Debug.Log("test");
-                    reachedEnd = true;
-                }
-                else
-                {
-                    Debug.Log("echec");
-                    reachedEnd = false;
-                }
-
-                Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb2DPlayer.position).normalized;
-                Vector2 force = direction * speedMovement * Time.deltaTime;
-
-                float distance = Vector2.Distance(rb2DPlayer.position, path.vectorPath[currentWayPoint]);
-
-                if (distance < nextPoint)
-                {
-                    Debug.Log("JE MARCHE PAS ET JE SOULE OROR");
-                    currentWayPoint++;
-                }
-            }*//*
-        }*/
-
-        if (toDisable && discuss.DiscussionBox.activeSelf == false)
-        {
-
-            toDisable.GetComponent<CapsuleCollider2D>().enabled = false;
+            toDisable.GetComponent<CapsuleCollider2D>().enabled = false; //plus de collision avec l'objet à désactiver
         }
 
         if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false)
@@ -208,29 +91,12 @@ public class PlayerBehavior : MonoBehaviour
                 direction = 0;
             }
 
-
-            /*if (Input.GetAxis("Horizontal") > 0f && spriteRenderer.flipX == false)
-            {
-                spriteRenderer.flipX = true;
-                animator.SetBool("isRunning", true);
-            }
-            else if (Input.GetAxis("Horizontal") < 0f && spriteRenderer.flipX == true)
-            {
-                spriteRenderer.flipX = false;
-            }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }*/
-
             horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;
 
             if (Input.GetButtonDown("Jump") && Walking == true)
             {
                 animator.SetTrigger("PrepaJump");
                 rb2DPlayer.velocity = Vector2.up * speedJump;
-                //Walking = false;
-                //Jumping = true;
             }
 
 
@@ -238,141 +104,25 @@ public class PlayerBehavior : MonoBehaviour
             //DASH OROR
             if (getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
             {
-                /*if (direction == 0)
-                {*/
-
-                //}
-                //else
-                //{
-                /*if (timeDash <= 0)
-                {
-                    direction = 0;
-                    Debug.Log("aled");
-                    timeDash = startTimeDash;
-                    rb2DPlayer.velocity = Vector2.zero;
-                }
-                else //if (timeDash > 0)
-                {
-                    timeDash -= Time.deltaTime;*/
                 animator.SetTrigger("PrepaDash");
                 if (direction == 1)
                     {
                         rb2DPlayer.velocity = Vector2.right * speedDash * 5;
-                        //isDashing = true;
-                        //direction = 0;
                     }
                     else if (direction == 2)
                     {
                         rb2DPlayer.velocity = Vector2.left * speedDash * 5;
-                        //isDashing = true;
-                        //direction = 0;
                     }
                     else if (direction == 3)
                     {
                         rb2DPlayer.velocity = Vector2.up * speedDash;
-                        //isDashing = true;
-                        //direction = 0;
                     }
-                //isDashing = true;
-                //direction = 0;
-                /*}else
-                {
-                    direction = 0;
-                    Debug.Log("aled");
-                    timeDash = startTimeDash;
-                    rb2DPlayer.velocity = Vector2.zero;
-                }*/
-                //}
-                //rb2DPlayer.velocity = Vector2.zero;
-                
                 isDashing = true;
                 animator.SetTrigger("EndDash");
             }
-
-            
-                /*animator.SetTrigger("PrepaDash");
-                //animator.SetTrigger("PrepaDash");
-                //petit souci à régler mais dans l'idée ça marche comme ça
-                if (horizontalMove != 0)
-                {
-
-
-                    //Debug.Log(Input.GetAxis("Horizontal"));
-                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x * Time.deltaTime * speedMovement * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
-                    animator.SetTrigger("EndDash");
-                    //rb2DPlayer.MovePosition(Input.GetAxis("Horizontal") * Vector2.right * speedJump);
-                }
-                else if (Input.GetAxis("Vertical") != 0)
-                {
-                    rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y + Time.deltaTime * speedMovement * speedDash);
-                    animator.SetTrigger("EndDash");
-                    //rb2DPlayer.MovePosition(Input.GetAxis("Vertical") * Vector2.up * speedJump);
-                }
-                else
-                {
-                    rb2DPlayer.velocity = new Vector2(Time.deltaTime * speedMovement, rb2DPlayer.velocity.y);
-                    animator.SetTrigger("EndDash");
-                    //rb2DPlayer.MovePosition(Vector2.right * speedJump);
-                }
-                //rb2DPlayer.MovePosition(horizontalMove * Vector2.one * speedJump);
-                Debug.Log("dash");
-                isDashing = true;
-                //animator.SetBool("isDashing", false);
-            }*/
-
-            //DASH AMANDINE
-            /*if (getDash == true)
-            {
-                if (direction == 0 && isDashing == false)
-                {
-                    if (horizontalMove != 0)
-                    {
-                        direction = 1;
-                    }
-                    else if (Input.GetAxis("Vertical") != 0)
-                    {
-                        direction = 2;
-                    }
-                    else
-                    {
-                        direction = 1;
-                    }
-                }
-                else if(Input.GetButtonDown("Dash")) 
-                {
-                    if (dashTime <= 0)
-                    {
-                        direction = 0;
-                        dashTime = startDashTime;
-                        rb2DPlayer.velocity = Vector2.zero;
-                        isDashing = false;
-                    }
-                    else
-                    {
-                        dashTime -= Time.deltaTime;
-                        isDashing = true;
-                        if (direction == 1)
-                        {
-                            animator.SetTrigger("PrepaDash");
-                            rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x * dashSpeed * Input.GetAxis("Horizontal"), rb2DPlayer.velocity.y);
-                            animator.SetTrigger("EndDash");
-                            Debug.Log("je dash horizontalement");
-                        }
-                        else if (direction == 2)
-                        {
-                            animator.SetTrigger("PrepaDash");
-                            rb2DPlayer.velocity = new Vector2(rb2DPlayer.velocity.x, rb2DPlayer.velocity.y * dashSpeed);
-                            animator.SetTrigger("EndDash");
-                            Debug.Log("je dash verticalement");
-                        }
-                        
-                    }
-                }
-            }*/
         }
         
     }
-
 
     void FixedUpdate()
     {
@@ -405,19 +155,13 @@ public class PlayerBehavior : MonoBehaviour
 
         }
 
-        /*for (int i = 0; i < spriteRenderer.Length; i++)
-        {*/
-            if (Input.GetAxis("Horizontal") > 0f && perso.transform.localScale.x > 0 /*&& spriteRenderer[0].flipX == false*/)
+            if (Input.GetAxis("Horizontal") > 0f && perso.transform.localScale.x > 0)
             {
                 perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
-                //spriteRenderer[i].flipX = true;
-                //gameObject.transform.localScale.x = -spriteRenderer[0].transform.localScale.x;
-
-        }
-            else if (Input.GetAxis("Horizontal") < 0f && perso.transform.localScale.x < 0 /*&& spriteRenderer[0].flipX == true*/)
+            }
+            else if (Input.GetAxis("Horizontal") < 0f && perso.transform.localScale.x < 0)
             {
                 perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
-                //spriteRenderer[0].flipX = false;
             }
 
             if (Walking == true)
@@ -425,20 +169,18 @@ public class PlayerBehavior : MonoBehaviour
                 isDashing = false;
                 animator.SetBool("isJumping", false);
                 //Debug.Log("je veu pa soté");
-
-        }
-        else
+            }
+            else
             {
                 animator.SetBool("isJumping", true);
-            //Walking = true;
-                Debug.Log("je saute llalalalalalala");
+                //Debug.Log("je saute llalalalalalala");
             }
 
             if (Climbing == true && getClimb == true)
             {
-                Debug.Log("je suis contre un mur");
+                //Debug.Log("je suis contre un mur");
 
-                if (/*isClimbing == false &&*/ Input.GetButtonDown("Climb") || Input.GetAxis("Climb") > 0f)
+                if (Input.GetButtonDown("Climb") || Input.GetAxis("Climb") > 0f)
                 {
                     Debug.Log("je grimpe");
                 rb2DPlayer.velocity = Vector2.zero;
@@ -451,19 +193,8 @@ public class PlayerBehavior : MonoBehaviour
                     rb2DPlayer.velocity = Vector2.down * speedClimb * Time.deltaTime;
                 }
 
-                    //rb2DPlayer.velocity = new Vector2(0, /*je sais pas*/);
                 }
             }
-        //}
-
-        /*if (Jumping == true)
-        {
-            //animator.SetTrigger("Jump");
-            rb2DPlayer.velocity = Vector2.up * speedJump;
-            //rb2DPlayer.MovePosition(Vector2.up * speedJump);
-            //rb2DPlayer.AddForce(new Vector2(100f, speedJump)); //aucune idée de pourquoi ça marche pas hein mais bon
-            Jumping = false;
-        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -535,17 +266,4 @@ public class PlayerBehavior : MonoBehaviour
             Gizmos.DrawWireSphere(wallCheck.position, wallCheckRay);
         }
     }
-    /*void OnBecameInvisible()
-    {
-        if (rb2DPlayer)
-        {
-            Debug.Log("JE SUIS PAS VISIBLE LALALALA");
-            rb2DPlayer.position = start.position; //retour à la case départ
-            rb2DPlayer.velocity = new Vector2(0 * rb2DPlayer.velocity.x, 0 * rb2DPlayer.velocity.y);
-        }
-
-        //StartCoroutine("Respawn");
-    }*/
-
-    
 }
