@@ -72,8 +72,9 @@ public class PlayerBehavior : MonoBehaviour
             toDisable.GetComponent<CapsuleCollider2D>().enabled = false; //plus de collision avec l'objet à désactiver
         }
 
-        if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false)
+        if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false) //si il n'y a pas de boite de diaogues ou elle n'est pas activée
         {
+            //setup des diverses directions
             if (Input.GetAxis("Horizontal") > 0f)
             {
                 direction = 1;
@@ -91,112 +92,122 @@ public class PlayerBehavior : MonoBehaviour
                 direction = 0;
             }
 
+            //calcul de la variable de déplacement latéral
             horizontalMove = Input.GetAxis("Horizontal") * speedMovement * Time.deltaTime;
 
-            if (Input.GetButtonDown("Jump") && Walking == true)
+            if (Input.GetButtonDown("Jump") && Walking == true) //si bouton de saut activé et on touche le sol
             {
-                animator.SetTrigger("PrepaJump");
-                rb2DPlayer.velocity = Vector2.up * speedJump;
+                animator.SetTrigger("PrepaJump"); //déclenchement de l'animation de préparation du saut
+                rb2DPlayer.velocity = Vector2.up * speedJump; //déplacement du joueur vers le haut
             }
-
-
 
             //DASH OROR
-            if (getDash == true && isDashing == false && Input.GetButtonDown("Dash"))
+            if (getDash == true && isDashing == false && Input.GetButtonDown("Dash")) //si on a débloqué le dash, que le joueur ne dash pas, et que le bouton du dash est activé
             {
-                animator.SetTrigger("PrepaDash");
+                animator.SetTrigger("PrepaDash"); //déclenchement de l'animation de préparation du dash
+
+                //en fonction de la direction, on dash pas dans la meme direction
                 if (direction == 1)
-                    {
-                        rb2DPlayer.velocity = Vector2.right * speedDash * 5;
-                    }
-                    else if (direction == 2)
-                    {
-                        rb2DPlayer.velocity = Vector2.left * speedDash * 5;
-                    }
-                    else if (direction == 3)
-                    {
-                        rb2DPlayer.velocity = Vector2.up * speedDash;
-                    }
-                isDashing = true;
-                animator.SetTrigger("EndDash");
+                {
+                    rb2DPlayer.velocity = Vector2.right * speedDash * 5;
+                }
+                else if (direction == 2)
+                {
+                    rb2DPlayer.velocity = Vector2.left * speedDash * 5;
+                }
+                else if (direction == 3)
+                {
+                    rb2DPlayer.velocity = Vector2.up * speedDash;
+                }
+                isDashing = true; //impossible de re dash
+                animator.SetTrigger("EndDash");//déclenchement de l'animation de fin du dash
             }
         }
-        
     }
 
     void FixedUpdate()
     {
+        //calcul du booléen de détection du sol
         Walking = Physics2D.OverlapCircle(groundCheck.position, groundCheckRay, collisionLayer);
 
-        if (wallCheck != null)
+        if (wallCheck != null) //si il y a un objet qui peut détecter les murs
         {
+            //calcul du booléen de détection des murs
             Climbing = Physics2D.OverlapCircle(wallCheck.position, wallCheckRay, collisionLayer);
         }
 
-        MovePlayer(horizontalMove);
+        MovePlayer(horizontalMove); //appel de la fonction Move Player
 
-        if (parallax != null)
+        if (parallax != null) //si il y a une parallaxe active
         {
-            parallax.UpdateParallax(transform.localPosition.x - lastPosition.x);
+            parallax.UpdateParallax(transform.localPosition.x - lastPosition.x); //mouvement de la parallaxe
         }
+
+
+
         lastPosition = transform.localPosition;
     }
 
     void MovePlayer(float _horizontalMovement)
     {
-        Vector3 targetSpeed = new Vector2(_horizontalMovement, rb2DPlayer.velocity.y);
-        rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
+        Vector3 targetSpeed = new Vector2(_horizontalMovement, rb2DPlayer.velocity.y); //calcul de la vitesse en fonction du déplacement courant
+        rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f); //déplacement du personnage de manière fluide
+        
+        //si le personnage est en mouvement latéral, on active l'animation de course
         if(horizontalMove != 0)
         {
             animator.SetBool("isRunning", true);
         } else
         {
             animator.SetBool("isRunning", false);
-
         }
 
-            if (Input.GetAxis("Horizontal") > 0f && perso.transform.localScale.x > 0)
-            {
-                perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
-            }
-            else if (Input.GetAxis("Horizontal") < 0f && perso.transform.localScale.x < 0)
-            {
-                perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
-            }
+        //en fonction de la direction, le personnage se tourne dans le bon sens pour avancer
+        if (Input.GetAxis("Horizontal") > 0f && perso.transform.localScale.x > 0)
+        {
+            perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
+        }
+        else if (Input.GetAxis("Horizontal") < 0f && perso.transform.localScale.x < 0)
+        {
+            perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z);
+        }
 
-            if (Walking == true)
-            {
-                isDashing = false;
-                animator.SetBool("isJumping", false);
-                //Debug.Log("je veu pa soté");
-            }
-            else
-            {
-                animator.SetBool("isJumping", true);
-                //Debug.Log("je saute llalalalalalala");
-            }
 
-            if (Climbing == true && getClimb == true)
+        if (Walking == true) //si le joueur est en contact avec le sol
+        {
+            isDashing = false; //le joueur n'est pas en train de dash
+            animator.SetBool("isJumping", false); //le personnage ne saute pas
+            //Debug.Log("Saut et dahs non actif");
+        }
+        else
+        {
+            animator.SetBool("isJumping", true);
+            //Debug.Log("Saut actif");
+        }
+
+
+        if (Climbing == true && getClimb == true) //si l'escalade est débloquée et détection d'un mur
+        {
+            //Debug.Log("Détection d'un mur");
+            if (Input.GetButtonDown("Climb") || Input.GetAxis("Climb") > 0f) //si bouton activé ou gachette enclenchée pour l'escalade
             {
-                //Debug.Log("je suis contre un mur");
+                //Debug.Log("Escalade en cours");
+                rb2DPlayer.velocity = Vector2.zero; //mouvement immobile par défaut
 
-                if (Input.GetButtonDown("Climb") || Input.GetAxis("Climb") > 0f)
-                {
-                    Debug.Log("je grimpe");
-                rb2DPlayer.velocity = Vector2.zero;
-
+                //en fonction de la direction verticale active du joueur, montée ou descente le long du mur
                 if (Input.GetAxis("Vertical") > 0f)
                 {
                     rb2DPlayer.velocity = Vector2.up * speedClimb * Time.deltaTime;
-                } else if (Input.GetAxis("Vertical") < 0f)
+                }
+                else if (Input.GetAxis("Vertical") < 0f)
                 {
                     rb2DPlayer.velocity = Vector2.down * speedClimb * Time.deltaTime;
                 }
-
-                }
             }
+        }
     }
 
+    //détection des collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "End")
