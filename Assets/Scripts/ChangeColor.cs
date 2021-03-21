@@ -5,15 +5,13 @@ using UnityEngine.Experimental.U2D.Animation;
 
 public class ChangeColor : MonoBehaviour
 {
-    [SerializeField] private SpriteLibrary spriteLibrary = default;
-    [SerializeField] private SpriteResolver spriteResolver;
+    [SerializeField] private SpriteLibrary spriteLibrary = default; //spriteLibrary => permet de définir le set de membres du corps qu'on veut afficher
 
+    //fonction permettant le remplacement de corps au contact de la fiole de couleur
     public void Replace(SpriteLibraryAsset libraryAsset)
     {
-        //Debug.Log("aled");
-        spriteLibrary.spriteLibraryAsset = libraryAsset;
-        //Debug.Log(GameObject.FindGameObjectWithTag("Couleur").name);
-        Destroy(GameObject.FindGameObjectWithTag("Couleur"));
-        //spriteResolver.ResolveSpriteToSpriteRenderer();
+        //Debug.Log("Couleur modifiée !");
+        spriteLibrary.spriteLibraryAsset = libraryAsset; //changement de la sprite library asset utilisée par celle voulue pour changer le corps
+        Destroy(GameObject.FindGameObjectWithTag("Couleur")); //destruction de la fiole
     }
 }

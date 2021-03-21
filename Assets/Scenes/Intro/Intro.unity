@@ -606,7 +606,7 @@ MonoBehaviour:
   menuStart: {fileID: 1183339730}
   aledText: {fileID: 1183339732}
   groundCheck: {fileID: 558537325}
-  groundCheckRay: 19.72
+  groundCheckRay: 8.69
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -614,9 +614,11 @@ MonoBehaviour:
   getDash: 0
   isDashing: 0
   speedDash: 0
-  timeDash: 0
-  startTimeDash: 0
   direction: 0
+  getClimb: 0
+  wallCheck: {fileID: 0}
+  wallCheckRay: 0
+  speedClimb: 0
 --- !u!50 &52341286
 Rigidbody2D:
   serializedVersion: 4
@@ -1301,12 +1303,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256809708}
   m_CullTransparentMesh: 0
---- !u!212 &272619647 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3313406592301237149, guid: c54c6af2a02651b4e85a198f6883d946,
-    type: 3}
-  m_PrefabInstance: {fileID: 331139498}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &331139498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2026,7 +2022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteLibrary: {fileID: 818421432}
-  spriteResolver: {fileID: 0}
 --- !u!114 &818421434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5612,4 +5607,3 @@ MonoBehaviour:
   DiscussionBox: {fileID: 1031444678}
   rb2DKing: {fileID: 2087984031}
   speedMove: 100
-  oui: {fileID: 272619647}

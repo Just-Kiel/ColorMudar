@@ -4,34 +4,17 @@ using UnityEngine;
 
 public class KingBehavior : MonoBehaviour
 {
+    [SerializeField] private GameObject DiscussionBox; //objet de boite de dialogue
 
-    [SerializeField] private GameObject DiscussionBox;
-    [SerializeField] private Rigidbody2D rb2DKing;
-
-    [SerializeField] private int speedMove;
-
-    [SerializeField] private GameObject oui;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody2D rb2DKing; //Rigidbody du Roi
+    [SerializeField] private int speedMove = 100; //vitesse de déplacement
 
     // Update is called once per frame
     void Update()
     {
-        if (DiscussionBox == null || DiscussionBox.activeSelf == false)
+        if (DiscussionBox == null || DiscussionBox.activeSelf == false) //si il n'y a pas d'objet de boite de dialogue ou qu'il est désactivé
         {
-            //Debug.Log("jem le chokola");
-            rb2DKing.velocity = Vector2.right * speedMove;
+            rb2DKing.velocity = Vector2.right * speedMove; //déplacement du roi vers la droite
         }
-
-        //Debug.Log(oui.isVisible);
-    }
-
-    void OnBecameInvisible()
-    {
-        Destroy(oui);
     }
 }

@@ -1542,7 +1542,7 @@ MonoBehaviour:
   menuStart: {fileID: 680131856}
   aledText: {fileID: 680131857}
   groundCheck: {fileID: 313413882}
-  groundCheckRay: 19.72
+  groundCheckRay: 8.69
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -1550,9 +1550,11 @@ MonoBehaviour:
   getDash: 1
   isDashing: 0
   speedDash: 175
-  timeDash: 0
-  startTimeDash: 0.005
   direction: 0
+  getClimb: 0
+  wallCheck: {fileID: 0}
+  wallCheckRay: 0
+  speedClimb: 0
 --- !u!50 &536788740
 Rigidbody2D:
   serializedVersion: 4
