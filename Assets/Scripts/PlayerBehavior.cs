@@ -193,6 +193,7 @@ public class PlayerBehavior : MonoBehaviour
             {
                 //Debug.Log("Escalade en cours");
                 rb2DPlayer.velocity = Vector2.zero; //mouvement immobile par défaut
+                animator.SetBool("isClimbing", true);
 
                 //en fonction de la direction verticale active du joueur, montée ou descente le long du mur
                 if (Input.GetAxis("Vertical") > 0f)
@@ -204,6 +205,7 @@ public class PlayerBehavior : MonoBehaviour
                     rb2DPlayer.velocity = Vector2.down * speedClimb * Time.deltaTime;
                 }
             }
+            animator.SetBool("isClimbing", false);
         }
     }
 

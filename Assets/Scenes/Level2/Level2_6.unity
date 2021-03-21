@@ -1963,32 +1963,31 @@ MonoBehaviour:
   - Level2_6
   - Level2_10
   currentLevel: 0
-  parallax: {fileID: 0}
   start: {fileID: 1079551424}
-  rb2DPlayer: {fileID: 865864199}
-  animator: {fileID: 1172530887}
-  spriteRenderer: []
-  perso: {fileID: 1172530880}
+  parallax: {fileID: 0}
   discuss: {fileID: 745519302}
-  speedMovement: 20000
-  speedJump: 130
-  horizontalMove: 0
   menuStart: {fileID: 745519301}
   aledText: {fileID: 745519300}
+  rb2DPlayer: {fileID: 865864199}
+  animator: {fileID: 1172530887}
+  perso: {fileID: 1172530880}
+  direction: 0
+  speedMovement: 20000
+  horizontalMove: 0
   groundCheck: {fileID: 1534272411}
   groundCheckRay: 8.69
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
-  toDisable: {fileID: 0}
+  speedJump: 130
   getDash: 1
   isDashing: 0
   speedDash: 175
-  direction: 0
   getClimb: 0
   wallCheck: {fileID: 542370084}
   wallCheckRay: 8.69
   speedClimb: 5000
+  toDisable: {fileID: 0}
 --- !u!50 &865864199
 Rigidbody2D:
   serializedVersion: 4
@@ -4449,7 +4448,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteLibrary: {fileID: 1172530881}
-  spriteResolver: {fileID: 0}
 --- !u!70 &1172530886
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5075,7 +5073,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Maintiens V pour faire un grimper.
+  m_Text: Maintiens V pour grimper.
 --- !u!222 &1660887895
 CanvasRenderer:
   m_ObjectHideFlags: 0
