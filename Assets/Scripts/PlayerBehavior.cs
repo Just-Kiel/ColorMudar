@@ -205,6 +205,11 @@ public class PlayerBehavior : MonoBehaviour
                     rb2DPlayer.velocity = Vector2.down * speedClimb * Time.deltaTime;
                 }
             }
+            //animator.SetBool("isClimbing", false);
+        }
+
+        if(Climbing == false)
+        {
             animator.SetBool("isClimbing", false);
         }
     }
