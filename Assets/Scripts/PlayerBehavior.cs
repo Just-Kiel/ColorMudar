@@ -45,6 +45,9 @@ public class PlayerBehavior : MonoBehaviour
 
     private Vector3 lastPosition;
 
+    [SerializeField] bool getFly;
+    [SerializeField] private bool isFlying;
+
     private void Start()
     {
         perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z); //les sprites regardent vers la gauche donc on les fait regarder vers la droite dès le début
@@ -69,7 +72,7 @@ public class PlayerBehavior : MonoBehaviour
         
         if (toDisable && discuss.DiscussionBox.activeSelf == false) //si objet à désactiver assigné et les boites de dialogue sont désactivées
         {
-            toDisable.GetComponent<CapsuleCollider2D>().enabled = false; //plus de collision avec l'objet à désactiver
+            toDisable.GetComponent<Collider2D>().enabled = false; //plus de collision avec l'objet à désactiver
         }
 
         if (GameObject.Find("Discussion") == null || discuss.DiscussionBox.activeSelf == false) //si il n'y a pas de boite de diaogues ou elle n'est pas activée
@@ -177,7 +180,8 @@ public class PlayerBehavior : MonoBehaviour
         {
             isDashing = false; //le joueur n'est pas en train de dash
             animator.SetBool("isJumping", false); //le personnage ne saute pas
-            //Debug.Log("Saut et dahs non actif");
+            isFlying = false; //le joueur n'est pas en train de voler
+            //Debug.Log("Saut, dash et vol non actifs");
         }
         else
         {
@@ -211,6 +215,11 @@ public class PlayerBehavior : MonoBehaviour
         if(Climbing == false)
         {
             animator.SetBool("isClimbing", false);
+        }
+
+        if(getFly == true)
+        {
+            //if()
         }
     }
 
@@ -253,6 +262,16 @@ public class PlayerBehavior : MonoBehaviour
         {
             Debug.Log("je peux enfin climb");
             getClimb = true;
+            animator.SetBool("isRunning", false);
+            horizontalMove = 0;
+            discuss.DiscussionBox.SetActive(true);
+            toDisable = collision.gameObject;
+        }
+
+        if(collision.gameObject.tag == "Fly")
+        {
+            Debug.Log("j'ai la cape pour voler");
+            getFly = true;
             animator.SetBool("isRunning", false);
             horizontalMove = 0;
             discuss.DiscussionBox.SetActive(true);

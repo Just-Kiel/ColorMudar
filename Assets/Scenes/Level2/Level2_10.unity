@@ -321,33 +321,33 @@ MonoBehaviour:
   - Level2_2
   - Level2_6
   - Level2_10
+  - Level2To3
   currentLevel: 0
-  parallax: {fileID: 0}
   start: {fileID: 1161544146}
-  rb2DPlayer: {fileID: 96773679}
-  animator: {fileID: 1348336511}
-  spriteRenderer: []
-  perso: {fileID: 1348336505}
+  parallax: {fileID: 0}
   discuss: {fileID: 468182798}
-  speedMovement: 20000
-  speedJump: 130
-  horizontalMove: 0
   menuStart: {fileID: 468182797}
   aledText: {fileID: 468182796}
+  rb2DPlayer: {fileID: 96773679}
+  animator: {fileID: 1348336511}
+  perso: {fileID: 1348336505}
+  direction: 0
+  speedMovement: 20000
+  horizontalMove: 0
   groundCheck: {fileID: 1385698830}
   groundCheckRay: 8.69
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
-  toDisable: {fileID: 0}
+  speedJump: 130
   getDash: 1
   isDashing: 0
   speedDash: 175
-  direction: 0
   getClimb: 1
   wallCheck: {fileID: 1531933829}
   wallCheckRay: 8.69
   speedClimb: 5000
+  toDisable: {fileID: 0}
 --- !u!50 &96773679
 Rigidbody2D:
   serializedVersion: 4
@@ -3246,7 +3246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteLibrary: {fileID: 1348336506}
-  spriteResolver: {fileID: 0}
 --- !u!114 &1348336508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4076,7 +4075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6dfc6acd9ed0ca4c984b4567051388c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fiole: {fileID: 1707003870}
   discuss: {fileID: 468182798}
   player: {fileID: 96773678}
   changeColor: {fileID: 1348336507}
