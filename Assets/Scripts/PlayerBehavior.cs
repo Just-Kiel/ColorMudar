@@ -311,6 +311,18 @@ public class PlayerBehavior : MonoBehaviour
             rb2DPlayer.position = start.position; //retour à la case départ
             rb2DPlayer.velocity = new Vector2(0 * rb2DPlayer.velocity.x, 0 * rb2DPlayer.velocity.y);
         }
+
+        if(collision.gameObject.tag == "Fall")
+        {
+            /*fallingTimer += Time.deltaTime;
+            Debug.Log(fallingTimer);
+
+            if(fallingTimer == 3)
+            {*/
+                Destroy(collision.gameObject, 3);
+               /* fallingTimer = 0;
+            }*/
+        }
     }
 
     public void OnDrawGizmos()
