@@ -195,6 +195,7 @@ public class PlayerBehavior : MonoBehaviour
             //Debug.Log("Détection d'un mur");
             if (Input.GetButtonDown("Climb") || Input.GetAxis("Climb") > 0f) //si bouton activé ou gachette enclenchée pour l'escalade
             {
+                animator.SetBool("isJumping", false); //le personnage ne saute pas
                 //Debug.Log("Escalade en cours");
                 rb2DPlayer.velocity = Vector2.zero; //mouvement immobile par défaut
                 animator.SetBool("isClimbing", true);

@@ -894,6 +894,7 @@ MonoBehaviour:
   speedClimb: 5000
   toDisable: {fileID: 0}
   getFly: 0
+  isFlying: 0
 --- !u!50 &466762548
 Rigidbody2D:
   serializedVersion: 4
@@ -1000,7 +1001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Attention, l'eau est pleine de lessive ! Ne saute pas dedans !
+  m_Text: Maintiens la touche ESPACE pour planer.
 --- !u!222 &499731939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4044,7 +4045,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!68 &1501297632
 EdgeCollider2D:
   m_ObjectHideFlags: 0
