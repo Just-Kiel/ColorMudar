@@ -5,6 +5,7 @@ using UnityEngine;
 public class FallingBehavior : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2DFall;
+    [SerializeField] private bool Fall;
     void Start()
     {
         rb2DFall = GetComponent<Rigidbody2D>();
@@ -14,13 +15,16 @@ public class FallingBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Invoke("Fall", 1.5f);
-            Destroy(gameObject, 5f);
+            Fall = true;
         }
     }
 
-    void Fall()
+    private void Update()
     {
-        rb2DFall.isKinematic = false;
+        if(Fall == true)
+        {
+            rb2DFall.isKinematic = false;
+            Destroy(gameObject, 2f);
+        }
     }
 }

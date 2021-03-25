@@ -46,10 +46,7 @@ public class PlayerBehavior : MonoBehaviour
     private Vector3 lastPosition;
 
     [SerializeField] bool getFly;
-    [SerializeField] private bool isFlying;
     [SerializeField] private GameObject cape = null;
-
-    [SerializeField] private Rigidbody2D rb2DFall = null;
 
     private void Start()
     {
@@ -115,11 +112,11 @@ public class PlayerBehavior : MonoBehaviour
                 //en fonction de la direction, on dash pas dans la meme direction
                 if (direction == 1)
                 {
-                    rb2DPlayer.velocity = Vector2.right * speedDash * 5;
+                    rb2DPlayer.velocity = Vector2.right * speedDash * 15;
                 }
                 else if (direction == 2)
                 {
-                    rb2DPlayer.velocity = Vector2.left * speedDash * 5;
+                    rb2DPlayer.velocity = Vector2.left * speedDash * 15;
                 }
                 else if (direction == 3)
                 {
@@ -206,7 +203,6 @@ public class PlayerBehavior : MonoBehaviour
         {
             isDashing = false; //le joueur n'est pas en train de dash
             animator.SetBool("isJumping", false); //le personnage ne saute pas
-            isFlying = false; //le joueur n'est pas en train de voler
             //Debug.Log("Saut, dash et vol non actifs");
         }
         else
