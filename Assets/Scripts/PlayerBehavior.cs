@@ -47,6 +47,7 @@ public class PlayerBehavior : MonoBehaviour
 
     [SerializeField] bool getFly;
     [SerializeField] private bool isFlying;
+    [SerializeField] private GameObject cape = null;
 
     private void Start()
     {
@@ -139,7 +140,24 @@ public class PlayerBehavior : MonoBehaviour
             Climbing = Physics2D.OverlapCircle(wallCheck.position, wallCheckRay, collisionLayer);
         }
 
-        MovePlayer(horizontalMove); //appel de la fonction Move Player
+        if (getFly == true && cape != null)
+        {
+            if (Input.GetButton("Fly"))
+            {
+                //Debug.Log("koukou");
+                rb2DPlayer.gravityScale = 1;
+                cape.SetActive(true);
+                Vector3 targetSpeed = new Vector2(horizontalMove / 3, rb2DPlayer.velocity.y);
+                rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
+            }
+            else
+            {
+                MovePlayer(horizontalMove); //appel de la fonction Move Player
+            }
+        } else
+        {
+            MovePlayer(horizontalMove); //appel de la fonction Move Player
+        }
 
         if (parallax != null) //si il y a une parallaxe active
         {
@@ -155,9 +173,11 @@ public class PlayerBehavior : MonoBehaviour
     {
         Vector3 targetSpeed = new Vector2(_horizontalMovement, rb2DPlayer.velocity.y); //calcul de la vitesse en fonction du déplacement courant
         rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f); //déplacement du personnage de manière fluide
-        
+        rb2DPlayer.gravityScale = 15; //gravité par défaut du personnage
+        cape.SetActive(false);
+
         //si le personnage est en mouvement latéral, on active l'animation de course
-        if(horizontalMove != 0)
+        if (horizontalMove != 0)
         {
             animator.SetBool("isRunning", true);
         } else
@@ -186,6 +206,8 @@ public class PlayerBehavior : MonoBehaviour
         else
         {
             animator.SetBool("isJumping", true);
+            targetSpeed = new Vector2(_horizontalMovement / 5, rb2DPlayer.velocity.y);
+            rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
             //Debug.Log("Saut actif");
         }
 
@@ -195,6 +217,7 @@ public class PlayerBehavior : MonoBehaviour
             //Debug.Log("Détection d'un mur");
             if (Input.GetButtonDown("Climb") || Input.GetAxis("Climb") > 0f) //si bouton activé ou gachette enclenchée pour l'escalade
             {
+                animator.SetBool("isJumping", false); //le personnage ne saute pas
                 //Debug.Log("Escalade en cours");
                 rb2DPlayer.velocity = Vector2.zero; //mouvement immobile par défaut
                 animator.SetBool("isClimbing", true);
@@ -217,10 +240,7 @@ public class PlayerBehavior : MonoBehaviour
             animator.SetBool("isClimbing", false);
         }
 
-        if(getFly == true)
-        {
-            //if()
-        }
+        
     }
 
     //détection des collisions
@@ -290,6 +310,18 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb2DPlayer.position = start.position; //retour à la case départ
             rb2DPlayer.velocity = new Vector2(0 * rb2DPlayer.velocity.x, 0 * rb2DPlayer.velocity.y);
+        }
+
+        if(collision.gameObject.tag == "Fall")
+        {
+            /*fallingTimer += Time.deltaTime;
+            Debug.Log(fallingTimer);
+
+            if(fallingTimer == 3)
+            {*/
+                Destroy(collision.gameObject, 3);
+               /* fallingTimer = 0;
+            }*/
         }
     }
 
