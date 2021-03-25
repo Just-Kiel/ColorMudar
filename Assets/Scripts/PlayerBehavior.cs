@@ -49,6 +49,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private bool isFlying;
     [SerializeField] private GameObject cape = null;
 
+    [SerializeField] private Rigidbody2D rb2DFall = null;
+
     private void Start()
     {
         perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z); //les sprites regardent vers la gauche donc on les fait regarder vers la droite dès le début
@@ -127,6 +129,8 @@ public class PlayerBehavior : MonoBehaviour
                 animator.SetTrigger("EndDash");//déclenchement de l'animation de fin du dash
             }
         }
+
+        //StartCoroutine(Falling(cape));
     }
 
     void FixedUpdate()
@@ -153,8 +157,10 @@ public class PlayerBehavior : MonoBehaviour
             else
             {
                 MovePlayer(horizontalMove); //appel de la fonction Move Player
+                cape.SetActive(false);
             }
-        } else
+        }
+        if (cape == null)
         {
             MovePlayer(horizontalMove); //appel de la fonction Move Player
         }
@@ -174,7 +180,7 @@ public class PlayerBehavior : MonoBehaviour
         Vector3 targetSpeed = new Vector2(_horizontalMovement, rb2DPlayer.velocity.y); //calcul de la vitesse en fonction du déplacement courant
         rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f); //déplacement du personnage de manière fluide
         rb2DPlayer.gravityScale = 15; //gravité par défaut du personnage
-        cape.SetActive(false);
+        
 
         //si le personnage est en mouvement latéral, on active l'animation de course
         if (horizontalMove != 0)
@@ -310,18 +316,6 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb2DPlayer.position = start.position; //retour à la case départ
             rb2DPlayer.velocity = new Vector2(0 * rb2DPlayer.velocity.x, 0 * rb2DPlayer.velocity.y);
-        }
-
-        if(collision.gameObject.tag == "Fall")
-        {
-            /*fallingTimer += Time.deltaTime;
-            Debug.Log(fallingTimer);
-
-            if(fallingTimer == 3)
-            {*/
-                Destroy(collision.gameObject, 3);
-               /* fallingTimer = 0;
-            }*/
         }
     }
 
