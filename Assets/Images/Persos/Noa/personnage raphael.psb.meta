@@ -1,0 +1,1441 @@
+fileFormatVersion: 2
+guid: 231689dc26da1b14aa3a0c23b463a2aa
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: head J
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 381
+      y: 1095
+      width: 365
+      height: 482
+    spriteID: e9a70da1a5c53624d88f17fc12dbc3b4
+    internalID: 0
+    spriteBone:
+    - name: head
+      position: {x: 210.4093, y: 56.283447, z: -1}
+      rotation: {x: 0, y: 0, z: 0.8842603, w: 0.4669944}
+      length: 57.311268
+      parentId: -1
+    - name: cou_1
+      position: {x: 57.311268, y: -0.000021524262, z: -1}
+      rotation: {x: 0, y: 0, z: -0.06296217, w: 0.998016}
+      length: 47.75136
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -677, y: -1482}
+  - name: head B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 757
+      y: 4
+      width: 365
+      height: 482
+    spriteID: a1a159e4553b22b47ba8d79d0f0da543
+    internalID: 0
+    spriteBone:
+    - name: head
+      position: {x: 210.4093, y: 56.283447, z: -1}
+      rotation: {x: 0, y: 0, z: 0.8842603, w: 0.4669944}
+      length: 57.311268
+      parentId: -1
+    - name: cou_1
+      position: {x: 57.311234, y: -0.000044829678, z: -1}
+      rotation: {x: 0, y: 0, z: -0.06296217, w: 0.998016}
+      length: 47.75136
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -301, y: -2573}
+  - name: head G
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 757
+      y: 494
+      width: 365
+      height: 482
+    spriteID: 470cbf40070dc6f438b07ba41441131d
+    internalID: 0
+    spriteBone:
+    - name: head
+      position: {x: 210.4093, y: 56.283447, z: -1}
+      rotation: {x: 0, y: 0, z: 0.8842603, w: 0.4669944}
+      length: 57.311268
+      parentId: -1
+    - name: cou_1
+      position: {x: 57.31124, y: 0.0000029732473, z: -1}
+      rotation: {x: 0, y: 0, z: -0.06296217, w: 0.998016}
+      length: 47.75136
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -301, y: -2083}
+  - name: head
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 381
+      y: 605
+      width: 366
+      height: 482
+    spriteID: a902684a90b8a2045a226ad977f703b9
+    internalID: 0
+    spriteBone:
+    - name: head
+      position: {x: 211.4093, y: 56.283447, z: -1}
+      rotation: {x: 0, y: 0, z: 0.8842603, w: 0.4669944}
+      length: 57.311268
+      parentId: -1
+    - name: cou_1
+      position: {x: 57.311237, y: -0.000030703377, z: -1}
+      rotation: {x: 0, y: 0, z: -0.06296217, w: 0.998016}
+      length: 47.75136
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -676, y: -1972}
+  - name: ArmG jaune
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 4
+      width: 209
+      height: 685
+    spriteID: f30f28c47268627429f4e5dcb9dc6a9c
+    internalID: 0
+    spriteBone:
+    - name: ArmAvant
+      position: {x: 143.13, y: 669.9529, z: 2}
+      rotation: {x: 0, y: 0, z: -0.67677927, w: 0.7361861}
+      length: 269.71152
+      parentId: -1
+    - name: armA
+      position: {x: 269.71164, y: -0.000030524163, z: 2}
+      rotation: {x: 0, y: 0, z: -0.15057337, w: 0.9885989}
+      length: 290.73187
+      parentId: 0
+    - name: MainA
+      position: {x: 547.26117, y: -86.55491, z: 2}
+      rotation: {x: 0, y: 0, z: -0.14949368, w: 0.9887627}
+      length: 46.358986
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -58, y: -1918}
+  - name: ArmG bleu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 697
+      width: 209
+      height: 685
+    spriteID: 883068d691b6eaf4d85c2c924c607151
+    internalID: 0
+    spriteBone:
+    - name: ArmAvant
+      position: {x: 143.13, y: 669.9529, z: 2}
+      rotation: {x: 0, y: 0, z: -0.67677927, w: 0.7361861}
+      length: 269.71152
+      parentId: -1
+    - name: armA
+      position: {x: 269.7116, y: 0.000055932374, z: 2}
+      rotation: {x: 0, y: 0, z: -0.15057337, w: 0.9885989}
+      length: 290.73187
+      parentId: 0
+    - name: MainA
+      position: {x: 547.26117, y: -86.554825, z: 2}
+      rotation: {x: 0, y: 0, z: -0.14949368, w: 0.9887627}
+      length: 46.358986
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -58, y: -1225}
+  - name: ArmG gris
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1347
+      y: 4
+      width: 209
+      height: 685
+    spriteID: a30fa3eb730d945489821b27ad98e86e
+    internalID: 0
+    spriteBone:
+    - name: ArmAvant
+      position: {x: 143.13, y: 669.9529, z: 2}
+      rotation: {x: 0, y: 0, z: -0.67677927, w: 0.7361861}
+      length: 269.71152
+      parentId: -1
+    - name: armA
+      position: {x: 269.7116, y: -0.000021702675, z: 2}
+      rotation: {x: 0, y: 0, z: -0.15057337, w: 0.9885989}
+      length: 290.73187
+      parentId: 0
+    - name: MainA
+      position: {x: 547.2611, y: -86.5549, z: 2}
+      rotation: {x: 0, y: 0, z: -0.14949368, w: 0.9887627}
+      length: 46.358986
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 159, y: -1918}
+  - name: ArmG
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 757
+      y: 984
+      width: 210
+      height: 685
+    spriteID: 023d761e9f3bc9f45ba1b63cc37f0417
+    internalID: 0
+    spriteBone:
+    - name: ArmAvant
+      position: {x: 143.13, y: 669.9529, z: 2}
+      rotation: {x: 0, y: 0, z: -0.67677927, w: 0.7361861}
+      length: 269.71152
+      parentId: -1
+    - name: armA
+      position: {x: 269.7117, y: 0.00004422006, z: 2}
+      rotation: {x: 0, y: 0, z: -0.15057337, w: 0.9885989}
+      length: 290.73187
+      parentId: 0
+    - name: MainA
+      position: {x: 547.2612, y: -86.55483, z: 2}
+      rotation: {x: 0, y: 0, z: -0.14949368, w: 0.9887627}
+      length: 46.358986
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -431, y: -938}
+  - name: Body J
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 369
+      height: 593
+    spriteID: 7d21236ea1820d54a81a1a136bd51e78
+    internalID: 0
+    spriteBone:
+    - name: squelette
+      position: {x: 185.47156, y: 551.49585, z: 0}
+      rotation: {x: 0, y: 0, z: -0.47919184, w: 0.8777102}
+      length: 70.551735
+      parentId: -1
+    - name: squelette_2
+      position: {x: 70.55174, y: -0.000017580307, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09688699, w: 0.99529546}
+      length: 80.55467
+      parentId: 0
+    - name: squelette_3
+      position: {x: 149.59433, y: -15.535999, z: 0}
+      rotation: {x: 0, y: 0, z: -0.23073192, w: 0.97301733}
+      length: 93.78235
+      parentId: 0
+    - name: squelette_5
+      position: {x: 317.5284, y: -120.131256, z: 0}
+      rotation: {x: 0, y: 0, z: -0.36535966, w: 0.9308664}
+      length: 80.381134
+      parentId: 0
+    - name: squelette_4
+      position: {x: 233.39148, y: -57.645576, z: 0}
+      rotation: {x: 0, y: 0, z: -0.31399268, w: 0.9494254}
+      length: 104.80212
+      parentId: 0
+    - name: squelette_6
+      position: {x: 376.44998, y: -174.80676, z: 0}
+      rotation: {x: 0, y: 0, z: -0.364054, w: 0.9313778}
+      length: 106.164734
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1104, y: -2056}
+  - name: Body B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 605
+      width: 368
+      height: 593
+    spriteID: b9b1cf59da076f042bc448b97f6d5803
+    internalID: 0
+    spriteBone:
+    - name: squelette
+      position: {x: 184.47156, y: 551.49585, z: 0}
+      rotation: {x: 0, y: 0, z: -0.47919184, w: 0.8777102}
+      length: 70.551735
+      parentId: -1
+    - name: squelette_2
+      position: {x: 70.551765, y: 0.0000000030631782, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09688699, w: 0.99529546}
+      length: 80.55467
+      parentId: 0
+    - name: squelette_3
+      position: {x: 149.59435, y: -15.535981, z: 0}
+      rotation: {x: 0, y: 0, z: -0.23073192, w: 0.97301733}
+      length: 93.78235
+      parentId: 0
+    - name: squelette_5
+      position: {x: 317.52844, y: -120.13123, z: 0}
+      rotation: {x: 0, y: 0, z: -0.36535966, w: 0.9308664}
+      length: 80.381134
+      parentId: 0
+    - name: squelette_4
+      position: {x: 233.39151, y: -57.645557, z: 0}
+      rotation: {x: 0, y: 0, z: -0.31399268, w: 0.9494254}
+      length: 104.80212
+      parentId: 0
+    - name: squelette_6
+      position: {x: 376.45, y: -174.80675, z: 0}
+      rotation: {x: 0, y: 0, z: -0.364054, w: 0.9313778}
+      length: 106.164734
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1105, y: -1455}
+  - name: Body G
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1206
+      width: 368
+      height: 593
+    spriteID: c845a86241de94349b2ae38c8883fe60
+    internalID: 0
+    spriteBone:
+    - name: squelette
+      position: {x: 184.47156, y: 551.49585, z: 0}
+      rotation: {x: 0, y: 0, z: -0.47919184, w: 0.8777102}
+      length: 70.551735
+      parentId: -1
+    - name: squelette_2
+      position: {x: 70.551765, y: 0.000014188969, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09688699, w: 0.99529546}
+      length: 80.55467
+      parentId: 0
+    - name: squelette_3
+      position: {x: 149.59436, y: -15.535967, z: 0}
+      rotation: {x: 0, y: 0, z: -0.23073192, w: 0.97301733}
+      length: 93.78235
+      parentId: 0
+    - name: squelette_5
+      position: {x: 317.52844, y: -120.131226, z: 0}
+      rotation: {x: 0, y: 0, z: -0.36535966, w: 0.9308664}
+      length: 80.381134
+      parentId: 0
+    - name: squelette_4
+      position: {x: 233.39151, y: -57.645542, z: 0}
+      rotation: {x: 0, y: 0, z: -0.31399268, w: 0.9494254}
+      length: 104.80212
+      parentId: 0
+    - name: squelette_6
+      position: {x: 376.45, y: -174.80673, z: 0}
+      rotation: {x: 0, y: 0, z: -0.364054, w: 0.9313778}
+      length: 106.164734
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1105, y: -854}
+  - name: 'Body '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 381
+      y: 4
+      width: 368
+      height: 593
+    spriteID: 39765f9a08d500e4ba2b0f79afe32b1c
+    internalID: 0
+    spriteBone:
+    - name: squelette
+      position: {x: 184.47156, y: 551.49585, z: 0}
+      rotation: {x: 0, y: 0, z: -0.47919184, w: 0.8777102}
+      length: 70.551735
+      parentId: -1
+    - name: squelette_2
+      position: {x: 70.55173, y: -0.000013288773, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09688699, w: 0.99529546}
+      length: 80.55467
+      parentId: 0
+    - name: squelette_3
+      position: {x: 149.59431, y: -15.535995, z: 0}
+      rotation: {x: 0, y: 0, z: -0.23073192, w: 0.97301733}
+      length: 93.78235
+      parentId: 0
+    - name: squelette_5
+      position: {x: 317.52838, y: -120.13125, z: 0}
+      rotation: {x: 0, y: 0, z: -0.36535966, w: 0.9308664}
+      length: 80.381134
+      parentId: 0
+    - name: squelette_4
+      position: {x: 233.39146, y: -57.645573, z: 0}
+      rotation: {x: 0, y: 0, z: -0.31399268, w: 0.9494254}
+      length: 104.80212
+      parentId: 0
+    - name: squelette_6
+      position: {x: 376.44998, y: -174.80676, z: 0}
+      rotation: {x: 0, y: 0, z: -0.364054, w: 0.9313778}
+      length: 106.164734
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -728, y: -2056}
+  - name: bas J
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 1390
+      width: 173
+      height: 604
+    spriteID: 7512e2ebc0d11ad4d9ca7c7180396798
+    internalID: 0
+    spriteBone:
+    - name: "Jambe Arri\xE8re"
+      position: {x: 120.052734, y: 548.3528, z: -2}
+      rotation: {x: 0, y: 0, z: -0.7434817, w: 0.66875637}
+      length: 222.89404
+      parentId: -1
+    - name: jambe Arr
+      position: {x: 491.35135, y: 65.790115, z: -2}
+      rotation: {x: 0, y: 0, z: -0.58550614, w: 0.810668}
+      length: 85.1756
+      parentId: 0
+    - name: Pied arr 1
+      position: {x: 416.3823, y: 54.19536, z: -2}
+      rotation: {x: 0, y: 0, z: 0.07664706, w: 0.99705833}
+      length: 75.86051
+      parentId: 0
+    - name: pied arr 2
+      position: {x: 222.89381, y: 0.00002412164, z: -2}
+      rotation: {x: 0, y: 0, z: 0.13612388, w: 0.99069184}
+      length: 200.93507
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -108, y: -141}
+  - name: bas B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1564
+      y: 616
+      width: 172
+      height: 604
+    spriteID: 89e5e66986b8ca64bbf8f6af73f7c934
+    internalID: 0
+    spriteBone:
+    - name: "Jambe Arri\xE8re"
+      position: {x: 118.052734, y: 548.3528, z: -2}
+      rotation: {x: 0, y: 0, z: -0.7434817, w: 0.66875637}
+      length: 222.89404
+      parentId: -1
+    - name: jambe Arr
+      position: {x: 491.3514, y: 65.79011, z: -2}
+      rotation: {x: 0, y: 0, z: -0.58550614, w: 0.810668}
+      length: 85.1756
+      parentId: 0
+    - name: Pied arr 1
+      position: {x: 416.38232, y: 54.195347, z: -2}
+      rotation: {x: 0, y: 0, z: 0.07664706, w: 0.99705833}
+      length: 75.86051
+      parentId: 0
+    - name: pied arr 2
+      position: {x: 222.89386, y: 0.000012066602, z: -2}
+      rotation: {x: 0, y: 0, z: 0.13612388, w: 0.99069184}
+      length: 200.93507
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 324, y: -915}
+  - name: Bas G
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1564
+      y: 1228
+      width: 172
+      height: 604
+    spriteID: c45d29d27838aa042bad4e36b4085dd3
+    internalID: 0
+    spriteBone:
+    - name: "Jambe Arri\xE8re"
+      position: {x: 119.052734, y: 548.3528, z: -2}
+      rotation: {x: 0, y: 0, z: -0.7434817, w: 0.66875637}
+      length: 222.89404
+      parentId: -1
+    - name: jambe Arr
+      position: {x: 491.35138, y: 65.79013, z: -2}
+      rotation: {x: 0, y: 0, z: -0.58550614, w: 0.810668}
+      length: 85.1756
+      parentId: 0
+    - name: Pied arr 1
+      position: {x: 416.38232, y: 54.19537, z: -2}
+      rotation: {x: 0, y: 0, z: 0.07664706, w: 0.99705833}
+      length: 75.86051
+      parentId: 0
+    - name: pied arr 2
+      position: {x: 222.89384, y: 0.000033136843, z: -2}
+      rotation: {x: 0, y: 0, z: 0.13612388, w: 0.99069184}
+      length: 200.93507
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 325, y: -303}
+  - name: bas
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1347
+      y: 697
+      width: 173
+      height: 604
+    spriteID: fcd85b3ca291db542beff30ec4381814
+    internalID: 0
+    spriteBone:
+    - name: "Jambe Arri\xE8re"
+      position: {x: 119.052734, y: 548.3528, z: -2}
+      rotation: {x: 0, y: 0, z: -0.7434817, w: 0.66875637}
+      length: 222.89404
+      parentId: -1
+    - name: jambe Arr
+      position: {x: 491.35147, y: 65.790115, z: -2}
+      rotation: {x: 0, y: 0, z: -0.58550614, w: 0.810668}
+      length: 85.1756
+      parentId: 0
+    - name: Pied arr 1
+      position: {x: 416.38242, y: 54.19536, z: -2}
+      rotation: {x: 0, y: 0, z: 0.07664706, w: 0.99705833}
+      length: 75.86051
+      parentId: 0
+    - name: pied arr 2
+      position: {x: 222.89394, y: 0.000023175417, z: -2}
+      rotation: {x: 0, y: 0, z: 0.13612388, w: 0.99069184}
+      length: 200.93507
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 108, y: -834}
+  - name: bas J_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1347
+      y: 1309
+      width: 173
+      height: 604
+    spriteID: b3ae387e59d56dd40865bb63ee5e8371
+    internalID: 0
+    spriteBone:
+    - name: Jambe Devant
+      position: {x: 102.455444, y: 547.56665, z: -1}
+      rotation: {x: 0, y: 0, z: -0.7226341, w: 0.6912308}
+      length: 223.48428
+      parentId: -1
+    - name: jambe avant
+      position: {x: 223.4844, y: 0.0001908204, z: -1}
+      rotation: {x: 0, y: 0, z: 0.10978153, w: 0.9939558}
+      length: 208.27536
+      parentId: 0
+    - name: pied Avant 2
+      position: {x: 492.68027, y: 51.694252, z: -1}
+      rotation: {x: 0, y: 0, z: -0.60331124, w: 0.79750586}
+      length: 86.64767
+      parentId: 0
+    - name: pied avant 1
+      position: {x: 426.73987, y: 45.453094, z: -1}
+      rotation: {x: 0, y: 0, z: 0.04716728, w: 0.998887}
+      length: 66.235085
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 108, y: -222}
+  - name: bas B_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1745
+      y: 4
+      width: 172
+      height: 604
+    spriteID: add1572ecd6b3684594309ed86b86d45
+    internalID: 0
+    spriteBone:
+    - name: Jambe Devant
+      position: {x: 100.455444, y: 547.56665, z: -1}
+      rotation: {x: 0, y: 0, z: -0.7226341, w: 0.6912308}
+      length: 223.48428
+      parentId: -1
+    - name: jambe avant
+      position: {x: 223.4844, y: 0.00009941296, z: -1}
+      rotation: {x: 0, y: 0, z: 0.10978153, w: 0.9939558}
+      length: 208.27536
+      parentId: 0
+    - name: pied Avant 2
+      position: {x: 492.68024, y: 51.69416, z: -1}
+      rotation: {x: 0, y: 0, z: -0.60331124, w: 0.79750586}
+      length: 86.64767
+      parentId: 0
+    - name: pied avant 1
+      position: {x: 426.73987, y: 45.453003, z: -1}
+      rotation: {x: 0, y: 0, z: 0.04716728, w: 0.998887}
+      length: 66.235085
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 504, y: -1527}
+  - name: Bas G_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1745
+      y: 616
+      width: 172
+      height: 604
+    spriteID: 03b38ae0ee3de9340b1367c662fc6770
+    internalID: 0
+    spriteBone:
+    - name: Jambe Devant
+      position: {x: 101.455444, y: 547.56665, z: -1}
+      rotation: {x: 0, y: 0, z: -0.7226341, w: 0.6912308}
+      length: 223.48428
+      parentId: -1
+    - name: jambe avant
+      position: {x: 223.48439, y: 0.0001578404, z: -1}
+      rotation: {x: 0, y: 0, z: 0.10978153, w: 0.9939558}
+      length: 208.27536
+      parentId: 0
+    - name: pied Avant 2
+      position: {x: 492.68024, y: 51.694218, z: -1}
+      rotation: {x: 0, y: 0, z: -0.60331124, w: 0.79750586}
+      length: 86.64767
+      parentId: 0
+    - name: pied avant 1
+      position: {x: 426.73984, y: 45.45306, z: -1}
+      rotation: {x: 0, y: 0, z: 0.04716728, w: 0.998887}
+      length: 66.235085
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 505, y: -915}
+  - name: bas_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1564
+      y: 4
+      width: 173
+      height: 604
+    spriteID: 626cd895b2aaa3f44b53c3e33eb8f625
+    internalID: 0
+    spriteBone:
+    - name: Jambe Devant
+      position: {x: 101.455444, y: 547.56665, z: -1}
+      rotation: {x: 0, y: 0, z: -0.7226341, w: 0.6912308}
+      length: 223.48428
+      parentId: -1
+    - name: jambe avant
+      position: {x: 223.48447, y: 0.0000064297124, z: -1}
+      rotation: {x: 0, y: 0, z: 0.10978153, w: 0.9939558}
+      length: 208.27536
+      parentId: 0
+    - name: pied Avant 2
+      position: {x: 492.6803, y: 51.69407, z: -1}
+      rotation: {x: 0, y: 0, z: -0.60331124, w: 0.79750586}
+      length: 86.64767
+      parentId: 0
+    - name: pied avant 1
+      position: {x: 426.73993, y: 45.45291, z: -1}
+      rotation: {x: 0, y: 0, z: 0.04716728, w: 0.998887}
+      length: 66.235085
+      parentId: 0
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 324, y: -1527}
+  - name: Calque 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 2002
+      width: 0
+      height: 0
+    spriteID: 28a590f79a52a1e4593ab98e57693abb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1350, y: -1506}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 2480, y: 3508}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 2048
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Head
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 12
+    mosaicPosition: {x: 0, y: 0}
+  - name: head J
+    spriteName: head J
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e9a70da1a5c53624d88f17fc12dbc3b4
+    layerID: 143
+    mosaicPosition: {x: 381, y: 1095}
+  - name: head B
+    spriteName: head B
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a1a159e4553b22b47ba8d79d0f0da543
+    layerID: 141
+    mosaicPosition: {x: 757, y: 4}
+  - name: head G
+    spriteName: head G
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 470cbf40070dc6f438b07ba41441131d
+    layerID: 54
+    mosaicPosition: {x: 757, y: 494}
+  - name: head
+    spriteName: head
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a902684a90b8a2045a226ad977f703b9
+    layerID: 14
+    mosaicPosition: {x: 381, y: 605}
+  - name: ArmG
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 10
+    mosaicPosition: {x: 0, y: 0}
+  - name: ArmG jaune
+    spriteName: ArmG jaune
+    isGroup: 0
+    parentIndex: 5
+    spriteID: f30f28c47268627429f4e5dcb9dc6a9c
+    layerID: 131
+    mosaicPosition: {x: 1130, y: 4}
+  - name: ArmG bleu
+    spriteName: ArmG bleu
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 883068d691b6eaf4d85c2c924c607151
+    layerID: 135
+    mosaicPosition: {x: 1130, y: 697}
+  - name: ArmG gris
+    spriteName: ArmG gris
+    isGroup: 0
+    parentIndex: 5
+    spriteID: a30fa3eb730d945489821b27ad98e86e
+    layerID: 112
+    mosaicPosition: {x: 1347, y: 4}
+  - name: ArmG
+    spriteName: ArmG
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 023d761e9f3bc9f45ba1b63cc37f0417
+    layerID: 18
+    mosaicPosition: {x: 757, y: 984}
+  - name: body
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 8
+    mosaicPosition: {x: 0, y: 0}
+  - name: Body J
+    spriteName: Body J
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 7d21236ea1820d54a81a1a136bd51e78
+    layerID: 139
+    mosaicPosition: {x: 4, y: 4}
+  - name: Body B
+    spriteName: Body B
+    isGroup: 0
+    parentIndex: 10
+    spriteID: b9b1cf59da076f042bc448b97f6d5803
+    layerID: 137
+    mosaicPosition: {x: 4, y: 605}
+  - name: Body G
+    spriteName: Body G
+    isGroup: 0
+    parentIndex: 10
+    spriteID: c845a86241de94349b2ae38c8883fe60
+    layerID: 58
+    mosaicPosition: {x: 4, y: 1206}
+  - name: 'Body '
+    spriteName: 'Body '
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 39765f9a08d500e4ba2b0f79afe32b1c
+    layerID: 16
+    mosaicPosition: {x: 381, y: 4}
+  - name: JambeD
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 179
+    mosaicPosition: {x: 0, y: 0}
+  - name: bas J
+    spriteName: bas J
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 7512e2ebc0d11ad4d9ca7c7180396798
+    layerID: 178
+    mosaicPosition: {x: 1130, y: 1390}
+  - name: bas B
+    spriteName: bas B
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 89e5e66986b8ca64bbf8f6af73f7c934
+    layerID: 177
+    mosaicPosition: {x: 1564, y: 616}
+  - name: Bas G
+    spriteName: Bas G
+    isGroup: 0
+    parentIndex: 15
+    spriteID: c45d29d27838aa042bad4e36b4085dd3
+    layerID: 176
+    mosaicPosition: {x: 1564, y: 1228}
+  - name: bas
+    spriteName: bas
+    isGroup: 0
+    parentIndex: 15
+    spriteID: fcd85b3ca291db542beff30ec4381814
+    layerID: 175
+    mosaicPosition: {x: 1347, y: 697}
+  - name: JambeG
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 4
+    mosaicPosition: {x: 0, y: 0}
+  - name: bas J
+    spriteName: bas J_1
+    isGroup: 0
+    parentIndex: 20
+    spriteID: b3ae387e59d56dd40865bb63ee5e8371
+    layerID: 152
+    mosaicPosition: {x: 1347, y: 1309}
+  - name: bas B
+    spriteName: bas B_1
+    isGroup: 0
+    parentIndex: 20
+    spriteID: add1572ecd6b3684594309ed86b86d45
+    layerID: 148
+    mosaicPosition: {x: 1745, y: 4}
+  - name: Bas G
+    spriteName: Bas G_1
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 03b38ae0ee3de9340b1367c662fc6770
+    layerID: 62
+    mosaicPosition: {x: 1745, y: 616}
+  - name: bas
+    spriteName: bas_1
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 626cd895b2aaa3f44b53c3e33eb8f625
+    layerID: 22
+    mosaicPosition: {x: 1564, y: 4}
+  - name: Calque 1
+    spriteName: Calque 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 28a590f79a52a1e4593ab98e57693abb
+    layerID: 3
+    mosaicPosition: {x: 1130, y: 2002}
+  characterData:
+    bones:
+    - name: head
+      position: {x: 1268.4093, y: 2633.2834, z: -1}
+      rotation: {x: 0, y: 0, z: 0.8842603, w: 0.4669944}
+      length: 57.31127
+      parentId: -1
+    - name: cou_1
+      position: {x: 57.31118, y: 0.0000267555, z: -1}
+      rotation: {x: 0, y: 0, z: -0.06296217, w: 0.998016}
+      length: 47.751358
+      parentId: 0
+    - name: squelette
+      position: {x: 1293.4716, y: 2611.4958, z: 0}
+      rotation: {x: 0, y: 0, z: -0.47919184, w: 0.8777102}
+      length: 70.551735
+      parentId: -1
+    - name: squelette_2
+      position: {x: 70.55179, y: -0.000030931747, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09688696, w: 0.9952954}
+      length: 80.554665
+      parentId: 2
+    - name: squelette_3
+      position: {x: 149.59438, y: -15.536013, z: 0}
+      rotation: {x: 0, y: 0, z: -0.23073193, w: 0.9730174}
+      length: 93.78236
+      parentId: 2
+    - name: squelette_4
+      position: {x: 233.39153, y: -57.645588, z: 0}
+      rotation: {x: 0, y: 0, z: -0.31399274, w: 0.94942546}
+      length: 104.802124
+      parentId: 2
+    - name: squelette_5
+      position: {x: 317.52844, y: -120.13127, z: 0}
+      rotation: {x: 0, y: 0, z: -0.36535966, w: 0.9308664}
+      length: 80.38114
+      parentId: 2
+    - name: squelette_6
+      position: {x: 376.45004, y: -174.80678, z: 0}
+      rotation: {x: 0, y: 0, z: -0.36405402, w: 0.9313779}
+      length: 106.164734
+      parentId: 2
+    - name: ArmAvant
+      position: {x: 1331.13, y: 2591.953, z: 2}
+      rotation: {x: 0, y: 0, z: -0.67677927, w: 0.7361861}
+      length: 269.71155
+      parentId: -1
+    - name: armA
+      position: {x: 269.7117, y: 0.0000061326937, z: 2}
+      rotation: {x: 0, y: 0, z: -0.15057333, w: 0.9885989}
+      length: 290.73193
+      parentId: 8
+    - name: MainA
+      position: {x: 547.2611, y: -86.55486, z: 2}
+      rotation: {x: 0, y: 0, z: -0.14949368, w: 0.9887627}
+      length: 46.358986
+      parentId: 8
+    - name: "ArmArri\xE8re"
+      position: {x: 1332.4606, y: 2592.8408, z: -3}
+      rotation: {x: 0, y: 0, z: -0.6778368, w: 0.73521245}
+      length: 270.75092
+      parentId: -1
+    - name: Arm arr
+      position: {x: 270.75095, y: 0.00003554342, z: -3}
+      rotation: {x: 0, y: 0, z: -0.15129416, w: 0.98848885}
+      length: 283.3477
+      parentId: 11
+    - name: "HandArri\xE8re"
+      position: {x: 541.1278, y: -84.75091, z: -3}
+      rotation: {x: 0, y: 0, z: -0.14652051, w: 0.9892077}
+      length: 57.781967
+      parentId: 11
+    - name: Jambe Devant
+      position: {x: 1341.4554, y: 2078.5667, z: -1}
+      rotation: {x: 0, y: 0, z: -0.7226341, w: 0.6912308}
+      length: 223.48428
+      parentId: -1
+    - name: jambe avant
+      position: {x: 223.4844, y: 0.00006397793, z: -1}
+      rotation: {x: 0, y: 0, z: 0.10978153, w: 0.9939558}
+      length: 208.27538
+      parentId: 14
+    - name: pied avant 1
+      position: {x: 426.73984, y: 45.452965, z: -1}
+      rotation: {x: 0, y: 0, z: 0.047167286, w: 0.998887}
+      length: 66.235085
+      parentId: 14
+    - name: pied Avant 2
+      position: {x: 492.68024, y: 51.69413, z: -1}
+      rotation: {x: 0, y: 0, z: -0.60331124, w: 0.79750586}
+      length: 86.64766
+      parentId: 14
+    - name: "Jambe Arri\xE8re"
+      position: {x: 1358.0527, y: 2079.3528, z: -2}
+      rotation: {x: 0, y: 0, z: -0.7434817, w: 0.66875637}
+      length: 222.89404
+      parentId: -1
+    - name: pied arr 2
+      position: {x: 222.89389, y: -0.000033002158, z: -2}
+      rotation: {x: 0, y: 0, z: 0.13612384, w: 0.99069184}
+      length: 200.93509
+      parentId: 18
+    - name: Pied arr 1
+      position: {x: 416.38235, y: 54.195312, z: -2}
+      rotation: {x: 0, y: 0, z: 0.07664705, w: 0.99705833}
+      length: 75.86051
+      parentId: 18
+    - name: jambe Arr
+      position: {x: 491.3514, y: 65.79007, z: -2}
+      rotation: {x: 0, y: 0, z: -0.58550614, w: 0.810668}
+      length: 85.1756
+      parentId: 18
+    parts:
+    - spritePosition:
+        x: 1058
+        y: 2577
+        width: 365
+        height: 482
+      spriteId: e9a70da1a5c53624d88f17fc12dbc3b4
+      bones: 0000000001000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1058
+        y: 2577
+        width: 365
+        height: 482
+      spriteId: a1a159e4553b22b47ba8d79d0f0da543
+      bones: 0000000001000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1058
+        y: 2577
+        width: 365
+        height: 482
+      spriteId: 470cbf40070dc6f438b07ba41441131d
+      bones: 0000000001000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1057
+        y: 2577
+        width: 366
+        height: 482
+      spriteId: a902684a90b8a2045a226ad977f703b9
+      bones: 0000000001000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1188
+        y: 1922
+        width: 209
+        height: 685
+      spriteId: f30f28c47268627429f4e5dcb9dc6a9c
+      bones: 08000000090000000a000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1188
+        y: 1922
+        width: 209
+        height: 685
+      spriteId: 883068d691b6eaf4d85c2c924c607151
+      bones: 08000000090000000a000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1188
+        y: 1922
+        width: 209
+        height: 685
+      spriteId: a30fa3eb730d945489821b27ad98e86e
+      bones: 08000000090000000a000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1188
+        y: 1922
+        width: 210
+        height: 685
+      spriteId: 023d761e9f3bc9f45ba1b63cc37f0417
+      bones: 08000000090000000a000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1108
+        y: 2060
+        width: 369
+        height: 593
+      spriteId: 7d21236ea1820d54a81a1a136bd51e78
+      bones: 020000000300000004000000060000000500000007000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1109
+        y: 2060
+        width: 368
+        height: 593
+      spriteId: b9b1cf59da076f042bc448b97f6d5803
+      bones: 020000000300000004000000060000000500000007000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1109
+        y: 2060
+        width: 368
+        height: 593
+      spriteId: c845a86241de94349b2ae38c8883fe60
+      bones: 020000000300000004000000060000000500000007000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1109
+        y: 2060
+        width: 368
+        height: 593
+      spriteId: 39765f9a08d500e4ba2b0f79afe32b1c
+      bones: 020000000300000004000000060000000500000007000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1238
+        y: 1531
+        width: 173
+        height: 604
+      spriteId: 7512e2ebc0d11ad4d9ca7c7180396798
+      bones: 12000000150000001400000013000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1240
+        y: 1531
+        width: 172
+        height: 604
+      spriteId: 89e5e66986b8ca64bbf8f6af73f7c934
+      bones: 12000000150000001400000013000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1239
+        y: 1531
+        width: 172
+        height: 604
+      spriteId: c45d29d27838aa042bad4e36b4085dd3
+      bones: 12000000150000001400000013000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1239
+        y: 1531
+        width: 173
+        height: 604
+      spriteId: fcd85b3ca291db542beff30ec4381814
+      bones: 12000000150000001400000013000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1239
+        y: 1531
+        width: 173
+        height: 604
+      spriteId: b3ae387e59d56dd40865bb63ee5e8371
+      bones: 0e0000000f0000001100000010000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1241
+        y: 1531
+        width: 172
+        height: 604
+      spriteId: add1572ecd6b3684594309ed86b86d45
+      bones: 0e0000000f0000001100000010000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1240
+        y: 1531
+        width: 172
+        height: 604
+      spriteId: 03b38ae0ee3de9340b1367c662fc6770
+      bones: 0e0000000f0000001100000010000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1240
+        y: 1531
+        width: 173
+        height: 604
+      spriteId: 626cd895b2aaa3f44b53c3e33eb8f625
+      bones: 0e0000000f0000001100000010000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 2480
+        y: 3508
+        width: 0
+        height: 0
+      spriteId: 28a590f79a52a1e4593ab98e57693abb
+      bones: 
+      parentGroup: 0
+      order: 0
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: personnage raphael Texture
+  prefabAssetName: personnage raphael Prefab
+  spriteLibAssetName: personnage raphael Sprite Lib
+  secondarySpriteTextures: []

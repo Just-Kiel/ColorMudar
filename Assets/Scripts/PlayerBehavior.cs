@@ -145,19 +145,22 @@ public class PlayerBehavior : MonoBehaviour
         {
             if (Input.GetButton("Fly"))
             {
+                animator.SetTrigger("PrepaFly");
                 //Debug.Log("koukou");
                 rb2DPlayer.gravityScale = 1;
                 cape.SetActive(true);
                 Vector3 targetSpeed = new Vector2(horizontalMove / 3, rb2DPlayer.velocity.y);
+                animator.SetBool("isFlying", true);
                 rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
             }
             else
             {
+                animator.SetBool("isFlying", false);
                 MovePlayer(horizontalMove); //appel de la fonction Move Player
                 cape.SetActive(false);
             }
         }
-        if (cape == null)
+        if (cape == null || getFly == false)
         {
             MovePlayer(horizontalMove); //appel de la fonction Move Player
         }
@@ -222,15 +225,19 @@ public class PlayerBehavior : MonoBehaviour
                 animator.SetBool("isJumping", false); //le personnage ne saute pas
                 //Debug.Log("Escalade en cours");
                 rb2DPlayer.velocity = Vector2.zero; //mouvement immobile par défaut
-                animator.SetBool("isClimbing", true);
+                animator.SetBool("isWaiting", true);
 
                 //en fonction de la direction verticale active du joueur, montée ou descente le long du mur
                 if (Input.GetAxis("Vertical") > 0f)
                 {
+                    animator.SetBool("isWaiting", false);
+                    animator.SetBool("isClimbing", true);
                     rb2DPlayer.velocity = Vector2.up * speedClimb * Time.deltaTime;
                 }
                 else if (Input.GetAxis("Vertical") < 0f)
                 {
+                    animator.SetBool("isWaiting", false);
+                    animator.SetBool("isClimbing", true);
                     rb2DPlayer.velocity = Vector2.down * speedClimb * Time.deltaTime;
                 }
             }
@@ -240,6 +247,7 @@ public class PlayerBehavior : MonoBehaviour
         if(Climbing == false)
         {
             animator.SetBool("isClimbing", false);
+            animator.SetBool("isWaiting", false);
         }
 
         
