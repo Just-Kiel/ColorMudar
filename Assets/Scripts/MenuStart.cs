@@ -59,7 +59,7 @@ public class MenuStart : MonoBehaviour
     public void SelectButton()
     {
         currentPlayer = gameObject.name; //personnage courant récupère le nom du gameobject
-        //Debug.Log(currentPlayer);
+        Debug.Log(currentPlayer);
         StartCoroutine(sceneLoader.LoadLevel("Intro")); //lancement de coroutine avec écran de chargement
     }
 

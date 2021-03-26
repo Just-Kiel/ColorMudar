@@ -1529,32 +1529,33 @@ MonoBehaviour:
   - Level1_8
   - Level2_1
   currentLevel: 0
-  parallax: {fileID: 0}
   start: {fileID: 1206428325}
-  rb2DPlayer: {fileID: 536788740}
-  animator: {fileID: 1537327214}
-  spriteRenderer: []
-  perso: {fileID: 1537327209}
+  parallax: {fileID: 0}
   discuss: {fileID: 680131858}
-  speedMovement: 20000
-  speedJump: 130
-  horizontalMove: 0
   menuStart: {fileID: 680131856}
   aledText: {fileID: 680131857}
+  rb2DPlayer: {fileID: 536788740}
+  animator: {fileID: 1537327214}
+  perso: {fileID: 1537327209}
+  direction: 0
+  speedMovement: 20000
+  horizontalMove: 0
   groundCheck: {fileID: 313413882}
   groundCheckRay: 8.69
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
-  toDisable: {fileID: 0}
+  speedJump: 130
   getDash: 1
   isDashing: 0
   speedDash: 175
-  direction: 0
   getClimb: 0
   wallCheck: {fileID: 0}
   wallCheckRay: 0
   speedClimb: 0
+  toDisable: {fileID: 0}
+  getFly: 0
+  cape: {fileID: 0}
 --- !u!50 &536788740
 Rigidbody2D:
   serializedVersion: 4
@@ -2812,7 +2813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6dfc6acd9ed0ca4c984b4567051388c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fiole: {fileID: 962823766}
   discuss: {fileID: 680131858}
   player: {fileID: 536788739}
   changeColor: {fileID: 1537327213}
@@ -3691,22 +3691,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.9092094e-34
   m_labelHash: -2.372375e+37
---- !u!114 &1537327212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537327209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9ea18f2e31c6342b278c0aa4ce7182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PersoList: []
-  currentPerso: {fileID: 0}
-  spriteLibrary: {fileID: 1537327215}
-  libraryAssetChoosen: {fileID: 0}
 --- !u!114 &1537327213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3720,7 +3704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteLibrary: {fileID: 1537327215}
-  spriteResolver: {fileID: 0}
 --- !u!95 &1537327214
 Animator:
   serializedVersion: 3
