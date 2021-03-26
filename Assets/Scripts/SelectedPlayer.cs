@@ -7,7 +7,7 @@ using UnityEngine.Experimental.U2D.Animation;
 public class SelectedPlayer : MonoBehaviour
 {
     [SerializeField] private Transform[] PersoList;
-    [SerializeField] private Transform currentPerso;
+    [SerializeField] private string currentPerso;
 
     [SerializeField] private SpriteLibrary spriteLibrary = default;
     [SerializeField] private SpriteLibraryAsset libraryAssetChoosen;
@@ -15,7 +15,15 @@ public class SelectedPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentPerso = PersoList.Single(d => d.name == MenuStart.currentPlayer);
+        currentPerso = MenuStart.currentPlayer;
+
+        foreach(Transform player in PersoList)
+        {
+            if(currentPerso != player.gameObject.name)
+            {
+                player.gameObject.SetActive(false);
+            }
+        }
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)

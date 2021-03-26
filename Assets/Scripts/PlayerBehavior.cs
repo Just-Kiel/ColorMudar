@@ -50,8 +50,12 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Start()
     {
+        perso = GameObject.Find(MenuStart.currentPlayer);
+
+        animator = perso.GetComponent<Animator>();
+
         perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z); //les sprites regardent vers la gauche donc on les fait regarder vers la droite dès le début
-        
+
         
 
         lastPosition = transform.localPosition;
@@ -107,6 +111,7 @@ public class PlayerBehavior : MonoBehaviour
             //DASH OROR
             if (getDash == true && isDashing == false && Input.GetButtonDown("Dash")) //si on a débloqué le dash, que le joueur ne dash pas, et que le bouton du dash est activé
             {
+                rb2DPlayer.gravityScale = 0;
                 animator.SetTrigger("PrepaDash"); //déclenchement de l'animation de préparation du dash
 
                 //en fonction de la direction, on dash pas dans la meme direction
@@ -124,6 +129,7 @@ public class PlayerBehavior : MonoBehaviour
                 }
                 isDashing = true; //impossible de re dash
                 animator.SetTrigger("EndDash");//déclenchement de l'animation de fin du dash
+                rb2DPlayer.gravityScale = 15;
             }
         }
 
@@ -143,7 +149,7 @@ public class PlayerBehavior : MonoBehaviour
 
         if (getFly == true && cape != null)
         {
-            if (Input.GetButton("Fly"))
+            if (Input.GetButton("Fly") || Input.GetAxis("Fly") > 0f)
             {
                 animator.SetTrigger("PrepaFly");
                 //Debug.Log("koukou");
