@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private Vector3 center; //centre de la zone d'apparition
     [SerializeField] private Vector3 size; //dimensions de la zone d'apparition
+    [SerializeField] private float minDelay; //délai minimum d'apparition
+    [SerializeField] private float maxDelay; //délai maximum d'apparition
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,7 @@ public class Spawner : MonoBehaviour
     //gere la position d'apparition des items et le timing entre 2 apparitions
     void SpawnItem()
     {
-        float randomDelay = Random.Range(2f, 5f); //délai d'apparition de l'item randomisé
+        float randomDelay = Random.Range(minDelay, maxDelay); //délai d'apparition de l'item randomisé
         Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2)); //position d'apparition de l'item randomisé
         Instantiate(newItem, pos, Quaternion.identity); //création d'une nouvelle instance d'item avec position random
 

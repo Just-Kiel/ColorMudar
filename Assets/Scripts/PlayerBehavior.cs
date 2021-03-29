@@ -314,6 +314,8 @@ public class PlayerBehavior : MonoBehaviour
             toDisable = collision.gameObject;
         }
 
+        
+
         if (collision.gameObject.tag == "Discussion")
         {
             animator.SetBool("isRunning", false);
@@ -326,6 +328,15 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb2DPlayer.position = start.position; //retour à la case départ
             rb2DPlayer.velocity = new Vector2(0 * rb2DPlayer.velocity.x, 0 * rb2DPlayer.velocity.y);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Geyser" && cape.activeSelf == true)
+        {
+            Debug.Log("flute");
+            rb2DPlayer.velocity = Vector2.up * 80;
         }
     }
 
