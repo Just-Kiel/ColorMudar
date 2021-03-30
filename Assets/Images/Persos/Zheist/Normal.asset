@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Normal
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Head
+    m_Hash: 130111906
+    m_CategoryList:
+    - m_Name: tete_c
+      m_Hash: 863656240
+      m_Sprite: {fileID: 5603227143794605857, guid: e8ce79da23812a744ab2d714db54a196,
+        type: 3}
+  - m_Name: ArmG
+    m_Hash: 1836228003
+    m_CategoryList:
+    - m_Name: bras_gauche_c
+      m_Hash: -1545529478
+      m_Sprite: {fileID: 2842590722852669953, guid: e8ce79da23812a744ab2d714db54a196,
+        type: 3}
+  - m_Name: Body
+    m_Hash: 2073732236
+    m_CategoryList:
+    - m_Name: corps_c
+      m_Hash: -1986887478
+      m_Sprite: {fileID: 982972539506626746, guid: e8ce79da23812a744ab2d714db54a196,
+        type: 3}
+  - m_Name: ArmD
+    m_Hash: -193213415
+    m_CategoryList:
+    - m_Name: bras_droit_c
+      m_Hash: -1128234206
+      m_Sprite: {fileID: 387121806563631268, guid: e8ce79da23812a744ab2d714db54a196,
+        type: 3}
+  - m_Name: LegG
+    m_Hash: 2090735617
+    m_CategoryList:
+    - m_Name: jambe_gauche_c
+      m_Hash: 1406202976
+      m_Sprite: {fileID: 6803637952351644174, guid: e8ce79da23812a744ab2d714db54a196,
+        type: 3}
+  - m_Name: LegD
+    m_Hash: -443070021
+    m_CategoryList:
+    - m_Name: jambe_droite_c
+      m_Hash: 2036049067
+      m_Sprite: {fileID: -7585107260697004499, guid: e8ce79da23812a744ab2d714db54a196,
+        type: 3}
