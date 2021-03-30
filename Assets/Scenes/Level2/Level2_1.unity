@@ -617,8 +617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PersoList: []
   currentPerso: 
-  spriteLibrary: {fileID: 171536599}
-  libraryAssetChoosen: {fileID: 0}
 --- !u!114 &171536603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,9 +1542,6 @@ MonoBehaviour:
   - {fileID: 171536600}
   - {fileID: 1865696085}
   currentPerso: 
-  spriteLibrary: {fileID: 0}
-  libraryAssetChoosen: {fileID: 11400000, guid: 76d181671312b4345a814a128f0a3805,
-    type: 2}
 --- !u!114 &507459008
 MonoBehaviour:
   m_ObjectHideFlags: 0
