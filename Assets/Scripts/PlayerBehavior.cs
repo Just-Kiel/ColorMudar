@@ -70,11 +70,6 @@ public class PlayerBehavior : MonoBehaviour
     private void Update()
     {
         playerAudioSource = AudioManager.instance.soundStream;
-
-        foreach (Sound s in sounds)
-        {
-            playerAudioSource.volume = s.volume;
-        }
         //gestion de pause du jeu
         if (menuStart.Pausing == true)
         {
@@ -157,6 +152,8 @@ public class PlayerBehavior : MonoBehaviour
         {
             Debug.Log("fin saut");
             PlaySound("EndJump");
+        } else if (animator.GetBool("PrepaDash")) {
+            PlaySound("Dash");
         } else
         {
             playerAudioSource.Stop();

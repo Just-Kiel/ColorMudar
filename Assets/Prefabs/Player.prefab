@@ -331,13 +331,12 @@ MonoBehaviour:
   sounds:
   - name: Walk
     clip: {fileID: 8300000, guid: da626b2fb42609e4583bcb7998c6ac03, type: 3}
-    volume: 1
   - name: PrepaJump
     clip: {fileID: 8300000, guid: e2fcdd8ef34a69f47aba70b534bc50b3, type: 3}
-    volume: 1
   - name: EndJump
     clip: {fileID: 8300000, guid: 284288eb615bc49428073aa7d83e05c9, type: 3}
-    volume: 1
+  - name: Dash
+    clip: {fileID: 8300000, guid: 4d5baee0c8ced0d40a40d48fefc862d5, type: 3}
   getFly: 0
   cape: {fileID: 0}
 --- !u!114 &8255807988836452802
@@ -461,7 +460,7 @@ PrefabInstance:
     - target: {fileID: 2611892852345621469, guid: 086a800bf32f20f419b8ec06a9d0f7f7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2611892852345621469, guid: 086a800bf32f20f419b8ec06a9d0f7f7,
         type: 3}
@@ -575,7 +574,7 @@ PrefabInstance:
     - target: {fileID: 2611892852345621469, guid: 086a800bf32f20f419b8ec06a9d0f7f7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2611892852345621469, guid: 086a800bf32f20f419b8ec06a9d0f7f7,
         type: 3}
