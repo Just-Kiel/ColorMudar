@@ -2015,10 +2015,10 @@ ScriptedImporter:
     - name: bras_devant
       position: {x: 231.29094, y: 0.000045625125, z: 2}
       rotation: {x: 0, y: 0, z: -0.047613066, w: 0.99886584}
-      length: 73.301865
+      length: 73.301834
       parentId: 0
     - name: bras_devant
-      position: {x: 73.30186, y: -0.0000019120926, z: 2}
+      position: {x: 73.301796, y: -0.0000096735575, z: 2}
       rotation: {x: 0, y: 0, z: -0.08757628, w: 0.9961579}
       length: 62.50208
       parentId: 1
@@ -2455,7 +2455,7 @@ ScriptedImporter:
     - name: bras_devant
       position: {x: 231.29095, y: 0.000031774496, z: 2}
       rotation: {x: 0, y: 0, z: -0.047613066, w: 0.99886584}
-      length: 73.301865
+      length: 73.301834
       parentId: 0
     - name: bras_devant
       position: {x: 73.30183, y: -0.000023980712, z: 2}
@@ -2895,7 +2895,7 @@ ScriptedImporter:
     - name: bras_devant
       position: {x: 231.29097, y: 0.000017923867, z: 2}
       rotation: {x: 0, y: 0, z: -0.047613066, w: 0.99886584}
-      length: 73.301865
+      length: 73.301834
       parentId: 0
     - name: bras_devant
       position: {x: 73.301796, y: -0.000046049332, z: 2}
@@ -3335,10 +3335,10 @@ ScriptedImporter:
     - name: bras_devant
       position: {x: 231.29099, y: 0.00005259887, z: 2}
       rotation: {x: 0, y: 0, z: -0.047613066, w: 0.99886584}
-      length: 73.301865
+      length: 73.301834
       parentId: 0
     - name: bras_devant
-      position: {x: 73.301834, y: -0.000018071381, z: 2}
+      position: {x: 73.3018, y: -0.000021952113, z: 2}
       rotation: {x: 0, y: 0, z: -0.08757628, w: 0.9961579}
       length: 62.50208
       parentId: 1
@@ -3790,22 +3790,22 @@ ScriptedImporter:
     - name: corps
       position: {x: 35.640816, y: -0.00010551945, z: 0}
       rotation: {x: 0, y: 0, z: -0.031207046, w: 0.99951303}
-      length: 34.46002
+      length: 34.46008
       parentId: 3
     - name: corps
-      position: {x: 34.460087, y: 0.000052811632, z: 0}
+      position: {x: 34.460148, y: 0.000052811978, z: 0}
       rotation: {x: 0, y: 0, z: -0.01921669, w: 0.99981534}
       length: 28.923162
       parentId: 4
     - name: corps
-      position: {x: 28.923147, y: -0.00009424741, z: 0}
+      position: {x: 28.923147, y: -0.000091901704, z: 0}
       rotation: {x: 0, y: 0, z: -0.04561278, w: 0.9989592}
-      length: 25.78342
+      length: 25.783388
       parentId: 5
     - name: corps
-      position: {x: 25.783417, y: 0.000100552556, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09587885, w: 0.99539304}
-      length: 28.121733
+      position: {x: 25.783386, y: 0.0000434644, z: 0}
+      rotation: {x: 0, y: 0, z: -0.095878966, w: 0.99539304}
+      length: 28.121729
       parentId: 6
     spriteOutline: []
     vertices:
@@ -4240,22 +4240,22 @@ ScriptedImporter:
     - name: corps
       position: {x: 35.64084, y: -0.000010185551, z: 0}
       rotation: {x: 0, y: 0, z: -0.031207046, w: 0.99951303}
-      length: 34.46002
+      length: 34.46008
       parentId: 3
     - name: corps
-      position: {x: 34.46006, y: 0.0000029834623, z: 0}
+      position: {x: 34.46012, y: 0.000002983807, z: 0}
       rotation: {x: 0, y: 0, z: -0.01921669, w: 0.99981534}
       length: 28.923162
       parentId: 4
     - name: corps
-      position: {x: 28.923143, y: -0.000004743581, z: 0}
+      position: {x: 28.923143, y: -0.0000023978828, z: 0}
       rotation: {x: 0, y: 0, z: -0.04561278, w: 0.9989592}
-      length: 25.78342
+      length: 25.783388
       parentId: 5
     - name: corps
-      position: {x: 25.78339, y: -0.000032127384, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09587885, w: 0.99539304}
-      length: 28.121733
+      position: {x: 25.783329, y: -0.000032127384, z: 0}
+      rotation: {x: 0, y: 0, z: -0.095878966, w: 0.99539304}
+      length: 28.121729
       parentId: 6
     spriteOutline: []
     vertices:
@@ -4690,7 +4690,7 @@ ScriptedImporter:
     - name: corps
       position: {x: 35.640743, y: 0.0001461835, z: 0}
       rotation: {x: 0, y: 0, z: -0.031207046, w: 0.99951303}
-      length: 34.46002
+      length: 34.46008
       parentId: 3
     - name: corps
       position: {x: 34.46015, y: 0.0000141904475, z: 0}
@@ -4698,20 +4698,15 @@ ScriptedImporter:
       length: 28.923162
       parentId: 4
     - name: corps
-      position: {x: 28.923168, y: 0.000023725088, z: 0}
+      position: {x: 28.92323, y: 0.000026070786, z: 0}
       rotation: {x: 0, y: 0, z: -0.04561278, w: 0.9989592}
-      length: 25.78342
+      length: 25.783388
       parentId: 5
     - name: corps
       position: {x: 25.783424, y: -0.00004273701, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09587885, w: 0.99539304}
-      length: 28.121733
+      rotation: {x: 0, y: 0, z: -0.095878966, w: 0.99539304}
+      length: 28.121729
       parentId: 6
-    - name: bras_derriere
-      position: {x: 71.7785, y: 222.69946, z: -3}
-      rotation: {x: 0, y: 0, z: -0.6147045, w: 0.7887575}
-      length: 251.85037
-      parentId: -1
     spriteOutline: []
     vertices:
     - position: {x: 151.64099, y: 0.3619995}
@@ -5036,22 +5031,22 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 76.98724, y: 57.743225}
       boneWeight:
-        weight0: 0.47000006
-        weight1: 0.2809
-        weight2: 0.24910001
+        weight0: 0.62591565
+        weight1: 0.3740844
+        weight2: 0
         weight3: 0
         boneIndex0: 7
         boneIndex1: 5
-        boneIndex2: 8
+        boneIndex2: 0
         boneIndex3: 0
     - position: {x: 134.4914, y: 62.392944}
       boneWeight:
-        weight0: 0.53
-        weight1: 0.47
+        weight0: 1
+        weight1: 0
         weight2: 0
         weight3: 0
         boneIndex0: 5
-        boneIndex1: 8
+        boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 51.413147, y: 110.57446}
@@ -5145,7 +5140,7 @@ ScriptedImporter:
     - name: corps
       position: {x: 35.640766, y: 0.000058411944, z: 0}
       rotation: {x: 0, y: 0, z: -0.031207046, w: 0.99951303}
-      length: 34.46002
+      length: 34.46008
       parentId: 3
     - name: corps
       position: {x: 34.460064, y: 0.000025397434, z: 0}
@@ -5155,12 +5150,12 @@ ScriptedImporter:
     - name: corps
       position: {x: 28.923195, y: -0.000006495702, z: 0}
       rotation: {x: 0, y: 0, z: -0.04561278, w: 0.9989592}
-      length: 25.78342
+      length: 25.783388
       parentId: 5
     - name: corps
       position: {x: 25.783396, y: 0.000007688519, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09587885, w: 0.99539304}
-      length: 28.121733
+      rotation: {x: 0, y: 0, z: -0.095878966, w: 0.99539304}
+      length: 28.121729
       parentId: 6
     spriteOutline: []
     vertices:
@@ -6188,7 +6183,7 @@ ScriptedImporter:
     - name: jambe_devant
       position: {x: 198.62267, y: 0.00039523828, z: -1}
       rotation: {x: 0, y: 0, z: -0.47562668, w: 0.87964725}
-      length: 63.671673
+      length: 63.67167
       parentId: 1
     - name: jambe_devant
       position: {x: 168.34709, y: 0.00004784324, z: -1}
@@ -7448,7 +7443,7 @@ ScriptedImporter:
     - name: jambe_devant
       position: {x: 198.62271, y: 0.00039082218, z: -1}
       rotation: {x: 0, y: 0, z: -0.47562668, w: 0.87964725}
-      length: 63.671673
+      length: 63.67167
       parentId: 1
     - name: jambe_devant
       position: {x: 168.34688, y: 0.000040716615, z: -1}
@@ -11391,8 +11386,8 @@ ScriptedImporter:
       parentId: 0
     - name: bras_derriere
       position: {x: 55.209103, y: 0.00003594283, z: -3}
-      rotation: {x: 0, y: 0, z: -0.050447747, w: 0.9987267}
-      length: 54.35269
+      rotation: {x: 0, y: 0, z: -0.05044779, w: 0.9987267}
+      length: 54.35268
       parentId: 1
     spriteOutline: []
     vertices:
@@ -11919,8 +11914,8 @@ ScriptedImporter:
       parentId: 0
     - name: bras_derriere
       position: {x: 55.2091, y: -0.000008105004, z: -3}
-      rotation: {x: 0, y: 0, z: -0.050447747, w: 0.9987267}
-      length: 54.35269
+      rotation: {x: 0, y: 0, z: -0.05044779, w: 0.9987267}
+      length: 54.35268
       parentId: 1
     spriteOutline: []
     vertices:
@@ -12458,8 +12453,8 @@ ScriptedImporter:
       parentId: 0
     - name: bras_derriere
       position: {x: 55.20917, y: 0.000032664575, z: -3}
-      rotation: {x: 0, y: 0, z: -0.050447747, w: 0.9987267}
-      length: 54.35269
+      rotation: {x: 0, y: 0, z: -0.05044779, w: 0.9987267}
+      length: 54.35268
       parentId: 1
     spriteOutline: []
     vertices:
@@ -12998,8 +12993,8 @@ ScriptedImporter:
       parentId: 0
     - name: bras_derriere
       position: {x: 55.209152, y: -0.000011383259, z: -3}
-      rotation: {x: 0, y: 0, z: -0.050447747, w: 0.9987267}
-      length: 54.35269
+      rotation: {x: 0, y: 0, z: -0.05044779, w: 0.9987267}
+      length: 54.35268
       parentId: 1
     spriteOutline: []
     vertices:
@@ -13821,10 +13816,10 @@ ScriptedImporter:
     - name: bras_devant
       position: {x: 231.29099, y: 0.000040074443, z: 2}
       rotation: {x: 0, y: 0, z: -0.04761306, w: 0.99886584}
-      length: 73.301865
+      length: 73.301834
       parentId: 2
     - name: bras_devant
-      position: {x: 73.301834, y: 0.000013574372, z: 2}
+      position: {x: 73.3018, y: 0.00000969364, z: 2}
       rotation: {x: 0, y: 0, z: -0.087576285, w: 0.9961579}
       length: 62.502075
       parentId: 3
@@ -13840,7 +13835,7 @@ ScriptedImporter:
       parentId: 5
     - name: bras_derriere
       position: {x: 55.20917, y: -0.0000022373006, z: -3}
-      rotation: {x: 0, y: 0, z: -0.05044778, w: 0.9987267}
+      rotation: {x: 0, y: 0, z: -0.05044783, w: 0.9987268}
       length: 54.352684
       parentId: 6
     - name: corps
@@ -13865,22 +13860,22 @@ ScriptedImporter:
       parentId: 10
     - name: corps
       position: {x: 35.640823, y: -0.0000104269675, z: 0}
-      rotation: {x: 0, y: 0, z: -0.031207057, w: 0.999513}
-      length: 34.46002
+      rotation: {x: 0, y: 0, z: -0.031207059, w: 0.999513}
+      length: 34.46008
       parentId: 11
     - name: corps
-      position: {x: 34.460052, y: 0.000012858873, z: 0}
+      position: {x: 34.46011, y: 0.000010838778, z: 0}
       rotation: {x: 0, y: 0, z: -0.019216675, w: 0.99981534}
       length: 28.92316
       parentId: 12
     - name: corps
-      position: {x: 28.923166, y: -0.000018059927, z: 0}
+      position: {x: 28.923164, y: -0.000017630957, z: 0}
       rotation: {x: 0, y: 0, z: -0.045612827, w: 0.9989592}
-      length: 25.78342
+      length: 25.78339
       parentId: 13
     - name: corps
-      position: {x: 25.783398, y: -0.000011371874, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09587881, w: 0.9953931}
+      position: {x: 25.783358, y: -0.000014710787, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09587886, w: 0.99539304}
       length: 28.121733
       parentId: 14
     - name: jambe_devant
@@ -13894,7 +13889,7 @@ ScriptedImporter:
       length: 198.62257
       parentId: 16
     - name: jambe_devant
-      position: {x: 198.62256, y: 0.00039085076, z: -1}
+      position: {x: 198.62256, y: 0.00039122542, z: -1}
       rotation: {x: 0, y: 0, z: -0.47562668, w: 0.87964725}
       length: 63.671673
       parentId: 17
@@ -14010,7 +14005,7 @@ ScriptedImporter:
         width: 199
         height: 271
       spriteId: f85a235e7568c1a4387f0669f35182fd
-      bones: 08000000090000000a0000000b0000000c0000000d0000000e0000000f00000005000000
+      bones: 08000000090000000a0000000b0000000c0000000d0000000e0000000f000000
       parentGroup: 0
       order: 0
     - spritePosition:
