@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -42,6 +44,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] public GameObject toDisable = null; //objet "à désactiver"
 
 
+    [SerializeField] private AudioSource playerAudioSource;
+    public Sound[] sounds;
 
     private Vector3 lastPosition;
 
@@ -63,6 +67,12 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Update()
     {
+        playerAudioSource = AudioManager.instance.soundStream;
+
+        foreach (Sound s in sounds)
+        {
+            playerAudioSource.volume = s.volume;
+        }
         //gestion de pause du jeu
         if (menuStart.Pausing == true)
         {
@@ -133,6 +143,23 @@ public class PlayerBehavior : MonoBehaviour
             }
         }
 
+        if (animator.GetBool("isRunning"))
+        {
+            Debug.Log("ptdr je cours");
+            PlaySound("Walk");
+        } else if (animator.GetBool("isJumping"))
+        {
+            Debug.Log("début saut");
+            PlaySound("PrepaJump");
+        } else if (!animator.GetBool("isJumping"))
+        {
+            Debug.Log("fin saut");
+            PlaySound("EndJump");
+        } else
+        {
+            playerAudioSource.Stop();
+        }
+
         //StartCoroutine(Falling(cape));
     }
 
@@ -189,7 +216,7 @@ public class PlayerBehavior : MonoBehaviour
         
 
         //si le personnage est en mouvement latéral, on active l'animation de course
-        if (horizontalMove != 0)
+        if (horizontalMove != 0 && Walking == true)
         {
             animator.SetBool("isRunning", true);
         } else
@@ -212,6 +239,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             isDashing = false; //le joueur n'est pas en train de dash
             animator.SetBool("isJumping", false); //le personnage ne saute pas
+            
             //Debug.Log("Saut, dash et vol non actifs");
         }
         else
@@ -338,6 +366,14 @@ public class PlayerBehavior : MonoBehaviour
             Debug.Log("flute");
             rb2DPlayer.velocity = Vector2.up * 80;
         }
+    }
+
+    //fonction pour lancer le bon son
+    public void PlaySound(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        playerAudioSource.clip = s.clip;
+        playerAudioSource.Play();
     }
 
     public void OnDrawGizmos()
