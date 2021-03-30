@@ -60,7 +60,7 @@ public class MenuStart : MonoBehaviour
     {
         currentPlayer = gameObject.name; //personnage courant récupère le nom du gameobject
         Debug.Log(currentPlayer);
-        StartCoroutine(sceneLoader.LoadLevel("Level1_8")); //lancement de coroutine avec écran de chargement
+        StartCoroutine(sceneLoader.LoadLevel("Intro")); //lancement de coroutine avec écran de chargement
     }
 
     //fonction du bouton Reprendre

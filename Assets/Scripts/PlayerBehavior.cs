@@ -50,7 +50,7 @@ public class PlayerBehavior : MonoBehaviour
     private Vector3 lastPosition;
 
     [SerializeField] bool getFly;
-    [SerializeField] private GameObject cape = null;
+    [SerializeField] private GameObject cape;
 
     private void Start()
     {
@@ -60,7 +60,9 @@ public class PlayerBehavior : MonoBehaviour
 
         perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z); //les sprites regardent vers la gauche donc on les fait regarder vers la droite dès le début
 
-        
+        wallCheck = perso.transform.Find("wallCheck");
+
+        cape = perso.transform.Find("couverture_collect").gameObject;
 
         lastPosition = transform.localPosition;
     }
