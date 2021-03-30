@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        champTimer.text = string.Format("{0:0}:{1:00}", Mathf.Floor(time / 60), time % 60);
+        champTimer.text = "Temps total :" + string.Format("{0:0}:{1:00}", Mathf.Floor(time / 60), time % 60);
         time = (int)Time.time;
     }
 }

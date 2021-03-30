@@ -11,6 +11,12 @@ public class FioleBehavior : MonoBehaviour
 
     [SerializeField] private SpriteLibraryAsset libraryAsset; //nouvelle sprite library asset
 
+    private void Start()
+    {
+        changeColor = player.perso.GetComponent<ChangeColor>();
+
+        libraryAsset = changeColor.newLibraryAsset;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //si collision entre le player (et la fiole)

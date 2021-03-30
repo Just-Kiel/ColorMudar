@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteLibrary: {fileID: 4168058743860269460}
+  newLibraryAsset: {fileID: 0}
 --- !u!70 &8255807988434224362
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -110,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteLibrary: {fileID: 7079110112529599732}
+  newLibraryAsset: {fileID: 0}
 --- !u!114 &8255807988434224361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +261,7 @@ MonoBehaviour:
   speedJump: 130
   getDash: 0
   isDashing: 0
-  speedDash: 0
+  speedDash: 175
   getClimb: 0
   wallCheck: {fileID: 0}
   wallCheckRay: 0

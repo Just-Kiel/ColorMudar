@@ -17,7 +17,7 @@ public class PlayerBehavior : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb2DPlayer; //RIGIDBODY du joueur
     [SerializeField] public Animator animator; //élément Animator du joueur (permet de gérer les animations)
-    [SerializeField] private GameObject perso; //objet du joueur
+    [SerializeField] public GameObject perso; //objet du joueur
     [SerializeField] private int direction; //variable où chaque valeur correspond à une direction
 
     [SerializeField] private float speedMovement; //vitesse de mouvement
