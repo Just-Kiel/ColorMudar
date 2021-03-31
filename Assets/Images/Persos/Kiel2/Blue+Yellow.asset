@@ -16,6 +16,42 @@ MonoBehaviour:
   - m_Name: Head
     m_Hash: 130111906
     m_CategoryList:
-    - m_Name: 
-      m_Hash: 0
-      m_Sprite: {fileID: 0}
+    - m_Name: tete_bj
+      m_Hash: 1083448447
+      m_Sprite: {fileID: -145345750148400582, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}
+  - m_Name: ArmG
+    m_Hash: 1836228003
+    m_CategoryList:
+    - m_Name: brasG_bj
+      m_Hash: 1783527207
+      m_Sprite: {fileID: 1028908060224874873, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}
+  - m_Name: ArmD
+    m_Hash: -193213415
+    m_CategoryList:
+    - m_Name: brasD_bj
+      m_Hash: 2029770953
+      m_Sprite: {fileID: 2283218232991610970, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}
+  - m_Name: Body
+    m_Hash: 2073732236
+    m_CategoryList:
+    - m_Name: body_bj
+      m_Hash: -1624315576
+      m_Sprite: {fileID: 721252117495052482, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}
+  - m_Name: LegG
+    m_Hash: 2090735617
+    m_CategoryList:
+    - m_Name: jambeG_bj
+      m_Hash: 1443187858
+      m_Sprite: {fileID: 4565759392041188637, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}
+  - m_Name: LegD
+    m_Hash: -443070021
+    m_CategoryList:
+    - m_Name: jambeD_bj
+      m_Hash: 1152443260
+      m_Sprite: {fileID: -1048353730880286352, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}

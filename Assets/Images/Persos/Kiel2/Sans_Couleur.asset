@@ -34,10 +34,24 @@ MonoBehaviour:
       m_Hash: 1392395133
       m_Sprite: {fileID: 4107056753108943661, guid: d83a6c96d8f376644b09efe3f0e13299,
         type: 3}
-  - m_Name: New Category
-    m_Hash: -1887952825
+  - m_Name: Body
+    m_Hash: 2073732236
     m_CategoryList:
-    - m_Name: brasD_sc
-      m_Hash: 1392395133
+    - m_Name: body_sc
+      m_Hash: -1255443716
       m_Sprite: {fileID: 8354683947293681235, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}
+  - m_Name: LegG
+    m_Hash: 2090735617
+    m_CategoryList:
+    - m_Name: jambeG_sc
+      m_Hash: 2080429862
+      m_Sprite: {fileID: 5342259437615331940, guid: d83a6c96d8f376644b09efe3f0e13299,
+        type: 3}
+  - m_Name: LegD
+    m_Hash: -443070021
+    m_CategoryList:
+    - m_Name: jambeD_sc
+      m_Hash: 1857386696
+      m_Sprite: {fileID: -7751704074235822834, guid: d83a6c96d8f376644b09efe3f0e13299,
         type: 3}
