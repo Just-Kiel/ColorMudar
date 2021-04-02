@@ -18,11 +18,12 @@ namespace Assets.Plugins.ButtonSoundsEditor
 
         public void Start()
         {
-            AudioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+            
         }
 
         public void Update()
         {
+            AudioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
             if (EventSystem.current.currentSelectedGameObject && (currentButton == null || currentButton.name != EventSystem.current.currentSelectedGameObject.name))
             {
                 PlayClickSound();

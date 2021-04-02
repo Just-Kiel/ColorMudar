@@ -13,6 +13,7 @@ public class MenuStart : MonoBehaviour
     [SerializeField] private GameObject selectFirstButton; //objet du premier bouton dispo du menu de sélection du personnage
 
     [SerializeField] private SceneLoader sceneLoader; //appel du script d'écran de chargement
+    [SerializeField] public Timer timer; //appel du script du timer
 
     public static string currentPlayer; //personnage sélectionné
 
@@ -20,6 +21,8 @@ public class MenuStart : MonoBehaviour
 
     private void Update()
     {
+        timer = GetComponent<Timer>();
+
         if (SceneManager.GetActiveScene().name == "StartScene") //si on est dans la scène de start
         {
             AudioManager.instance.soundStream.clip = null; //il n'y a pas de son actif
@@ -52,6 +55,7 @@ public class MenuStart : MonoBehaviour
     //fonction du bouton Commencer
     public void StartButton()
     {
+        Time.timeScale = 1;
         PlayerPrefs.SetInt("nextLevel", 0); //la variable du level à charger démarre à 0
         currentMenu.SetActive(false);
         selectMenu.SetActive(true);
@@ -64,6 +68,9 @@ public class MenuStart : MonoBehaviour
     {
         currentPlayer = gameObject.name; //personnage courant récupère le nom du gameobject
         Debug.Log(currentPlayer);
+        AudioManager.instance.musicStream.Stop();
+        PlayerPrefs.SetFloat("stopTime", timer.time);
+        Debug.Log(timer.stopTime);
         StartCoroutine(sceneLoader.LoadLevel("Intro")); //lancement de coroutine avec écran de chargement
     }
 
@@ -77,6 +84,7 @@ public class MenuStart : MonoBehaviour
     //fonction du bouton Retour au menu principal
     public void MainMenu()
     {
+        AudioManager.instance.musicStream.Play();
         SceneManager.LoadScene("StartScene");
     }
 

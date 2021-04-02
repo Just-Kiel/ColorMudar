@@ -16,7 +16,7 @@ public class PlayerBehavior : MonoBehaviour
     public AledText aledText; //appel du script Aled Text, qui permet d'attribuer la valeur à la bonne zone de texte
 
     [SerializeField] private Rigidbody2D rb2DPlayer; //RIGIDBODY du joueur
-    [SerializeField] public Animator animator; //élément Animator du joueur (permet de gérer les animations)
+    public Animator animator; //élément Animator du joueur (permet de gérer les animations)
     [SerializeField] public GameObject perso; //objet du joueur
     [SerializeField] private int direction; //variable où chaque valeur correspond à une direction
 
@@ -199,6 +199,7 @@ public class PlayerBehavior : MonoBehaviour
             }
         }
 
+        //si la cape n'est pas assignée et le vol n'est pas débloqué
         if (cape == null || getFly == false)
         {
             MovePlayer(horizontalMove); //appel de la fonction Move Player
@@ -266,6 +267,7 @@ public class PlayerBehavior : MonoBehaviour
                 //Debug.Log("Escalade en cours");
                 rb2DPlayer.velocity = Vector2.zero; //mouvement immobile par défaut
                 animator.SetBool("isWaiting", true);
+                animator.SetBool("isClimbing", false);
 
                 //en fonction de la direction verticale active du joueur, montée ou descente le long du mur
                 if (Input.GetAxis("Vertical") > 0f)
@@ -281,7 +283,6 @@ public class PlayerBehavior : MonoBehaviour
                     rb2DPlayer.velocity = Vector2.down * speedClimb * Time.deltaTime;
                 }
             }
-            //animator.SetBool("isClimbing", false);
         }
 
         if(Climbing == false)
@@ -289,23 +290,27 @@ public class PlayerBehavior : MonoBehaviour
             animator.SetBool("isClimbing", false);
             animator.SetBool("isWaiting", false);
         }
-
-        
     }
 
     //détection des collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //si contact avec l'objet de fin de tableau, on passe au tableau suivant
         if(collision.gameObject.tag == "End")
         {
             currentLevel = PlayerPrefs.GetInt("nextLevel");
             int m_nextLevel = currentLevel + 1;
             Debug.Log(m_nextLevel);
+            if(levelName[m_nextLevel] == "EndScene")
+            {
+                playerAudioSource.Stop();
+            }
             SceneManager.LoadScene(levelName[m_nextLevel]);
             PlayerPrefs.SetInt("nextLevel", m_nextLevel);
             Debug.Log(m_nextLevel);
         }
 
+        //si contact avec un collectable on incrémente le score, et détruit l'objet (et 3eme tableau du level 1 on ouvre la boite de dialogues)
         if(collision.gameObject.tag == "Aled")
         {
             if (SceneManager.GetActiveScene().name == "Level1_3")
@@ -318,19 +323,21 @@ public class PlayerBehavior : MonoBehaviour
             AledText.score ++;
         }
 
+        //si contact avec l'objet activant le dash
         if (collision.gameObject.tag == "Dash")
         {
-            Debug.Log("j'ai le dash");
-            getDash = true;
-            animator.SetBool("isRunning", false);
+            //Debug.Log("Dash débloqué");
+            getDash = true; //booléen de déblocage du dash à vrai
+            animator.SetBool("isRunning", false); //arret de mouvement
             horizontalMove = 0;
-            discuss.DiscussionBox.SetActive(true);
-            toDisable = collision.gameObject;
+            discuss.DiscussionBox.SetActive(true); //ouverture de la boite de dialogues
+            toDisable = collision.gameObject; //l'objet activant le dash devient un objet à désactiver
         }
 
+        //si contact avec l'objet activant l'escalade
         if(collision.gameObject.tag == "Climb")
         {
-            Debug.Log("je peux enfin climb");
+            //Debug.Log("Climb débloqué");
             getClimb = true;
             animator.SetBool("isRunning", false);
             horizontalMove = 0;
@@ -338,9 +345,10 @@ public class PlayerBehavior : MonoBehaviour
             toDisable = collision.gameObject;
         }
 
+        //si contact avec l'objet activant le vol
         if(collision.gameObject.tag == "Fly")
         {
-            Debug.Log("j'ai la cape pour voler");
+            //Debug.Log("Vol débloqué");
             getFly = true;
             animator.SetBool("isRunning", false);
             horizontalMove = 0;
@@ -348,8 +356,7 @@ public class PlayerBehavior : MonoBehaviour
             toDisable = collision.gameObject;
         }
 
-        
-
+        //si contact avec un objet ayant du dialogue
         if (collision.gameObject.tag == "Discussion")
         {
             animator.SetBool("isRunning", false);
@@ -358,6 +365,7 @@ public class PlayerBehavior : MonoBehaviour
             toDisable = collision.gameObject;
         }
 
+        //si contact avec un objet faisant "mourir" le personnage
         if (collision.gameObject.tag == "Reset")
         {
             rb2DPlayer.position = start.position; //retour à la case départ
@@ -367,10 +375,10 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //si contact avec un geyser quand la cape est activée
         if (collision.gameObject.tag == "Geyser" && cape.activeSelf == true)
         {
-            Debug.Log("flute");
-            rb2DPlayer.velocity = Vector2.up * 80;
+            rb2DPlayer.velocity = Vector2.up * 80; //appel d'air qui fait remonter
         }
     }
 
@@ -382,6 +390,7 @@ public class PlayerBehavior : MonoBehaviour
         playerAudioSource.Play();
     }
 
+    //tracé des zones de détection
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

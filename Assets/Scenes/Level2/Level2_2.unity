@@ -1151,6 +1151,7 @@ MonoBehaviour:
   currentFirstButton: {fileID: 8032352}
   selectFirstButton: {fileID: 0}
   sceneLoader: {fileID: 0}
+  timer: {fileID: 0}
   Pausing: 0
 --- !u!114 &354168796
 MonoBehaviour:
@@ -1178,6 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+  stopTime: 0
   champTimer: {fileID: 1701956781}
   timeLevel: 0
   champTimerLevel: {fileID: 1679941802}
@@ -3621,11 +3623,11 @@ MonoBehaviour:
   wallCheck: {fileID: 0}
   wallCheckRay: 0
   speedClimb: 0
+  getFly: 0
+  cape: {fileID: 0}
   toDisable: {fileID: 0}
   playerAudioSource: {fileID: 0}
   sounds: []
-  getFly: 0
-  cape: {fileID: 0}
 --- !u!50 &676448643
 Rigidbody2D:
   serializedVersion: 4
@@ -5408,7 +5410,7 @@ PrefabInstance:
     - target: {fileID: 8949153041030979158, guid: d41310786b2de6d42945d51c17d1c013,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 83.16914
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8949153041030979158, guid: d41310786b2de6d42945d51c17d1c013,
         type: 3}
@@ -5454,6 +5456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949153041030979159, guid: d41310786b2de6d42945d51c17d1c013,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d41310786b2de6d42945d51c17d1c013, type: 3}

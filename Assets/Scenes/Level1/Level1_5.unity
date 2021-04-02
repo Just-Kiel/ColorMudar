@@ -2368,6 +2368,26 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7832643191489629230, guid: ec879c7b0abba8447b5be7ddc7201b98,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.24390352
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832643191489629230, guid: ec879c7b0abba8447b5be7ddc7201b98,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.26097032
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832643191489629230, guid: ec879c7b0abba8447b5be7ddc7201b98,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.2735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832643191489629230, guid: ec879c7b0abba8447b5be7ddc7201b98,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec879c7b0abba8447b5be7ddc7201b98, type: 3}
 --- !u!1 &940493978
@@ -2529,11 +2549,11 @@ MonoBehaviour:
   wallCheck: {fileID: 0}
   wallCheckRay: 0
   speedClimb: 0
+  getFly: 0
+  cape: {fileID: 0}
   toDisable: {fileID: 0}
   playerAudioSource: {fileID: 0}
   sounds: []
-  getFly: 0
-  cape: {fileID: 0}
 --- !u!50 &989588993
 Rigidbody2D:
   serializedVersion: 4

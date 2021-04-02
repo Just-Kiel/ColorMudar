@@ -5621,7 +5621,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &1823050789
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,11 +6884,11 @@ MonoBehaviour:
   wallCheck: {fileID: 2140747184}
   wallCheckRay: 8.69
   speedClimb: 5000
+  getFly: 1
+  cape: {fileID: 1752068690}
   toDisable: {fileID: 0}
   playerAudioSource: {fileID: 0}
   sounds: []
-  getFly: 1
-  cape: {fileID: 1752068690}
 --- !u!50 &2126179622
 Rigidbody2D:
   serializedVersion: 4
