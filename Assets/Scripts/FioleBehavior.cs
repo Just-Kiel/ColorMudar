@@ -13,9 +13,9 @@ public class FioleBehavior : MonoBehaviour
 
     private void Start()
     {
-        changeColor = player.perso.GetComponent<ChangeColor>();
+        changeColor = player.perso.GetComponent<ChangeColor>(); //récupération du script sur le player actif
 
-        libraryAsset = changeColor.newLibraryAsset;
+        libraryAsset = changeColor.newLibraryAsset; //attribution de la nouvelle library à mettre en place
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

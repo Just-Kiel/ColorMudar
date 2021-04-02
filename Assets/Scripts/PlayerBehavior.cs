@@ -41,35 +41,42 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private float wallCheckRay; //variable du rayon de la zone de détection du mur
     [SerializeField] private float speedClimb; //vitesse d'escalade
 
+    [SerializeField] bool getFly; //booléen de déblocage du vol
+    [SerializeField] private GameObject cape; //cape permettant de voler
+
     [SerializeField] public GameObject toDisable = null; //objet "à désactiver"
 
+    [SerializeField] private AudioSource playerAudioSource; //source sonore liée aux actions du personnage
+    public Sound[] sounds; //banque de sons
 
-    [SerializeField] private AudioSource playerAudioSource;
-    public Sound[] sounds;
+
+
 
     private Vector3 lastPosition;
 
-    [SerializeField] bool getFly;
-    [SerializeField] private GameObject cape;
+    
 
     private void Start()
     {
-        perso = GameObject.Find(MenuStart.currentPlayer);
+        perso = GameObject.Find(MenuStart.currentPlayer); //récupération du personnage sélectionné
 
-        animator = perso.GetComponent<Animator>();
+        animator = perso.GetComponent<Animator>(); //récupération de ses animations
 
         perso.transform.localScale = new Vector3(-perso.transform.localScale.x, perso.transform.localScale.y, perso.transform.localScale.z); //les sprites regardent vers la gauche donc on les fait regarder vers la droite dès le début
 
-        wallCheck = perso.transform.Find("wallCheck");
+        wallCheck = perso.transform.Find("wallCheck"); //récupération de l'objet de détection des murs
 
-        cape = perso.transform.Find("couverture_collect").gameObject;
+        cape = perso.transform.Find("couverture_collect").gameObject; //récupération de la cape
+
+
 
         lastPosition = transform.localPosition;
     }
 
     private void Update()
     {
-        playerAudioSource = AudioManager.instance.soundStream;
+        playerAudioSource = AudioManager.instance.soundStream; //récupération de la source sonore de l'audiomanager
+
         //gestion de pause du jeu
         if (menuStart.Pausing == true)
         {
@@ -118,7 +125,7 @@ public class PlayerBehavior : MonoBehaviour
             //DASH OROR
             if (getDash == true && isDashing == false && Input.GetButtonDown("Dash")) //si on a débloqué le dash, que le joueur ne dash pas, et que le bouton du dash est activé
             {
-                rb2DPlayer.gravityScale = 0;
+                rb2DPlayer.gravityScale = 0; //il n'y a plus de gravité sur l'objet
                 animator.SetTrigger("PrepaDash"); //déclenchement de l'animation de préparation du dash
 
                 //en fonction de la direction, on dash pas dans la meme direction
@@ -136,21 +143,22 @@ public class PlayerBehavior : MonoBehaviour
                 }
                 isDashing = true; //impossible de re dash
                 animator.SetTrigger("EndDash");//déclenchement de l'animation de fin du dash
-                rb2DPlayer.gravityScale = 15;
+                rb2DPlayer.gravityScale = 15; //retour à une gravité normale
             }
         }
 
+        //gestion du soundDesign
         if (animator.GetBool("isRunning"))
         {
-            Debug.Log("ptdr je cours");
+            //Debug.Log("Course en cours");
             PlaySound("Walk");
         } else if (animator.GetBool("isJumping"))
         {
-            Debug.Log("début saut");
+            //Debug.Log("Début saut");
             PlaySound("PrepaJump");
         } else if (!animator.GetBool("isJumping"))
         {
-            Debug.Log("fin saut");
+            //Debug.Log("Fin saut");
             PlaySound("EndJump");
         } else if (animator.GetBool("PrepaDash")) {
             PlaySound("Dash");
@@ -158,8 +166,6 @@ public class PlayerBehavior : MonoBehaviour
         {
             playerAudioSource.Stop();
         }
-
-        //StartCoroutine(Falling(cape));
     }
 
     void FixedUpdate()
@@ -173,25 +179,26 @@ public class PlayerBehavior : MonoBehaviour
             Climbing = Physics2D.OverlapCircle(wallCheck.position, wallCheckRay, collisionLayer);
         }
 
+        //si le vol est débloqué et que la cape est bien attribuée
         if (getFly == true && cape != null)
         {
-            if (Input.GetButton("Fly") || Input.GetAxis("Fly") > 0f)
+            if (Input.GetButton("Fly") || Input.GetAxis("Fly") > 0f) //si appui sur le bouton ou la gachette liée au vol
             {
-                animator.SetTrigger("PrepaFly");
-                //Debug.Log("koukou");
-                rb2DPlayer.gravityScale = 1;
-                cape.SetActive(true);
-                Vector3 targetSpeed = new Vector2(horizontalMove / 3, rb2DPlayer.velocity.y);
-                animator.SetBool("isFlying", true);
-                rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
+                animator.SetTrigger("PrepaFly"); //on débute l'animation de vol
+                rb2DPlayer.gravityScale = 3; //baisse de la gravité permettant de planer
+                cape.SetActive(true); //on affiche la cape
+                Vector3 targetSpeed = new Vector2(horizontalMove / 3, rb2DPlayer.velocity.y); //on permet un mouvement latéral plus lent que si on courait
+                animator.SetBool("isFlying", true); //on déclenche une autre partie de l'animation de vol
+                rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f); //déplacement latéral
             }
             else
             {
-                animator.SetBool("isFlying", false);
+                animator.SetBool("isFlying", false); //on arrete le vol
                 MovePlayer(horizontalMove); //appel de la fonction Move Player
-                cape.SetActive(false);
+                cape.SetActive(false); //on désaffiche la cape
             }
         }
+
         if (cape == null || getFly == false)
         {
             MovePlayer(horizontalMove); //appel de la fonction Move Player

@@ -20,9 +20,9 @@ public class MenuStart : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "StartScene")
+        if (SceneManager.GetActiveScene().name == "StartScene") //si on est dans la scène de start
         {
-            AudioManager.instance.soundStream.clip = null;
+            AudioManager.instance.soundStream.clip = null; //il n'y a pas de son actif
         }
         if (Input.GetButtonDown("Cancel") && optionMenu == true) //si appui sur le bouton de retour en étant sur le menu options
         {
