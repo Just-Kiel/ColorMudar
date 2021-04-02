@@ -24,7 +24,7 @@ public class VideoScript : MonoBehaviour
             //SceneManager.LoadScene("FirstCinematiqueScene");
         }
         
-        if (SceneManager.GetActiveScene().name == "FirstCinematiqueScene")
+        if (SceneManager.GetActiveScene().name == "FirstCinematiqueScene" || SceneManager.GetActiveScene().name == "EndScene")
         {
             SceneManager.LoadScene("StartScene");
         }

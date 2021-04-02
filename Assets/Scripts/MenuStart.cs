@@ -20,6 +20,10 @@ public class MenuStart : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "StartScene")
+        {
+            AudioManager.instance.soundStream.clip = null;
+        }
         if (Input.GetButtonDown("Cancel") && optionMenu == true) //si appui sur le bouton de retour en étant sur le menu options
         {
             optionMenu.SetActive(false); //on ferme le menu options
@@ -88,7 +92,7 @@ public class MenuStart : MonoBehaviour
     //fonction du bouton Crédits
     public void CreditsButton()
     {
-        //game object des crédits ?
+        SceneManager.LoadScene("EndScene");
     }
 
     //fonction du bouton Quitter

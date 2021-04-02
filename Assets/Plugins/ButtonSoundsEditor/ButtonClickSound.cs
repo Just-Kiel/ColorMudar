@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Assets.Plugins.ButtonSoundsEditor
 {
@@ -15,9 +16,13 @@ namespace Assets.Plugins.ButtonSoundsEditor
             PlayClickSound();
         }*/
 
+        public void Start()
+        {
+            AudioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+        }
+
         public void Update()
         {
-            
             if (EventSystem.current.currentSelectedGameObject && (currentButton == null || currentButton.name != EventSystem.current.currentSelectedGameObject.name))
             {
                 PlayClickSound();
