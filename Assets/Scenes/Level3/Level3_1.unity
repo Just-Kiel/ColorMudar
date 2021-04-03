@@ -1262,7 +1262,6 @@ GameObject:
   - component: {fileID: 468548364}
   - component: {fileID: 468548363}
   - component: {fileID: 468548362}
-  - component: {fileID: 468548365}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1381,21 +1380,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468548360}
   m_CullTransparentMesh: 0
---- !u!114 &468548365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468548360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7d01bc933f27143a65ab22c43e8d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1842696517}
-  ClickSound: {fileID: 8300000, guid: 4d6cd04c226c3624ba9120f54ddaf010, type: 3}
-  currentButton: {fileID: 0}
 --- !u!1 &475572522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,7 +2944,6 @@ GameObject:
   - component: {fileID: 1129514583}
   - component: {fileID: 1129514582}
   - component: {fileID: 1129514581}
-  - component: {fileID: 1129514584}
   m_Layer: 5
   m_Name: Reprendre
   m_TagString: Untagged
@@ -3079,21 +3062,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129514579}
   m_CullTransparentMesh: 0
---- !u!114 &1129514584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129514579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7d01bc933f27143a65ab22c43e8d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1842696517}
-  ClickSound: {fileID: 8300000, guid: 4d6cd04c226c3624ba9120f54ddaf010, type: 3}
-  currentButton: {fileID: 0}
 --- !u!1 &1136520104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,7 +3169,6 @@ GameObject:
   - component: {fileID: 1166995707}
   - component: {fileID: 1166995706}
   - component: {fileID: 1166995705}
-  - component: {fileID: 1166995708}
   m_Layer: 5
   m_Name: +
   m_TagString: Untagged
@@ -3320,21 +3287,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166995703}
   m_CullTransparentMesh: 0
---- !u!114 &1166995708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166995703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7d01bc933f27143a65ab22c43e8d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1842696517}
-  ClickSound: {fileID: 8300000, guid: 4d6cd04c226c3624ba9120f54ddaf010, type: 3}
-  currentButton: {fileID: 0}
 --- !u!1 &1183898631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,7 +4033,6 @@ GameObject:
   - component: {fileID: 1289123355}
   - component: {fileID: 1289123354}
   - component: {fileID: 1289123353}
-  - component: {fileID: 1289123356}
   m_Layer: 5
   m_Name: Menu principal
   m_TagString: Untagged
@@ -4200,21 +4151,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289123351}
   m_CullTransparentMesh: 0
---- !u!114 &1289123356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289123351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7d01bc933f27143a65ab22c43e8d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1842696517}
-  ClickSound: {fileID: 8300000, guid: 7713d5acfe0db8a43927d5fc8fa92ac9, type: 3}
-  currentButton: {fileID: 0}
 --- !u!1 &1308358542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,11 +4667,11 @@ MonoBehaviour:
   wallCheck: {fileID: 1945080478}
   wallCheckRay: 8.69
   speedClimb: 5000
+  getFly: 1
+  cape: {fileID: 644737888}
   toDisable: {fileID: 0}
   playerAudioSource: {fileID: 0}
   sounds: []
-  getFly: 1
-  cape: {fileID: 644737888}
 --- !u!50 &1469313510
 Rigidbody2D:
   serializedVersion: 4
@@ -5364,7 +5300,6 @@ GameObject:
   - component: {fileID: 1586533100}
   - component: {fileID: 1586533099}
   - component: {fileID: 1586533098}
-  - component: {fileID: 1586533101}
   m_Layer: 5
   m_Name: '-'
   m_TagString: Untagged
@@ -5483,21 +5418,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586533096}
   m_CullTransparentMesh: 0
---- !u!114 &1586533101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586533096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7d01bc933f27143a65ab22c43e8d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1842696517}
-  ClickSound: {fileID: 8300000, guid: 7713d5acfe0db8a43927d5fc8fa92ac9, type: 3}
-  currentButton: {fileID: 0}
 --- !u!1 &1616536864
 GameObject:
   m_ObjectHideFlags: 0
@@ -6181,6 +6101,7 @@ GameObject:
   - component: {fileID: 1863790635}
   - component: {fileID: 1863790637}
   - component: {fileID: 1863790638}
+  - component: {fileID: 1863790640}
   m_Layer: 0
   m_Name: Script Menu
   m_TagString: Untagged
@@ -6220,6 +6141,7 @@ MonoBehaviour:
   currentFirstButton: {fileID: 1129514579}
   selectFirstButton: {fileID: 0}
   sceneLoader: {fileID: 0}
+  timer: {fileID: 0}
   Pausing: 0
 --- !u!114 &1863790637
 MonoBehaviour:
@@ -6247,6 +6169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+  stopTime: 0
   champTimer: {fileID: 1257833691}
   timeLevel: 0
   champTimerLevel: {fileID: 1721647078}
@@ -6264,6 +6187,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1863790640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863790634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7daf0754a6e3864ca8014228c6b6e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  ClickSound: {fileID: 8300000, guid: 4d6cd04c226c3624ba9120f54ddaf010, type: 3}
+  currentButton: {fileID: 0}
 --- !u!1 &1880731753
 GameObject:
   m_ObjectHideFlags: 0
@@ -6500,7 +6438,6 @@ GameObject:
   - component: {fileID: 2032874703}
   - component: {fileID: 2032874702}
   - component: {fileID: 2032874701}
-  - component: {fileID: 2032874704}
   m_Layer: 5
   m_Name: +
   m_TagString: Untagged
@@ -6619,21 +6556,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032874699}
   m_CullTransparentMesh: 0
---- !u!114 &2032874704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032874699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7d01bc933f27143a65ab22c43e8d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1842696517}
-  ClickSound: {fileID: 8300000, guid: 4d6cd04c226c3624ba9120f54ddaf010, type: 3}
-  currentButton: {fileID: 0}
 --- !u!1 &2073397787
 GameObject:
   m_ObjectHideFlags: 0
@@ -6646,7 +6568,6 @@ GameObject:
   - component: {fileID: 2073397791}
   - component: {fileID: 2073397790}
   - component: {fileID: 2073397789}
-  - component: {fileID: 2073397792}
   m_Layer: 5
   m_Name: '-'
   m_TagString: Untagged
@@ -6765,18 +6686,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073397787}
   m_CullTransparentMesh: 0
---- !u!114 &2073397792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073397787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7d01bc933f27143a65ab22c43e8d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1842696517}
-  ClickSound: {fileID: 8300000, guid: 7713d5acfe0db8a43927d5fc8fa92ac9, type: 3}
-  currentButton: {fileID: 0}

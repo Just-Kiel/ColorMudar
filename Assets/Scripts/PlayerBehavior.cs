@@ -304,6 +304,7 @@ public class PlayerBehavior : MonoBehaviour
             if(levelName[m_nextLevel] == "EndScene")
             {
                 playerAudioSource.Stop();
+                AudioManager.instance.musicStream.Play();
             }
             SceneManager.LoadScene(levelName[m_nextLevel]);
             PlayerPrefs.SetInt("nextLevel", m_nextLevel);
