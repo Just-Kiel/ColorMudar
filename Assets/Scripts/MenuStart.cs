@@ -7,6 +7,7 @@ public class MenuStart : MonoBehaviour
     [SerializeField] private GameObject optionMenu; //objet contenant le menu d'options
     [SerializeField] private GameObject currentMenu; //objet contenant le menu courant
     [SerializeField] private GameObject selectMenu; //objet contenant le menu de sélection du personnage
+    [SerializeField] private GameObject controleMenu; //objet contenant les controles
 
     [SerializeField] private GameObject optionFirstButton; //objet du premier bouton dispo des options
     [SerializeField] private GameObject currentFirstButton; //objet du premier bouton dispo du menu courant
@@ -27,6 +28,15 @@ public class MenuStart : MonoBehaviour
         {
             AudioManager.instance.soundStream.clip = null; //il n'y a pas de son actif
         }
+
+        if (Input.GetButtonDown("Cancel") && controleMenu == true) //si appui sur le bouton de retour en étant sur le menu controles
+        {
+            controleMenu.SetActive(false); //on ferme le menu controles
+            optionMenu.SetActive(true); //on affiche le menu options
+            EventSystem.current.SetSelectedGameObject(null); //le bouton préselectionné est reset
+            EventSystem.current.SetSelectedGameObject(optionFirstButton); //on le définit sur le bouton du menu options
+        }
+
         if (Input.GetButtonDown("Cancel") && optionMenu == true) //si appui sur le bouton de retour en étant sur le menu options
         {
             optionMenu.SetActive(false); //on ferme le menu options
@@ -34,7 +44,7 @@ public class MenuStart : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null); //le bouton préselectionné est reset
             EventSystem.current.SetSelectedGameObject(currentFirstButton); //on le définit sur le bouton du menu courant
         }
-        
+
         if (Input.GetButtonDown("Cancel") && selectMenu == true) //si appui sur bouton de retour en étant sur menu de sélection de personnage (même principe que pour le menu d'options)
         {
             selectMenu.SetActive(false);
@@ -95,6 +105,13 @@ public class MenuStart : MonoBehaviour
         optionMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionFirstButton);
+    }
+
+    //fonction du bouton Controles
+    public void ControlesButton()
+    {
+        optionMenu.SetActive(false);
+        controleMenu.SetActive(true);
     }
 
     //fonction du bouton Crédits
