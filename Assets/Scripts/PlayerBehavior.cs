@@ -131,15 +131,15 @@ public class PlayerBehavior : MonoBehaviour
                 //en fonction de la direction, on dash pas dans la meme direction
                 if (direction == 1)
                 {
-                    rb2DPlayer.velocity = Vector2.right * speedDash * 15;
+                    rb2DPlayer.velocity = Vector2.right * speedDash * 50;
                 }
                 else if (direction == 2)
                 {
-                    rb2DPlayer.velocity = Vector2.left * speedDash * 15;
+                    rb2DPlayer.velocity = Vector2.left * speedDash * 50;
                 }
                 else if (direction == 3)
                 {
-                    rb2DPlayer.velocity = Vector2.up * speedDash;
+                    rb2DPlayer.velocity = Vector2.up * (speedDash + 76);
                 }
                 isDashing = true; //impossible de re dash
                 animator.SetTrigger("EndDash");//déclenchement de l'animation de fin du dash
