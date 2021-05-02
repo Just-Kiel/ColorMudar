@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         if (instance == null) //si aucune instance AudioManager existe
         {
             instance = this; //on en crée 1

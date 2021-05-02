@@ -12,6 +12,8 @@ public class VideoScript : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         m_videoPlayer.loopPointReached += VideoOver; //quand la vidéo est finie on appelle la fonction VideoOver
     }
 

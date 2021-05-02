@@ -244,6 +244,7 @@ public class PlayerBehavior : MonoBehaviour
 
         if (Walking == true) //si le joueur est en contact avec le sol
         {
+            rb2DPlayer.gravityScale = 5;
             isDashing = false; //le joueur n'est pas en train de dash
             animator.SetBool("isJumping", false); //le personnage ne saute pas
             
@@ -252,6 +253,7 @@ public class PlayerBehavior : MonoBehaviour
         else
         {
             animator.SetBool("isJumping", true);
+            rb2DPlayer.gravityScale = 26;
             targetSpeed = new Vector2(_horizontalMovement / 5, rb2DPlayer.velocity.y);
             rb2DPlayer.velocity = Vector3.SmoothDamp(rb2DPlayer.velocity, targetSpeed, ref velocity, 0.05f);
             //Debug.Log("Saut actif");
