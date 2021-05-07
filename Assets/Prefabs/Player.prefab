@@ -517,9 +517,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName:
   - Intro
-  - Intro_2
-  - Intro_3
-  - Level1_3
+  - Level1_8
+  - Level2_10
+  - Level3_12
   - Level1_5
   - Level1_8
   - Level2_1
@@ -552,7 +552,7 @@ MonoBehaviour:
   speedJump: 130
   getDash: 0
   isDashing: 0
-  speedDash: 175
+  speedDash: 160
   getClimb: 0
   wallCheck: {fileID: 0}
   wallCheckRay: 8.69

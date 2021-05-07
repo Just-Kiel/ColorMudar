@@ -1882,6 +1882,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1370702892382476256, guid: e8ce79da23812a744ab2d714db54a196,
         type: 3}
+    - target: {fileID: 8255807988836452800, guid: b6b2f1f3e2ba300408e74e621a634320,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8255807988836452801, guid: b6b2f1f3e2ba300408e74e621a634320,
         type: 3}
       propertyPath: m_LocalPosition.x
